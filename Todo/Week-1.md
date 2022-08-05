@@ -16,8 +16,8 @@
 
 ### FireFox 测试实时状态
 
-测试用例：2/50
-缺陷报告：1
+- 测试用例：2/50
+- 缺陷报告：1
 
 ## WSL 上通过 QEMU 仿真 RISC-V 环境并启动 OpenEuler RISC-V 系统
 
