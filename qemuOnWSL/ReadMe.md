@@ -94,3 +94,7 @@ Users online:   2
 
 [root@openEuler-riscv64 ~]#
 ```
+
+## 参考文献
+
+- [通过 QEMU 仿真 RISC-V 环境并启动 OpenEuler RISC-V 系统](https://github.com/openeuler-mirror/RISC-V/blob/master/doc/tutorials/vm-qemu-oErv.md)
