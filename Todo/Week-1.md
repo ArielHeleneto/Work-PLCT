@@ -2,7 +2,7 @@
 
 ## 计划产出
 
-## 提交 `neofetch` 包到上游。
+## 提交 `neofetch` 包到上游
 
 包在 [此处](https://gitee.com/xiongjiahui/neofetch)
 
