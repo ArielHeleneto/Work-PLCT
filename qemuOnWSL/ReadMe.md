@@ -6,7 +6,7 @@
 
 ### 安装 WSL
 
-略。笔者使用的是 `Ubuntu 20.04.4 LTS` 。
+略。笔者使用的是 `Ubuntu 20.04.4 LTS` 。可点击 [此处](https://docs.microsoft.com/zh-cn/windows/wsl/install) 参阅官方文献。
 
 ### 安装 VNC Viewer
 
