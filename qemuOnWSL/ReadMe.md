@@ -48,7 +48,7 @@ Copyright (c) 2003-2021 Fabrice Bellard and the QEMU Project developers
 
 - 确认当前目录内包含 `fw_payload_oe_qemuvirt.elf`, `openeuler-qemu-xfce.raw.tar.zst`
 - 下载教程目录下的 `start_vm_xfce.sh` 并放置在同目录下，并视情况调整设置
-- 解压镜像压缩包 `$ tar -I 'zstdmt' -xvf ./openeuler-qemu.raw.tar.zst` 或使用解压工具解压
+- 解压镜像压缩包 `$ tar -I 'zstdmt' -xvf ./openeuler-qemu-xfce.raw.tar.zst` 或使用解压工具解压
 - 执行启动脚本 `$ bash start_vm_xfce.sh`
 - 根据脚本提示信息连接虚拟机的 SSH Server
 - 启动 VNC Viewer ，在地址栏内输入脚本信息回显的地址按回车连接。如果提示未加密请忽略。
