@@ -2,9 +2,6 @@
 
 # The script is created for starting a riscv64 qemu virtual machine with specific parameters on WSL on Windows 10
 
-RESTORE=$(echo -en '\001\033[0m\002')
-YELLOW=$(echo -en '\033[00;33m\002')
-
 ## Configuration
 vcpu=8
 memory=8
