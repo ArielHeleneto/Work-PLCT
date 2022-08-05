@@ -2,7 +2,7 @@
 
 ## 计划产出
 
-- 提交 `neofetch` 包到上游。[^1]
+- 提交 `neofetch` 包到上游。[^1]：等待上游响应 [Pull Request](https://gitee.com/src-openeuler/neofetch/pulls/1) 等待中。
 - [FireFox](https://support.mozilla.org) 测试。[^2]
 - WSL2 上通过 QEMU 仿真 RISC-V 环境并启动 OpenEuler RISC-V 系统。[^3]
 
