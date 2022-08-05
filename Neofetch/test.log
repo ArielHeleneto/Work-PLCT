@@ -1,0 +1,290 @@
+[root@openEuler-riscv64 neofetch-latest]# yum install neoftech.rpm
+Last metadata expiration check: 0:54:26 ago on Fri 05 Aug 2022 01:06:01 PM CST.
+Dependencies resolved.
+======================================================================================================================== Package                                      Architecture    Version                        Repository            Size
+========================================================================================================================Installing:
+ neofetch                                     noarch          7.1.0-8.oe1                    @commandline          93 k
+Installing dependencies:
+ Imath                                        riscv64         3.1.4-1.oe2203                 mainline              68 k
+ OpenEXR-libs                                 riscv64         3.1.3-1.oe2203                 mainline             877 k
+ adobe-mappings-cmap                          noarch          20190730-3.oe2203              mainline              15 k
+ adobe-mappings-cmap-lang                     noarch          20190730-3.oe2203              mainline             2.5 M
+ adobe-mappings-pdf                           noarch          20190401-2.oe2203              mainline             755 k
+ bind-libs                                    riscv64         32:9.16.23-4.oe2203            mainline             1.2 M
+ bind-license                                 noarch          32:9.16.23-4.oe2203            mainline              17 k
+ bind-utils                                   riscv64         32:9.16.23-4.oe2203            mainline             177 k
+ ghostscript                                  riscv64         9.55.0-1.oe2203                mainline             5.4 M
+ google-droid-sans-fonts                      noarch          20200215-1.oe2203              mainline             2.4 M
+ hwdata                                       noarch          0.353-1.oe2203                 mainline             1.7 M
+ jbig2dec                                     riscv64         0.19-3.oe2203                  mainline              74 k
+ libICE                                       riscv64         1.0.10-2.oe2203                mainline              50 k
+ libSM                                        riscv64         1.2.3-2.oe2203                 mainline              22 k
+ libXmu                                       riscv64         1.1.3-1.oe2203                 mainline              51 k
+ libXt                                        riscv64         1.2.1-1.oe2203                 mainline             156 k
+ libXv                                        riscv64         1.0.11-11.oe2203               mainline              16 k
+ libXxf86dga                                  riscv64         1.1.5-1.oe2203                 mainline              17 k
+ libXxf86vm                                   riscv64         1.1.4-13.oe2203                mainline              16 k
+ libdmx                                       riscv64         1.1.4-6.oe2203                 mainline              15 k
+ libidn                                       riscv64         1.38-3.oe2203                  mainline             138 k
+ libijs                                       riscv64         0.35-9.oe2203                  mainline              27 k
+ libpaper                                     riscv64         1.1.28-1.oe2203                mainline              33 k
+ librsvg2                                     riscv64         2.50.5-2.oe2203                mainline             2.3 M
+ libuv                                        riscv64         1:1.44.1-1.oe2203              mainline              78 k
+ libwebp                                      riscv64         1.2.1-1.oe2203                 mainline             213 k
+ libwmf                                       riscv64         0.2.12-2.oe2203                mainline             176 k
+ lmdb                                         riscv64         0.9.29-2.oe2203                mainline              67 k
+ mcpp                                         riscv64         2.7.2-28.oe2203                mainline              75 k
+ open-sans-fonts                              noarch          1.10-11.oe2203                 mainline             456 k
+ openjpeg2                                    riscv64         2.4.0-5.oe2203                 mainline             148 k
+ pciutils                                     riscv64         3.7.0-2.oe2203                 mainline             103 k
+ urw-base35-bookman-fonts                     noarch          20200910-1.oe2203              mainline             854 k
+ urw-base35-c059-fonts                        noarch          20200910-1.oe2203              mainline             881 k
+ urw-base35-d050000l-fonts                    noarch          20200910-1.oe2203              mainline              76 k
+ urw-base35-fonts                             noarch          20200910-1.oe2203              mainline             9.5 k
+ urw-base35-fonts-common                      noarch          20200910-1.oe2203              mainline              21 k
+ urw-base35-gothic-fonts                      noarch          20200910-1.oe2203              mainline             651 k
+ urw-base35-nimbus-mono-ps-fonts              noarch          20200910-1.oe2203              mainline             798 k
+ urw-base35-nimbus-roman-fonts                noarch          20200910-1.oe2203              mainline             862 k
+ urw-base35-nimbus-sans-fonts                 noarch          20200910-1.oe2203              mainline             1.3 M
+ urw-base35-p052-fonts                        noarch          20200910-1.oe2203              mainline             979 k
+ urw-base35-standard-symbols-ps-fonts         noarch          20200910-1.oe2203              mainline              41 k
+ urw-base35-z003-fonts                        noarch          20200910-1.oe2203              mainline             277 k
+Installing weak dependencies:
+ ImageMagick                                  riscv64         1:7.1.0.27-1.oe2203            mainline             2.2 M
+ xorg-x11-server-utils                        riscv64         7.7-29.oe2203                  mainline             120 k
+ xorg-x11-utils                               riscv64         7.5-31.oe2203                  mainline              93 k
+
+Transaction Summary
+========================================================================================================================Install  48 Packages
+
+Total size: 28 M
+Total download size: 28 M
+Installed size: 102 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/47): Imath-3.1.4-1.oe2203.riscv64.rpm                                                 76 kB/s |  68 kB     00:00
+(2/47): ImageMagick-7.1.0.27-1.oe2203.riscv64.rpm                                       1.5 MB/s | 2.2 MB     00:01
+(3/47): adobe-mappings-cmap-20190730-3.oe2203.noarch.rpm                                 36 kB/s |  15 kB     00:00
+(4/47): OpenEXR-libs-3.1.3-1.oe2203.riscv64.rpm                                         585 kB/s | 877 kB     00:01
+(5/47): adobe-mappings-cmap-lang-20190730-3.oe2203.noarch.rpm                           3.2 MB/s | 2.5 MB     00:00
+(6/47): adobe-mappings-pdf-20190401-2.oe2203.noarch.rpm                                 721 kB/s | 755 kB     00:01
+(7/47): bind-libs-9.16.23-4.oe2203.riscv64.rpm                                          1.1 MB/s | 1.2 MB     00:01
+(8/47): bind-license-9.16.23-4.oe2203.noarch.rpm                                        124 kB/s |  17 kB     00:00
+(9/47): bind-utils-9.16.23-4.oe2203.riscv64.rpm                                         1.4 MB/s | 177 kB     00:00
+(10/47): ghostscript-9.55.0-1.oe2203.riscv64.rpm                                        2.6 MB/s | 5.4 MB     00:02
+(11/47): google-droid-sans-fonts-20200215-1.oe2203.noarch.rpm                           837 kB/s | 2.4 MB     00:02
+(12/47): hwdata-0.353-1.oe2203.noarch.rpm                                               480 kB/s | 1.7 MB     00:03
+(13/47): jbig2dec-0.19-3.oe2203.riscv64.rpm                                              53 kB/s |  74 kB     00:01
+(14/47): libICE-1.0.10-2.oe2203.riscv64.rpm                                              76 kB/s |  50 kB     00:00
+(15/47): libSM-1.2.3-2.oe2203.riscv64.rpm                                               259 kB/s |  22 kB     00:00
+(16/47): libXmu-1.1.3-1.oe2203.riscv64.rpm                                              481 kB/s |  51 kB     00:00
+(17/47): libXt-1.2.1-1.oe2203.riscv64.rpm                                               992 kB/s | 156 kB     00:00
+(18/47): libXv-1.0.11-11.oe2203.riscv64.rpm                                             149 kB/s |  16 kB     00:00
+(19/47): libXxf86dga-1.1.5-1.oe2203.riscv64.rpm                                         239 kB/s |  17 kB     00:00
+(20/47): libXxf86vm-1.1.4-13.oe2203.riscv64.rpm                                         190 kB/s |  16 kB     00:00
+(21/47): libdmx-1.1.4-6.oe2203.riscv64.rpm                                              163 kB/s |  15 kB     00:00
+(22/47): libidn-1.38-3.oe2203.riscv64.rpm                                               1.1 MB/s | 138 kB     00:00
+(23/47): libijs-0.35-9.oe2203.riscv64.rpm                                               352 kB/s |  27 kB     00:00
+(24/47): libpaper-1.1.28-1.oe2203.riscv64.rpm                                           394 kB/s |  33 kB     00:00
+(25/47): librsvg2-2.50.5-2.oe2203.riscv64.rpm                                           1.8 MB/s | 2.3 MB     00:01
+(26/47): libuv-1.44.1-1.oe2203.riscv64.rpm                                               60 kB/s |  78 kB     00:01
+(27/47): libwebp-1.2.1-1.oe2203.riscv64.rpm                                             165 kB/s | 213 kB     00:01
+(28/47): libwmf-0.2.12-2.oe2203.riscv64.rpm                                             1.0 MB/s | 176 kB     00:00
+(29/47): lmdb-0.9.29-2.oe2203.riscv64.rpm                                               410 kB/s |  67 kB     00:00
+(30/47): mcpp-2.7.2-28.oe2203.riscv64.rpm                                               391 kB/s |  75 kB     00:00
+(31/47): open-sans-fonts-1.10-11.oe2203.noarch.rpm                                      1.7 MB/s | 456 kB     00:00
+(32/47): openjpeg2-2.4.0-5.oe2203.riscv64.rpm                                           508 kB/s | 148 kB     00:00
+(33/47): pciutils-3.7.0-2.oe2203.riscv64.rpm                                            343 kB/s | 103 kB     00:00
+(34/47): urw-base35-bookman-fonts-20200910-1.oe2203.noarch.rpm                          1.7 MB/s | 854 kB     00:00
+(35/47): urw-base35-c059-fonts-20200910-1.oe2203.noarch.rpm                             983 kB/s | 881 kB     00:00
+(36/47): urw-base35-d050000l-fonts-20200910-1.oe2203.noarch.rpm                          85 kB/s |  76 kB     00:00
+(37/47): urw-base35-fonts-20200910-1.oe2203.noarch.rpm                                   21 kB/s | 9.5 kB     00:00
+(38/47): urw-base35-fonts-common-20200910-1.oe2203.noarch.rpm                           271 kB/s |  21 kB     00:00
+(39/47): urw-base35-gothic-fonts-20200910-1.oe2203.noarch.rpm                           1.8 MB/s | 651 kB     00:00
+(40/47): urw-base35-nimbus-mono-ps-fonts-20200910-1.oe2203.noarch.rpm                   1.1 MB/s | 798 kB     00:00
+(41/47): urw-base35-nimbus-roman-fonts-20200910-1.oe2203.noarch.rpm                     836 kB/s | 862 kB     00:01
+(42/47): urw-base35-nimbus-sans-fonts-20200910-1.oe2203.noarch.rpm                      988 kB/s | 1.3 MB     00:01
+(43/47): urw-base35-p052-fonts-20200910-1.oe2203.noarch.rpm                             708 kB/s | 979 kB     00:01
+(44/47): urw-base35-standard-symbols-ps-fonts-20200910-1.oe2203.noarch.rpm               38 kB/s |  41 kB     00:01
+(45/47): urw-base35-z003-fonts-20200910-1.oe2203.noarch.rpm                             597 kB/s | 277 kB     00:00
+(46/47): xorg-x11-server-utils-7.7-29.oe2203.riscv64.rpm                                1.2 MB/s | 120 kB     00:00
+(47/47): xorg-x11-utils-7.5-31.oe2203.riscv64.rpm                                       802 kB/s |  93 kB     00:00
+------------------------------------------------------------------------------------------------------------------------Total                                                                                   2.4 MB/s |  28 MB     00:11
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                1/1
+  Installing       : urw-base35-fonts-common-20200910-1.oe2203.noarch                                              1/48
+  Installing       : libICE-1.0.10-2.oe2203.riscv64                                                                2/48
+  Installing       : libSM-1.2.3-2.oe2203.riscv64                                                                  3/48
+  Installing       : libXt-1.2.1-1.oe2203.riscv64                                                                  4/48
+  Installing       : adobe-mappings-cmap-lang-20190730-3.oe2203.noarch                                             5/48
+  Installing       : adobe-mappings-cmap-20190730-3.oe2203.noarch                                                  6/48
+  Installing       : openjpeg2-2.4.0-5.oe2203.riscv64                                                              7/48
+  Installing       : lmdb-0.9.29-2.oe2203.riscv64                                                                  8/48
+  Installing       : libuv-1:1.44.1-1.oe2203.riscv64                                                               9/48
+  Installing       : libXxf86vm-1.1.4-13.oe2203.riscv64                                                           10/48
+  Installing       : Imath-3.1.4-1.oe2203.riscv64                                                                 11/48
+  Installing       : OpenEXR-libs-3.1.3-1.oe2203.riscv64                                                          12/48
+  Installing       : libXmu-1.1.3-1.oe2203.riscv64                                                                13/48
+  Installing       : urw-base35-bookman-fonts-20200910-1.oe2203.noarch                                            14/48
+  Running scriptlet: urw-base35-bookman-fonts-20200910-1.oe2203.noarch                                            14/48
+  Installing       : urw-base35-c059-fonts-20200910-1.oe2203.noarch                                               15/48
+  Running scriptlet: urw-base35-c059-fonts-20200910-1.oe2203.noarch                                               15/48
+  Installing       : urw-base35-d050000l-fonts-20200910-1.oe2203.noarch                                           16/48
+  Running scriptlet: urw-base35-d050000l-fonts-20200910-1.oe2203.noarch                                           16/48
+  Installing       : urw-base35-gothic-fonts-20200910-1.oe2203.noarch                                             17/48
+  Running scriptlet: urw-base35-gothic-fonts-20200910-1.oe2203.noarch                                             17/48
+  Installing       : urw-base35-nimbus-mono-ps-fonts-20200910-1.oe2203.noarch                                     18/48
+  Running scriptlet: urw-base35-nimbus-mono-ps-fonts-20200910-1.oe2203.noarch                                     18/48
+  Installing       : urw-base35-nimbus-roman-fonts-20200910-1.oe2203.noarch                                       19/48
+  Running scriptlet: urw-base35-nimbus-roman-fonts-20200910-1.oe2203.noarch                                       19/48
+  Installing       : urw-base35-nimbus-sans-fonts-20200910-1.oe2203.noarch                                        20/48
+  Running scriptlet: urw-base35-nimbus-sans-fonts-20200910-1.oe2203.noarch                                        20/48
+  Installing       : urw-base35-p052-fonts-20200910-1.oe2203.noarch                                               21/48
+  Running scriptlet: urw-base35-p052-fonts-20200910-1.oe2203.noarch                                               21/48
+  Installing       : urw-base35-standard-symbols-ps-fonts-20200910-1.oe2203.noarch                                22/48
+  Running scriptlet: urw-base35-standard-symbols-ps-fonts-20200910-1.oe2203.noarch                                22/48
+  Installing       : urw-base35-z003-fonts-20200910-1.oe2203.noarch                                               23/48
+  Running scriptlet: urw-base35-z003-fonts-20200910-1.oe2203.noarch                                               23/48
+  Installing       : urw-base35-fonts-20200910-1.oe2203.noarch                                                    24/48
+  Installing       : libwmf-0.2.12-2.oe2203.riscv64                                                               25/48
+  Running scriptlet: libwmf-0.2.12-2.oe2203.riscv64                                                               25/48
+  Installing       : open-sans-fonts-1.10-11.oe2203.noarch                                                        26/48
+  Installing       : mcpp-2.7.2-28.oe2203.riscv64                                                                 27/48
+  Running scriptlet: mcpp-2.7.2-28.oe2203.riscv64                                                                 27/48
+  Installing       : xorg-x11-server-utils-7.7-29.oe2203.riscv64                                                  28/48
+  Installing       : libwebp-1.2.1-1.oe2203.riscv64                                                               29/48
+  Installing       : librsvg2-2.50.5-2.oe2203.riscv64                                                             30/48
+  Installing       : libpaper-1.1.28-1.oe2203.riscv64                                                             31/48
+  Installing       : libijs-0.35-9.oe2203.riscv64                                                                 32/48
+  Installing       : libidn-1.38-3.oe2203.riscv64                                                                 33/48
+  Installing       : libdmx-1.1.4-6.oe2203.riscv64                                                                34/48
+  Installing       : libXxf86dga-1.1.5-1.oe2203.riscv64                                                           35/48
+  Installing       : libXv-1.0.11-11.oe2203.riscv64                                                               36/48
+  Running scriptlet: xorg-x11-utils-7.5-31.oe2203.riscv64                                                         37/48
+  Installing       : xorg-x11-utils-7.5-31.oe2203.riscv64                                                         37/48
+  Running scriptlet: xorg-x11-utils-7.5-31.oe2203.riscv64                                                         37/48
+  Installing       : jbig2dec-0.19-3.oe2203.riscv64                                                               38/48
+  Installing       : hwdata-0.353-1.oe2203.noarch                                                                 39/48
+  Installing       : pciutils-3.7.0-2.oe2203.riscv64                                                              40/48
+  Running scriptlet: pciutils-3.7.0-2.oe2203.riscv64                                                              40/48
+  Installing       : google-droid-sans-fonts-20200215-1.oe2203.noarch                                             41/48
+  Installing       : bind-license-32:9.16.23-4.oe2203.noarch                                                      42/48
+  Installing       : bind-libs-32:9.16.23-4.oe2203.riscv64                                                        43/48
+  Installing       : bind-utils-32:9.16.23-4.oe2203.riscv64                                                       44/48
+  Installing       : adobe-mappings-pdf-20190401-2.oe2203.noarch                                                  45/48
+  Running scriptlet: ghostscript-9.55.0-1.oe2203.riscv64                                                          46/48
+  Installing       : ghostscript-9.55.0-1.oe2203.riscv64                                                          46/48
+  Running scriptlet: ghostscript-9.55.0-1.oe2203.riscv64                                                          46/48
+  Installing       : ImageMagick-1:7.1.0.27-1.oe2203.riscv64                                                      47/48
+  Running scriptlet: ImageMagick-1:7.1.0.27-1.oe2203.riscv64                                                      47/48
+  Installing       : neofetch-7.1.0-8.oe1.noarch                                                                  48/48
+  Running scriptlet: urw-base35-bookman-fonts-20200910-1.oe2203.noarch                                            48/48
+  Running scriptlet: urw-base35-c059-fonts-20200910-1.oe2203.noarch                                               48/48
+  Running scriptlet: urw-base35-d050000l-fonts-20200910-1.oe2203.noarch                                           48/48
+  Running scriptlet: urw-base35-gothic-fonts-20200910-1.oe2203.noarch                                             48/48
+  Running scriptlet: urw-base35-nimbus-mono-ps-fonts-20200910-1.oe2203.noarch                                     48/48
+  Running scriptlet: urw-base35-nimbus-roman-fonts-20200910-1.oe2203.noarch                                       48/48
+  Running scriptlet: urw-base35-nimbus-sans-fonts-20200910-1.oe2203.noarch                                        48/48
+  Running scriptlet: urw-base35-p052-fonts-20200910-1.oe2203.noarch                                               48/48
+  Running scriptlet: urw-base35-standard-symbols-ps-fonts-20200910-1.oe2203.noarch                                48/48
+  Running scriptlet: urw-base35-z003-fonts-20200910-1.oe2203.noarch                                               48/48
+  Running scriptlet: neofetch-7.1.0-8.oe1.noarch                                                                  48/48
+  Verifying        : ImageMagick-1:7.1.0.27-1.oe2203.riscv64                                                       1/48
+  Verifying        : Imath-3.1.4-1.oe2203.riscv64                                                                  2/48
+  Verifying        : OpenEXR-libs-3.1.3-1.oe2203.riscv64                                                           3/48
+  Verifying        : adobe-mappings-cmap-20190730-3.oe2203.noarch                                                  4/48
+  Verifying        : adobe-mappings-cmap-lang-20190730-3.oe2203.noarch                                             5/48
+  Verifying        : adobe-mappings-pdf-20190401-2.oe2203.noarch                                                   6/48
+  Verifying        : bind-libs-32:9.16.23-4.oe2203.riscv64                                                         7/48
+  Verifying        : bind-license-32:9.16.23-4.oe2203.noarch                                                       8/48
+  Verifying        : bind-utils-32:9.16.23-4.oe2203.riscv64                                                        9/48
+  Verifying        : ghostscript-9.55.0-1.oe2203.riscv64                                                          10/48
+  Verifying        : google-droid-sans-fonts-20200215-1.oe2203.noarch                                             11/48
+  Verifying        : hwdata-0.353-1.oe2203.noarch                                                                 12/48
+  Verifying        : jbig2dec-0.19-3.oe2203.riscv64                                                               13/48
+  Verifying        : libICE-1.0.10-2.oe2203.riscv64                                                               14/48
+  Verifying        : libSM-1.2.3-2.oe2203.riscv64                                                                 15/48
+  Verifying        : libXmu-1.1.3-1.oe2203.riscv64                                                                16/48
+  Verifying        : libXt-1.2.1-1.oe2203.riscv64                                                                 17/48
+  Verifying        : libXv-1.0.11-11.oe2203.riscv64                                                               18/48
+  Verifying        : libXxf86dga-1.1.5-1.oe2203.riscv64                                                           19/48
+  Verifying        : libXxf86vm-1.1.4-13.oe2203.riscv64                                                           20/48
+  Verifying        : libdmx-1.1.4-6.oe2203.riscv64                                                                21/48
+  Verifying        : libidn-1.38-3.oe2203.riscv64                                                                 22/48
+  Verifying        : libijs-0.35-9.oe2203.riscv64                                                                 23/48
+  Verifying        : libpaper-1.1.28-1.oe2203.riscv64                                                             24/48
+  Verifying        : librsvg2-2.50.5-2.oe2203.riscv64                                                             25/48
+  Verifying        : libuv-1:1.44.1-1.oe2203.riscv64                                                              26/48
+  Verifying        : libwebp-1.2.1-1.oe2203.riscv64                                                               27/48
+  Verifying        : libwmf-0.2.12-2.oe2203.riscv64                                                               28/48
+  Verifying        : lmdb-0.9.29-2.oe2203.riscv64                                                                 29/48
+  Verifying        : mcpp-2.7.2-28.oe2203.riscv64                                                                 30/48
+  Verifying        : open-sans-fonts-1.10-11.oe2203.noarch                                                        31/48
+  Verifying        : openjpeg2-2.4.0-5.oe2203.riscv64                                                             32/48
+  Verifying        : pciutils-3.7.0-2.oe2203.riscv64                                                              33/48
+  Verifying        : urw-base35-bookman-fonts-20200910-1.oe2203.noarch                                            34/48
+  Verifying        : urw-base35-c059-fonts-20200910-1.oe2203.noarch                                               35/48
+  Verifying        : urw-base35-d050000l-fonts-20200910-1.oe2203.noarch                                           36/48
+  Verifying        : urw-base35-fonts-20200910-1.oe2203.noarch                                                    37/48
+  Verifying        : urw-base35-fonts-common-20200910-1.oe2203.noarch                                             38/48
+  Verifying        : urw-base35-gothic-fonts-20200910-1.oe2203.noarch                                             39/48
+  Verifying        : urw-base35-nimbus-mono-ps-fonts-20200910-1.oe2203.noarch                                     40/48
+  Verifying        : urw-base35-nimbus-roman-fonts-20200910-1.oe2203.noarch                                       41/48
+  Verifying        : urw-base35-nimbus-sans-fonts-20200910-1.oe2203.noarch                                        42/48
+  Verifying        : urw-base35-p052-fonts-20200910-1.oe2203.noarch                                               43/48
+  Verifying        : urw-base35-standard-symbols-ps-fonts-20200910-1.oe2203.noarch                                44/48
+  Verifying        : urw-base35-z003-fonts-20200910-1.oe2203.noarch                                               45/48
+  Verifying        : xorg-x11-server-utils-7.7-29.oe2203.riscv64                                                  46/48
+  Verifying        : xorg-x11-utils-7.5-31.oe2203.riscv64                                                         47/48
+  Verifying        : neofetch-7.1.0-8.oe1.noarch                                                                  48/48
+
+Installed:
+  ImageMagick-1:7.1.0.27-1.oe2203.riscv64                        Imath-3.1.4-1.oe2203.riscv64
+  OpenEXR-libs-3.1.3-1.oe2203.riscv64                            adobe-mappings-cmap-20190730-3.oe2203.noarch
+  adobe-mappings-cmap-lang-20190730-3.oe2203.noarch              adobe-mappings-pdf-20190401-2.oe2203.noarch
+  bind-libs-32:9.16.23-4.oe2203.riscv64                          bind-license-32:9.16.23-4.oe2203.noarch
+  bind-utils-32:9.16.23-4.oe2203.riscv64                         ghostscript-9.55.0-1.oe2203.riscv64
+  google-droid-sans-fonts-20200215-1.oe2203.noarch               hwdata-0.353-1.oe2203.noarch
+  jbig2dec-0.19-3.oe2203.riscv64                                 libICE-1.0.10-2.oe2203.riscv64
+  libSM-1.2.3-2.oe2203.riscv64                                   libXmu-1.1.3-1.oe2203.riscv64
+  libXt-1.2.1-1.oe2203.riscv64                                   libXv-1.0.11-11.oe2203.riscv64
+  libXxf86dga-1.1.5-1.oe2203.riscv64                             libXxf86vm-1.1.4-13.oe2203.riscv64
+  libdmx-1.1.4-6.oe2203.riscv64                                  libidn-1.38-3.oe2203.riscv64
+  libijs-0.35-9.oe2203.riscv64                                   libpaper-1.1.28-1.oe2203.riscv64
+  librsvg2-2.50.5-2.oe2203.riscv64                               libuv-1:1.44.1-1.oe2203.riscv64
+  libwebp-1.2.1-1.oe2203.riscv64                                 libwmf-0.2.12-2.oe2203.riscv64
+  lmdb-0.9.29-2.oe2203.riscv64                                   mcpp-2.7.2-28.oe2203.riscv64
+  neofetch-7.1.0-8.oe1.noarch                                    open-sans-fonts-1.10-11.oe2203.noarch
+  openjpeg2-2.4.0-5.oe2203.riscv64                               pciutils-3.7.0-2.oe2203.riscv64
+  urw-base35-bookman-fonts-20200910-1.oe2203.noarch              urw-base35-c059-fonts-20200910-1.oe2203.noarch
+  urw-base35-d050000l-fonts-20200910-1.oe2203.noarch             urw-base35-fonts-20200910-1.oe2203.noarch
+  urw-base35-fonts-common-20200910-1.oe2203.noarch               urw-base35-gothic-fonts-20200910-1.oe2203.noarch
+  urw-base35-nimbus-mono-ps-fonts-20200910-1.oe2203.noarch       urw-base35-nimbus-roman-fonts-20200910-1.oe2203.noarch
+  urw-base35-nimbus-sans-fonts-20200910-1.oe2203.noarch          urw-base35-p052-fonts-20200910-1.oe2203.noarch
+  urw-base35-standard-symbols-ps-fonts-20200910-1.oe2203.noarch  urw-base35-z003-fonts-20200910-1.oe2203.noarch
+  xorg-x11-server-utils-7.7-29.oe2203.riscv64                    xorg-x11-utils-7.5-31.oe2203.riscv64
+
+Complete!
+[root@openEuler-riscv64 neofetch-latest]# neofetch
+                                                         root@openEuler-riscv64
+                       (#####                            ----------------------
+                     (((########  #####                  OS: openEuler 22.03 LTS riscv64
+                    (((        ##########    __...__     Host: riscv-virtio,qemu
+             ((((((((           #######    /((((((###\   Kernel: 5.10.0
+           (((((((((((   .......           \(((((####/   Uptime: 1 hour, 11 mins
+          ((((((    ((((#########            *******     Packages: 517 (rpm)
+    %((((((#          ((########                         Shell: bash 5.1.8
+ /////(((((              ###                             Resolution: 1024x768
+/////(((((((#   (((&                                     Terminal: /dev/pts/0
+         (((((((((((((                                   CPU: (8)
+          ((((((((((((                                   GPU: 00:01.0 Virtio: Virtio GPU
+           (((((((((     ((((((###                       Memory: 76MiB / 8048MiB
+                       /((((((######
+                      //((((((######
+                       /((((((#####
+                        *********/
+[root@openEuler-riscv64 neofetch-latest]#
