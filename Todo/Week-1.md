@@ -21,11 +21,11 @@
 
 ## WSL 上通过 QEMU 仿真 RISC-V 环境并启动 OpenEuler RISC-V 系统
 
-点击 [此处](https://github.com/YunxiangLuo/testing/blob/main/Firefox/README.md) 查看文档。
+点击 [此处](https://github.com/YunxiangLuo/testing/blob/main/Firefox/README.md) 查看基础文档。
 
 ### WSL 的 qemu 实时状态
 
-成功启动没有xfce的，还没写文档。
+已完成，请阅读 [帮助文档](https://github.com/ArielHeleneto/Work-PLCT/tree/master/qemuOnWSL) 。
 
 ### 参考文献
 
