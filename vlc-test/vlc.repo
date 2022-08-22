@@ -1,0 +1,5 @@
+[vlc]
+name=vlc
+baseurl=http://obs-backend.tarsier-infra.com:82/home:/Jingwiw:/VLC/Factory_RISC-V_22.03/
+enabled=1
+gpgcheck=0
