@@ -7,10 +7,12 @@ vcpu=8
 memory=8
 memory_append=`expr $memory \* 1024`
 drive="test.qcow2"
-fw="../base/20220812v0.3/fw_payload_oe_qemuvirt.elf"
+fw="fw_payload_oe_qemuvirt.elf"
 ssh_port=12055
 vnc_port=12056
 spice_port=12057
+localip=localhost
+sleeptime=10
 
 cmd="qemu-system-riscv64 \
   -nographic -machine virt \
@@ -35,6 +37,7 @@ echo ""
 echo -e "\033[37mvCPU Cores:      \033[0m \033[34m"$vcpu"\033[0m"
 echo -e "\033[37mMemory:          \033[0m \033[34m"$memory"\033[0m"
 echo -e "\033[37mDisk Path:       \033[0m \033[34m"$drive"\033[0m"
+echo -e "\033[37mKernal Path:     \033[0m \033[34m"$fw"\033[0m"
 if [ $ssh_port ]
 then
 echo -e "\033[37mSSH Port:        \033[0m \033[34m"$ssh_port"\033[0m"
@@ -56,20 +59,21 @@ fi
 echo ""
 if [ $ssh_port ]
 then
-echo -e "\033[37mUse the following command to connect SSH server:\0\033[0m\033[34m ssh root@localhost -p "$ssh_port"\033[0m"
+echo -e "\033[37mUse the following command to connect SSH server:\0\033[0m\033[34m ssh root@"$localip" -p "$ssh_port"\033[0m"
 fi
 if [ $vnc_port ]
 then
-echo -e "\033[37mUse the following address to connect VNC server:\0\033[0m\033[34m localhost:"$vnc_port"\033[0m"
+echo -e "\033[37mUse the following address to connect VNC server:\0\033[0m\033[34m "$localip":"$vnc_port"\033[0m"
 fi
 if [ $spice_port ]
 then
-echo -e "\033[37mUse the following address to connect SPICE server:\0\033[0m\033[34m spice://localhost:"$spice_port"\033[0m"
+echo -e "\033[37mUse the following address to connect SPICE server:\0\033[0m\033[34m spice://"$localip":"$spice_port"\033[0m"
 fi
 echo ""
 echo -e "\033[37mUsing the following command to start VM: \033[0m"
 echo ""
 echo $cmd
 echo ""
+sleep $sleeptime
 echo -e "\033[37mStarting VM... \033[0m"
 eval $cmd
