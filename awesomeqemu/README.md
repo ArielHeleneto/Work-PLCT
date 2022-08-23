@@ -74,13 +74,47 @@ e.g. 20220822 的 v0.3 版本 QEMU 的 Tesing Build 映像文件位于 [openEule
 - `start_vm_xfce.sh`: 官方桌面环境虚拟机启动脚本
 - `start_vm.sh`: 官方无桌面环境虚拟机启动脚本
 
+### [可选] 配置 copy-on-write（COW）磁盘
+
+> 写时复制（copy-on-write，缩写COW）技术不会对原始的映像文件做更改，变化的部分写在另外的映像文件中，这种特性在 QEMU 中只有 QCOW 格式支持，多个磁盘映像可以指向同一映像同时测试多个配置, 而不会破坏原映像。
+
+#### 创建新映像
+
+使用如下的命令创建新的映像，并在下方启动虚拟机时使用新映像。假设原映像为 `openeuler-qemu-xfce.qcow2`，新映像为 `test.qcow2`。
+
+```bash
+qemu-img create -o backing_file=openeuler-qemu-xfce.qcow2,backing_fmt=qcow2 -f qcow2 test.qcow2
+```
+
+#### 查看映像信息
+
+```bash
+qemu-img info --backing-chain test.qcow2
+```
+
+#### 修改基础映像位置
+
+使用如下的命令修改基础映像位置。假设新的基础映像为 `another.qcow2`，欲修改映像为 `test.qcow2`。
+
+```bash
+qemu-img rebase -b another.qcow2 test.qcow2
+```
+
+#### 合并映像
+
+将修改后的镜像合并到原来的镜像。假设新映像为 `test.qcow2`。
+
+```bash
+qemu-img commit test.qcow2
+```
+
 ## 启动 openEuler RISC-V 虚拟机
 
 ### 启动虚拟机
 
 - 确认当前目录内包含 `fw_payload_oe_qemuvirt.elf`, 磁盘映像压缩包。
 - 从 [本项目](https://github.com/ArielHeleneto/Work-PLCT) 下载 [启动脚本](https://github.com/ArielHeleneto/Work-PLCT/blob/master/awesomeqemu/start_vm.sh)
-- 解压镜像压缩包 `$ tar -I 'zstdmt' -xvf ./openeuler-qemu.raw.tar.zst` 或使用解压工具解压磁盘映像。
+- 解压映像压缩包 `$ tar -I 'zstdmt' -xvf ./openeuler-qemu.raw.tar.zst` 或使用解压工具解压磁盘映像。
 - 调整启动参数
 - 执行启动脚本 `$ bash start_vm.sh`
 
@@ -88,7 +122,7 @@ e.g. 20220822 的 v0.3 版本 QEMU 的 Tesing Build 映像文件位于 [openEule
 
 - `vcpu` 为 qemu 运行线程数，与 CPU 核数没有严格对应。目前有实质性证据表明，当设定的 vcpu 值大于宿主机核心值时，可能导致运行阻塞和速度严重降低。
 - `memory` 为虚拟机内存大小，可随需要调整
-- `drive` 为虚拟磁盘路径，可随需要调整
+- `drive` 为虚拟磁盘路径，如果在上文中配置了 COW 映像，此处填写创建的新映像。
 - `fw` 为启动内核
 - `ssh_port` 为转发的 SSH 端口，默认为 12055。设定为空以关闭该功能。
 - `vnc_port` 为 VNC 服务端端口，默认为 12056。设定为空以关闭该功能。
