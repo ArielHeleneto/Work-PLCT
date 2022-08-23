@@ -1,0 +1,5 @@
+[firefox]
+name=firefox
+baseurl=http://obs-backend.tarsier-infra.com:82/Factory:/RISC-V:/Mozilla/22.03/
+enabled=1
+gpgcheck=0
