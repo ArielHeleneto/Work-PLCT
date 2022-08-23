@@ -53,6 +53,8 @@ Copyright (c) 2003-2022 Fabrice Bellard and the QEMU Project developers
 
 需要下载启动内核(`fw_payload_oe_qemuvirt.elf`)，桌面或非桌面的磁盘映像。
 
+特别地，如果打算测试音频，请使用本项目下的新内核。
+
 ### 下载目录
 
 Develop Build 相较于 Test Build 更为激进，更新也更加积极。
