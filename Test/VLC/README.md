@@ -52,6 +52,10 @@ WARNING: This target JIT is not designed for the host you are running.  If bad t
 
 ![设置](./pic/settings-1.png)
 
+## 多媒体
+
+本项目下提供了各类视频，请下载 `media.7z`
+
 ## 反馈问题
 
-在 [VLC 仓库](https://gitee.com/openeuler-risc-v/vlc) 的 [Issue](https://gitee.com/openeuler-risc-v/vlc/issues) 界面 [提交问题](https://gitee.com/openeuler-risc-v/vlc/issues/new?issue%5Bassignee_id%5D=0&issue%5Bmilestone_id%5D=0)。
+在 [openeuler/RISC-V 仓库](https://gitee.com/openeuler/RISC-V/) 的 [Issue](https://gitee.com/openeuler/RISC-V/issues) 界面 [提交问题](https://gitee.com/openeuler/RISC-V/issues/new?issue%5Bassignee_id%5D=0&issue%5Bmilestone_id%5D=0)。
