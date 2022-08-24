@@ -6,18 +6,19 @@
 vcpu=8
 memory=8
 memory_append=`expr $memory \* 1024`
-drive="test.qcow2"
-fw="fw_payload_oe_qemuvirt.elf"
+drive="test2.qcow2"
+fw="../base/20220822v0.3/fw_payload_oe_qemuvirt2.elf"
 ssh_port=12055
 vnc_port=12056
 spice_port=12057
 localip=localhost
-sleeptime=10
+[[ $spice_port ]] && audiobackend="spice" || audiobackend="none"
+sleeptime=0
 
 cmd="qemu-system-riscv64 \
   -nographic -machine virt \
   -smp "$vcpu" -m "$memory"G \
-  -audiodev spice,id=snd0 \
+  -audiodev "$audiobackend",id=snd0 \
   -device ich9-intel-hda \
   -device hda-output,audiodev=snd0 \
   -kernel "$fw" \
@@ -27,7 +28,7 @@ cmd="qemu-system-riscv64 \
   -device virtio-vga \
   -device virtio-rng-device,rng=rng0 \
   -device virtio-blk-device,drive=hd0 \
-  -device virtio-net-device,netdev=usernet \
+  -device virtio-net-device \
   -device qemu-xhci -usb -device usb-kbd -device usb-tablet -device usb-audio,audiodev=snd0 \
   -append 'root=/dev/vda1 rw console=ttyS0 swiotlb=1 loglevel=3 systemd.default_timeout_start_sec=600 selinux=0 highres=off mem="$memory_append"M earlycon' \
    "
