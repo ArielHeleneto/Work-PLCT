@@ -8,7 +8,7 @@ memory=8
 memory_append=`expr $memory \* 1024`
 drive="test2.qcow2"
 fw="../base/20220822v0.3/fw_payload_oe_qemuvirt2.elf"
-ssh_port=12055
+ssh_port=
 vnc_port=12056
 spice_port=12057
 localip=localhost
@@ -28,7 +28,7 @@ cmd="qemu-system-riscv64 \
   -device virtio-vga \
   -device virtio-rng-device,rng=rng0 \
   -device virtio-blk-device,drive=hd0 \
-  -device virtio-net-device \
+  -device virtio-net-device,netdev=usernet \
   -device qemu-xhci -usb -device usb-kbd -device usb-tablet -device usb-audio,audiodev=snd0 \
   -append 'root=/dev/vda1 rw console=ttyS0 swiotlb=1 loglevel=3 systemd.default_timeout_start_sec=600 selinux=0 highres=off mem="$memory_append"M earlycon' \
    "
@@ -43,6 +43,8 @@ if [ $ssh_port ]
 then
 echo -e "\033[37mSSH Port:        \033[0m \033[34m"$ssh_port"\033[0m"
 cmd="${cmd} -netdev user,id=usernet,hostfwd=tcp::"$ssh_port"-:22 "
+else
+cmd="${cmd} -netdev user,id=usernet "
 fi
 if [ $vnc_port ]
 then
