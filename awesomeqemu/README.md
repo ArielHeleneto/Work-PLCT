@@ -53,7 +53,13 @@ Copyright (c) 2003-2022 Fabrice Bellard and the QEMU Project developers
 
 需要下载启动内核(`fw_payload_oe_qemuvirt.elf`)，桌面或非桌面的磁盘映像。
 
-特别地，如果打算测试音频，请使用本项目下的新内核。
+#### 更新音频内核
+
+由于原内核没有音频驱动，可选用如下方案之一更新内核。
+
+- 在客户系统内安装 [内核](http://obs-backend.tarsier-infra.com:82/Factory:/RISC-V:/Kernel/22.03/riscv64/kernel-5.10.0-7.oe2203.riscv64.rpm) 软件包。（该方法对内核和磁盘映像分离的客户系统不起作用，该脚本不可用。）
+- 下载 [内核](http://obs-backend.tarsier-infra.com:82/Factory:/RISC-V:/Kernel/22.03/riscv64/opensbi-qemu-1.0-1.oe2203.riscv64.rpm) 软件包，解压找到 `fw_payload_oe_qemuvirt.elf` 并替换。
+- 本项目下有准备好的 [内核文件](https://github.com/ArielHeleneto/Work-PLCT/raw/master/awesomeqemu/fw_payload_oe_qemuvirt_new.elf)，替换即可。
 
 ### 下载目录
 
