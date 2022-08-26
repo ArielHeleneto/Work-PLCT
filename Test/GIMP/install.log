@@ -1,0 +1,1133 @@
+[root@openEuler-riscv64 ~]# dnf install gimp
+Last metadata expiration check: 18:16:16 ago on Thu 25 Aug 2022 07:51:11 PM CST.
+Dependencies resolved.
+========================================================================================================================
+ Package                                 Arch       Version                                           Repository   Size
+========================================================================================================================
+Installing:
+ gimp                                    riscv64    2:2.99.6-3.oe2203                                 mainline     20 M
+Installing dependencies:
+ Imath                                   riscv64    3.1.4-1.oe2203                                    mainline     68 k
+ LibRaw                                  riscv64    0.20.2-5.oe2203                                   mainline    366 k
+ OpenEXR-libs                            riscv64    3.1.3-1.oe2203                                    mainline    877 k
+ SDL2                                    riscv64    2.0.12-4.oe2203                                   mainline    446 k
+ adobe-mappings-cmap                     noarch     20190730-3.oe2203                                 mainline     15 k
+ adobe-mappings-cmap-lang                noarch     20190730-3.oe2203                                 mainline    2.5 M
+ adobe-mappings-pdf                      noarch     20190401-2.oe2203                                 mainline    755 k
+ alsa-lib                                riscv64    1.2.5.1-1.oe2203                                  mainline    449 k
+ at-spi2-atk-devel                       riscv64    2.38.0-1.oe2203                                   mainline    9.1 k
+ at-spi2-core-devel                      riscv64    2.42.0-1.oe2203                                   mainline     86 k
+ atk-devel                               riscv64    2.36.0-2.oe2203                                   mainline    197 k
+ avahi-glib                              riscv64    0.8-12.oe2203                                     mainline     13 k
+ babl                                    riscv64    0.1.88-1.oe2203                                   mainline    270 k
+ bubblewrap                              riscv64    0.4.1-1.oe2203                                    mainline     40 k
+ bzip2-devel                             riscv64    1.0.8-4.oe2203                                    mainline     79 k
+ cairo-devel                             riscv64    1.17.4-1.oe2203                                   mainline    213 k
+ cairo-gobject-devel                     riscv64    1.17.4-1.oe2203                                   mainline     11 k
+ cdparanoia-libs                         riscv64    10.2-31.oe2203                                    mainline     46 k
+ cmake-filesystem                        riscv64    3.22.0-4.oe2203                                   mainline     12 k
+ dbus-devel                              riscv64    1:1.12.20-6.oe2203                                mainline     35 k
+ desktop-file-utils                      riscv64    0.26-2.oe2203                                     mainline     52 k
+ enchant2                                riscv64    2.3.2-1.oe2203                                    mainline     53 k
+ exiv2                                   riscv64    0.26-27.oe2203                                    mainline    1.6 M
+ ffmpeg-libs                             riscv64    4.2.4-3.oe2203                                    mainline    6.7 M
+ fontconfig-devel                        riscv64    2.13.94-1.oe2203                                  mainline     18 k
+ freetype-devel                          riscv64    2.11.0-1.oe2203                                   mainline    169 k
+ fribidi-devel                           riscv64    1.0.10-1.oe2203                                   mainline     25 k
+ gdk-pixbuf2-devel                       riscv64    2.42.6-2.oe2203                                   mainline     61 k
+ gegl04                                  riscv64    0.4.34-1.oe2203                                   mainline    1.9 M
+ geoclue2                                riscv64    2.5.7-1.oe2203                                    mainline    152 k
+ gettext                                 riscv64    0.21-4.oe2203                                     mainline    1.1 M
+ ghostscript                             riscv64    9.55.0-1.oe2203                                   mainline    5.4 M
+ gjs                                     riscv64    1.66.2-1.oe2203                                   mainline    339 k
+ glib-networking                         riscv64    2.68.1-3.oe2203                                   mainline    154 k
+ glib2-devel                             riscv64    2.68.1-12.oe2203                                  mainline    5.7 M
+ gobject-introspection                   riscv64    1.70.0-1.oe2203                                   mainline    254 k
+ google-droid-sans-fonts                 noarch     20200215-1.oe2203                                 mainline    2.4 M
+ graphene                                riscv64    1.10.6-1.oe2203                                   mainline     69 k
+ graphite2-devel                         riscv64    1.3.14-5.oe2203                                   mainline     42 k
+ gsettings-desktop-schemas               riscv64    41.0-1.oe2203                                     mainline    702 k
+ gsm                                     riscv64    1.0.18-5.oe2203                                   mainline     40 k
+ gstreamer1                              riscv64    1.19.3-1.oe2203                                   mainline    1.2 M
+ gstreamer1-plugins-base                 riscv64    1.19.3-1.oe2203                                   mainline    1.9 M
+ gtk3-devel                              riscv64    3.24.30-5.oe2203                                  mainline    5.5 M
+ harfbuzz-devel                          riscv64    4.2.0-1.oe2203                                    mainline    174 k
+ hunspell                                riscv64    1.7.0-11.oe2203                                   mainline    241 k
+ hunspell-en                             noarch     2020.12.07-2.oe2203                               mainline    208 k
+ hwdata                                  noarch     0.353-1.oe2203                                    mainline    1.7 M
+ hyphen                                  riscv64    2.8.8-14.oe2203                                   mainline     43 k
+ iso-codes                               noarch     4.7.0-1.oe2203                                    mainline    3.7 M
+ jbig2dec                                riscv64    0.19-3.oe2203                                     mainline     74 k
+ json-glib                               riscv64    1.6.2-2.oe2203                                    mainline    147 k
+ kernel-tools                            riscv64    5.10.0-7.oe2203                                   extra       120 k
+ lame                                    riscv64    3.100-9.oe2203                                    mainline    455 k
+ lensfun                                 riscv64    0.3.2-20.oe2203                                   mainline    238 k
+ libICE                                  riscv64    1.0.10-2.oe2203                                   mainline     50 k
+ libSM                                   riscv64    1.2.3-2.oe2203                                    mainline     22 k
+ libX11-devel                            riscv64    1.7.2-2.oe2203                                    mainline    1.2 M
+ libXau-devel                            riscv64    1.0.9-2.oe2203                                    mainline    9.7 k
+ libXcomposite-devel                     riscv64    0.4.5-1.oe2203                                    mainline     10 k
+ libXcursor-devel                        riscv64    1.2.0-1.oe2203                                    mainline     49 k
+ libXdamage-devel                        riscv64    1.1.5-1.oe2203                                    mainline     14 k
+ libXext-devel                           riscv64    1.3.4-2.oe2203                                    mainline     86 k
+ libXfixes-devel                         riscv64    6.0.0-1.oe2203                                    mainline     25 k
+ libXft-devel                            riscv64    2.3.4-1.oe2203                                    mainline    101 k
+ libXi-devel                             riscv64    1.8-2.oe2203                                      mainline     85 k
+ libXinerama-devel                       riscv64    1.1.4-5.oe2203                                    mainline     15 k
+ libXmu                                  riscv64    1.1.3-1.oe2203                                    mainline     51 k
+ libXpm                                  riscv64    3.5.13-1.oe2203                                   mainline     40 k
+ libXrandr-devel                         riscv64    1.5.2-1.oe2203                                    mainline     47 k
+ libXrender-devel                        riscv64    0.9.10-10.oe2203                                  mainline     47 k
+ libXt                                   riscv64    1.2.1-1.oe2203                                    mainline    156 k
+ libXtst-devel                           riscv64    1.2.3-10.oe2203                                   mainline     28 k
+ libXv                                   riscv64    1.0.11-11.oe2203                                  mainline     16 k
+ libXxf86vm                              riscv64    1.1.4-13.oe2203                                   mainline     16 k
+ libaom                                  riscv64    1.0.0-1.oe2203                                    mainline    1.0 M
+ libappstream-glib                       riscv64    0.7.14-4.oe2203                                   mainline    298 k
+ libass                                  riscv64    0.15.0-2.oe2203                                   mainline     89 k
+ libbluray                               riscv64    1.1.2-5.oe2203                                    mainline    171 k
+ libdatrie-devel                         riscv64    0.2.13-1.oe2203                                   mainline     19 k
+ libdav1d                                riscv64    0.5.2-2.oe2203                                    mainline    252 k
+ libdazzle                               riscv64    3.38.0-1.oe2203                                   mainline    364 k
+ libdazzle-devel                         riscv64    3.38.0-1.oe2203                                   mainline    331 k
+ libdrm                                  riscv64    2.4.109-3.oe2203                                  mainline     87 k
+ libepoxy-devel                          riscv64    1.5.9-3.oe2203                                    mainline    143 k
+ libffi-devel                            riscv64    3.3-31.oe2203                                     mainline     12 k
+ libgegl-0_4-0                           riscv64    0.4.34-1.oe2203                                   mainline    276 k
+ libgexiv2                               riscv64    0.12.1-1.oe2203                                   mainline     63 k
+ libgfortran                             riscv64    10.3.1-10.oe2203                                  mainline    366 k
+ libgimp-3_0-0                           riscv64    2:2.99.6-3.oe2203                                 mainline    230 k
+ libgimpui-3_0-0                         riscv64    2:2.99.6-3.oe2203                                 mainline    237 k
+ libglvnd                                riscv64    1:1.3.4-2.oe2203                                  mainline     74 k
+ libglvnd-core-devel                     riscv64    1:1.3.4-2.oe2203                                  mainline     18 k
+ libglvnd-devel                          riscv64    1:1.3.4-2.oe2203                                  mainline    178 k
+ libglvnd-egl                            riscv64    1:1.3.4-2.oe2203                                  mainline     38 k
+ libglvnd-gles                           riscv64    1:1.3.4-2.oe2203                                  mainline     30 k
+ libglvnd-glx                            riscv64    1:1.3.4-2.oe2203                                  mainline    130 k
+ libglvnd-opengl                         riscv64    1:1.3.4-2.oe2203                                  mainline     42 k
+ libgudev                                riscv64    237-1.oe2203                                      mainline     30 k
+ libicu-devel                            riscv64    69.1-3.oe2203                                     mainline    961 k
+ libidn                                  riscv64    1.38-3.oe2203                                     mainline    138 k
+ libijs                                  riscv64    0.35-9.oe2203                                     mainline     27 k
+ libimagequant                           riscv64    2.15.1-1.oe2203                                   mainline     59 k
+ libmng                                  riscv64    2.0.3-10.oe2203                                   mainline    194 k
+ libmodplug                              riscv64    1:0.8.9.0-10.oe2203                               mainline    180 k
+ libmypaint                              riscv64    1.6.1-1.oe2203                                    mainline    210 k
+ libnotify                               riscv64    0.7.9-1.oe2203                                    mainline     34 k
+ libogg                                  riscv64    2:1.3.5-1.oe2203                                  mainline     30 k
+ libpaper                                riscv64    1.1.28-1.oe2203                                   mainline     33 k
+ libpng-devel                            riscv64    2:1.6.37-3.oe2203                                 mainline     53 k
+ libproxy                                riscv64    0.4.17-1.oe2203                                   mainline     98 k
+ librsvg2                                riscv64    2.50.5-2.oe2203                                   mainline    2.3 M
+ libselinux-devel                        riscv64    3.3-1.oe2203                                      mainline    208 k
+ libsepol-devel                          riscv64    3.3-1.oe2203                                      mainline    943 k
+ libsoup                                 riscv64    2.74.2-1.oe2203                                   mainline    328 k
+ libspiro                                riscv64    20200505-1.oe2203                                 mainline     40 k
+ libstemmer                              riscv64    0-12.oe2203                                       mainline     63 k
+ libsysprof-ui                           riscv64    3.38.1-2.oe2203                                   mainline    158 k
+ libthai-devel                           riscv64    0.1.28-4.oe2203                                   mainline    122 k
+ libtheora                               riscv64    1:1.1.1-25.oe2203                                 mainline    164 k
+ libtiff-devel                           riscv64    4.3.0-12.oe2203                                   mainline     32 k
+ libunwind                               riscv64    2:1.6.2-2.oe2203                                  mainline     53 k
+ libva                                   riscv64    2.13.0-1.oe2203                                   mainline     87 k
+ libvdpau                                riscv64    1.2-1.oe2203                                      mainline    484 k
+ libvisual                               riscv64    1:0.4.0-27.oe2203                                 mainline    144 k
+ libvorbis                               riscv64    1:1.3.7-2.oe2203                                  mainline    173 k
+ libvpx                                  riscv64    1.7.0-9.oe2203                                    mainline    745 k
+ libwebp                                 riscv64    1.2.1-1.oe2203                                    mainline    213 k
+ libwmf                                  riscv64    0.2.12-2.oe2203                                   mainline    176 k
+ libwpe                                  riscv64    1.6.0-1.oe2203                                    mainline     22 k
+ libxcb-devel                            riscv64    1.14-1.oe2203                                     mainline    592 k
+ libxkbcommon-devel                      riscv64    1.3.1-2.oe2203                                    mainline     65 k
+ libxml2-devel                           riscv64    2.9.12-5.oe2203                                   mainline    2.5 M
+ libxshmfence                            riscv64    1.3-7.oe2203                                      mainline     11 k
+ mesa-filesystem                         riscv64    21.3.1-1.oe2203                                   mainline    8.4 k
+ mesa-libEGL                             riscv64    21.3.1-1.oe2203                                   mainline    105 k
+ mesa-libGL                              riscv64    21.3.1-1.oe2203                                   mainline    155 k
+ mesa-libgbm                             riscv64    21.3.1-1.oe2203                                   mainline     37 k
+ mesa-libglapi                           riscv64    21.3.1-1.oe2203                                   mainline     56 k
+ nspr                                    riscv64    4.32.0-1.oe2203                                   mainline    130 k
+ nss                                     riscv64    3.76.0-1.oe2203                                   mainline    620 k
+ nss-help                                riscv64    3.76.0-1.oe2203                                   mainline     70 k
+ nss-softokn                             riscv64    3.76.0-1.oe2203                                   mainline    672 k
+ nss-util                                riscv64    3.76.0-1.oe2203                                   mainline    458 k
+ ocl-icd                                 riscv64    2.2.12-2.oe2203                                   mainline     40 k
+ openblas                                riscv64    0.3.18-2.oe2203                                   mainline     92 M
+ openblas-devel                          riscv64    0.3.18-2.oe2203                                   mainline     84 k
+ opencore-amr                            riscv64    0.1.5-7.oe2203                                    mainline    176 k
+ openjpeg2                               riscv64    2.4.0-5.oe2203                                    mainline    148 k
+ opus                                    riscv64    1.3.1-1.oe2203                                    mainline    199 k
+ orc                                     riscv64    0.4.32-1.oe2203                                   mainline    164 k
+ pango-devel                             riscv64    1.49.3-3.oe2203                                   mainline    363 k
+ pciutils                                riscv64    3.7.0-2.oe2203                                    mainline    103 k
+ pcre-devel                              riscv64    8.45-1.oe2203                                     mainline    640 k
+ pcre2-devel                             riscv64    10.39-1.oe2203                                    mainline    858 k
+ pixman-devel                            riscv64    0.40.0-2.oe2203                                   mainline     17 k
+ polkit-devel                            riscv64    0.120-3.oe2203                                    mainline    277 k
+ polkit-help                             noarch     0.120-3.oe2203                                    mainline     25 k
+ poppler                                 riscv64    0.90.0-2.oe2203                                   mainline    915 k
+ poppler-data                            noarch     0.4.10-1.oe2203                                   mainline    2.3 M
+ poppler-glib                            riscv64    0.90.0-2.oe2203                                   mainline    128 k
+ python3-cairo                           riscv64    1.20.0-1.oe2203                                   mainline     81 k
+ python3-gobject                         riscv64    3.42.0-2.oe2203                                   mainline     13 k
+ python3-gobject-base                    riscv64    3.42.0-2.oe2203                                   mainline    306 k
+ sgml-common                             noarch     0.6.3-51.oe2203                                   mainline     52 k
+ soxr                                    riscv64    0.1.3-5.oe2203                                    mainline     70 k
+ speex                                   riscv64    1.2.0-5.oe2203                                    mainline     76 k
+ speexdsp                                riscv64    1.2.0-2.oe2203                                    mainline     47 k
+ srt-libs                                riscv64    1.4.1-4.oe2203                                    mainline    226 k
+ suitesparse                             riscv64    4.4.6-17.oe2203                                   mainline    756 k
+ sysprof                                 riscv64    3.38.1-2.oe2203                                   mainline     93 k
+ sysprof-cli                             riscv64    3.38.1-2.oe2203                                   mainline    313 k
+ sysprof-devel                           riscv64    3.38.1-2.oe2203                                   mainline    120 k
+ tbb                                     riscv64    2020.3-5.oe2203                                   mainline    143 k
+ urw-base35-bookman-fonts                noarch     20200910-1.oe2203                                 mainline    854 k
+ urw-base35-c059-fonts                   noarch     20200910-1.oe2203                                 mainline    881 k
+ urw-base35-d050000l-fonts               noarch     20200910-1.oe2203                                 mainline     76 k
+ urw-base35-fonts                        noarch     20200910-1.oe2203                                 mainline    9.5 k
+ urw-base35-fonts-common                 noarch     20200910-1.oe2203                                 mainline     21 k
+ urw-base35-gothic-fonts                 noarch     20200910-1.oe2203                                 mainline    651 k
+ urw-base35-nimbus-mono-ps-fonts         noarch     20200910-1.oe2203                                 mainline    798 k
+ urw-base35-nimbus-roman-fonts           noarch     20200910-1.oe2203                                 mainline    862 k
+ urw-base35-nimbus-sans-fonts            noarch     20200910-1.oe2203                                 mainline    1.3 M
+ urw-base35-p052-fonts                   noarch     20200910-1.oe2203                                 mainline    979 k
+ urw-base35-standard-symbols-ps-fonts    noarch     20200910-1.oe2203                                 mainline     41 k
+ urw-base35-z003-fonts                   noarch     20200910-1.oe2203                                 mainline    277 k
+ util-linux-devel                        riscv64    2.37.2-6.oe2203                                   mainline     30 k
+ vid.stab                                riscv64    1.1.0-1.oe2203                                    mainline     43 k
+ vo-amrwbenc                             riscv64    0.1.3-1.oe2203                                    mainline     78 k
+ wayland-devel                           riscv64    1.19.91-1.oe2203                                  mainline    104 k
+ wayland-protocols-devel                 noarch     1.24-2.oe2203                                     mainline     89 k
+ webkit2gtk3                             riscv64    2.32.1-2.oe2203                                   mainline     15 M
+ webkit2gtk3-jsc                         riscv64    2.32.1-2.oe2203                                   mainline    3.2 M
+ woff2                                   riscv64    1.0.2-6.oe2203                                    mainline     54 k
+ wpebackend-fdo                          riscv64    1.6.1-1.oe2203                                    mainline     28 k
+ x264-libs                               riscv64    0.157-13.20190717git34c06d1_bootstrap.oe2203      mainline    532 k
+ x265                                    riscv64    3.4-3.oe2203                                      mainline    481 k
+ xdg-dbus-proxy                          riscv64    0.1.2-1.oe2203                                    mainline     33 k
+ xdg-utils                               noarch     1.1.3-5.oe2203                                    mainline     53 k
+ xorg-x11-proto-devel                    noarch     2021.5-1.oe2203                                   mainline    278 k
+ xvidcore                                riscv64    1.3.7-1.oe2203                                    mainline    242 k
+ xz-devel                                riscv64    5.2.5-2.oe2203                                    mainline    251 k
+ zimg                                    riscv64    3.0.3-1.oe2203                                    mainline     96 k
+ zlib-devel                              riscv64    1.2.11-19.oe2203                                  mainline    137 k
+ zvbi                                    riscv64    0.2.35-7.oe2203                                   mainline    451 k
+Installing weak dependencies:
+ abattis-cantarell-fonts                 noarch     0.301-1.oe2203                                    mainline    348 k
+ gimp-plugin-python3                     riscv64    2:2.99.6-3.oe2203                                 mainline    131 k
+ pngquant                                riscv64    2.12.5-3.oe2203                                   mainline     39 k
+
+Transaction Summary
+========================================================================================================================
+Install  209 Packages
+
+Total download size: 218 M
+Installed size: 1.3 G
+Is this ok [y/N]: y
+Downloading Packages:
+(1/209): Imath-3.1.4-1.oe2203.riscv64.rpm                                                90 kB/s |  68 kB     00:00
+(2/209): LibRaw-0.20.2-5.oe2203.riscv64.rpm                                             370 kB/s | 366 kB     00:00
+(3/209): OpenEXR-libs-3.1.3-1.oe2203.riscv64.rpm                                        836 kB/s | 877 kB     00:01
+(4/209): SDL2-2.0.12-4.oe2203.riscv64.rpm                                               1.4 MB/s | 446 kB     00:00
+(5/209): abattis-cantarell-fonts-0.301-1.oe2203.noarch.rpm                              1.7 MB/s | 348 kB     00:00
+(6/209): adobe-mappings-cmap-20190730-3.oe2203.noarch.rpm                                70 kB/s |  15 kB     00:00
+(7/209): adobe-mappings-cmap-lang-20190730-3.oe2203.noarch.rpm                          2.3 MB/s | 2.5 MB     00:01
+(8/209): adobe-mappings-pdf-20190401-2.oe2203.noarch.rpm                                702 kB/s | 755 kB     00:01
+(9/209): alsa-lib-1.2.5.1-1.oe2203.riscv64.rpm                                          378 kB/s | 449 kB     00:01
+(10/209): at-spi2-atk-devel-2.38.0-1.oe2203.riscv64.rpm                                  47 kB/s | 9.1 kB     00:00
+(11/209): at-spi2-core-devel-2.42.0-1.oe2203.riscv64.rpm                                882 kB/s |  86 kB     00:00
+(12/209): atk-devel-2.36.0-2.oe2203.riscv64.rpm                                         1.6 MB/s | 197 kB     00:00
+(13/209): avahi-glib-0.8-12.oe2203.riscv64.rpm                                           88 kB/s |  13 kB     00:00
+(14/209): babl-0.1.88-1.oe2203.riscv64.rpm                                              1.3 MB/s | 270 kB     00:00
+(15/209): bubblewrap-0.4.1-1.oe2203.riscv64.rpm                                         333 kB/s |  40 kB     00:00
+(16/209): bzip2-devel-1.0.8-4.oe2203.riscv64.rpm                                        815 kB/s |  79 kB     00:00
+(17/209): cairo-devel-1.17.4-1.oe2203.riscv64.rpm                                       1.8 MB/s | 213 kB     00:00
+(18/209): cairo-gobject-devel-1.17.4-1.oe2203.riscv64.rpm                               118 kB/s |  11 kB     00:00
+(19/209): cdparanoia-libs-10.2-31.oe2203.riscv64.rpm                                    397 kB/s |  46 kB     00:00
+(20/209): cmake-filesystem-3.22.0-4.oe2203.riscv64.rpm                                  200 kB/s |  12 kB     00:00
+(21/209): dbus-devel-1.12.20-6.oe2203.riscv64.rpm                                       390 kB/s |  35 kB     00:00
+(22/209): desktop-file-utils-0.26-2.oe2203.riscv64.rpm                                  568 kB/s |  52 kB     00:00
+(23/209): enchant2-2.3.2-1.oe2203.riscv64.rpm                                           762 kB/s |  53 kB     00:00
+(24/209): exiv2-0.26-27.oe2203.riscv64.rpm                                              2.3 MB/s | 1.6 MB     00:00
+(25/209): fontconfig-devel-2.13.94-1.oe2203.riscv64.rpm                                  16 kB/s |  18 kB     00:01
+(26/209): freetype-devel-2.11.0-1.oe2203.riscv64.rpm                                    111 kB/s | 169 kB     00:01
+(27/209): fribidi-devel-1.0.10-1.oe2203.riscv64.rpm                                      22 kB/s |  25 kB     00:01
+(28/209): ffmpeg-libs-4.2.4-3.oe2203.riscv64.rpm                                        2.1 MB/s | 6.7 MB     00:03
+(29/209): gdk-pixbuf2-devel-2.42.6-2.oe2203.riscv64.rpm                                  54 kB/s |  61 kB     00:01
+(30/209): gegl04-0.4.34-1.oe2203.riscv64.rpm                                            1.4 MB/s | 1.9 MB     00:01
+(31/209): geoclue2-2.5.7-1.oe2203.riscv64.rpm                                           470 kB/s | 152 kB     00:00
+(32/209): gettext-0.21-4.oe2203.riscv64.rpm                                             2.3 MB/s | 1.1 MB     00:00
+(33/209): gimp-plugin-python3-2.99.6-3.oe2203.riscv64.rpm                                85 kB/s | 131 kB     00:01
+(34/209): ghostscript-9.55.0-1.oe2203.riscv64.rpm                                       2.3 MB/s | 5.4 MB     00:02
+(35/209): glib-networking-2.68.1-3.oe2203.riscv64.rpm                                    99 kB/s | 154 kB     00:01
+(36/209): gjs-1.66.2-1.oe2203.riscv64.rpm                                               115 kB/s | 339 kB     00:02
+(37/209): gobject-introspection-1.70.0-1.oe2203.riscv64.rpm                             110 kB/s | 254 kB     00:02
+(38/209): gimp-2.99.6-3.oe2203.riscv64.rpm                                              2.0 MB/s |  20 MB     00:10
+(39/209): google-droid-sans-fonts-20200215-1.oe2203.noarch.rpm                          672 kB/s | 2.4 MB     00:03
+(40/209): glib2-devel-2.68.1-12.oe2203.riscv64.rpm                                      690 kB/s | 5.7 MB     00:08
+(41/209): graphene-1.10.6-1.oe2203.riscv64.rpm                                           33 kB/s |  69 kB     00:02
+(42/209): graphite2-devel-1.3.14-5.oe2203.riscv64.rpm                                    27 kB/s |  42 kB     00:01
+(43/209): gsettings-desktop-schemas-41.0-1.oe2203.riscv64.rpm                           1.6 MB/s | 702 kB     00:00
+(44/209): gsm-1.0.18-5.oe2203.riscv64.rpm                                                84 kB/s |  40 kB     00:00
+(45/209): gstreamer1-1.19.3-1.oe2203.riscv64.rpm                                        1.1 MB/s | 1.2 MB     00:01
+(46/209): gstreamer1-plugins-base-1.19.3-1.oe2203.riscv64.rpm                           1.2 MB/s | 1.9 MB     00:01
+(47/209): harfbuzz-devel-4.2.0-1.oe2203.riscv64.rpm                                      64 kB/s | 174 kB     00:02
+(48/209): gtk3-devel-3.24.30-5.oe2203.riscv64.rpm                                       1.2 MB/s | 5.5 MB     00:04
+(49/209): hunspell-1.7.0-11.oe2203.riscv64.rpm                                           83 kB/s | 241 kB     00:02
+(50/209): hunspell-en-2020.12.07-2.oe2203.noarch.rpm                                    175 kB/s | 208 kB     00:01
+(51/209): hwdata-0.353-1.oe2203.noarch.rpm                                              2.5 MB/s | 1.7 MB     00:00
+(52/209): hyphen-2.8.8-14.oe2203.riscv64.rpm                                             64 kB/s |  43 kB     00:00
+(53/209): iso-codes-4.7.0-1.oe2203.noarch.rpm                                           952 kB/s | 3.7 MB     00:04
+(54/209): jbig2dec-0.19-3.oe2203.riscv64.rpm                                             23 kB/s |  74 kB     00:03
+(55/209): json-glib-1.6.2-2.oe2203.riscv64.rpm                                           44 kB/s | 147 kB     00:03
+(56/209): lame-3.100-9.oe2203.riscv64.rpm                                               746 kB/s | 455 kB     00:00
+(57/209): lensfun-0.3.2-20.oe2203.riscv64.rpm                                           305 kB/s | 238 kB     00:00
+(58/209): libICE-1.0.10-2.oe2203.riscv64.rpm                                             60 kB/s |  50 kB     00:00
+(59/209): libSM-1.2.3-2.oe2203.riscv64.rpm                                               71 kB/s |  22 kB     00:00
+(60/209): libX11-devel-1.7.2-2.oe2203.riscv64.rpm                                       703 kB/s | 1.2 MB     00:01
+(61/209): libXau-devel-1.0.9-2.oe2203.riscv64.rpm                                       5.8 kB/s | 9.7 kB     00:01
+(62/209): libXcomposite-devel-0.4.5-1.oe2203.riscv64.rpm                                6.1 kB/s |  10 kB     00:01
+(63/209): libXcursor-devel-1.2.0-1.oe2203.riscv64.rpm                                   454 kB/s |  49 kB     00:00
+(64/209): libXdamage-devel-1.1.5-1.oe2203.riscv64.rpm                                   145 kB/s |  14 kB     00:00
+(65/209): libXext-devel-1.3.4-2.oe2203.riscv64.rpm                                      408 kB/s |  86 kB     00:00
+(66/209): libXfixes-devel-6.0.0-1.oe2203.riscv64.rpm                                    164 kB/s |  25 kB     00:00
+(67/209): libXft-devel-2.3.4-1.oe2203.riscv64.rpm                                       414 kB/s | 101 kB     00:00
+(68/209): libXi-devel-1.8-2.oe2203.riscv64.rpm                                          399 kB/s |  85 kB     00:00
+(69/209): libXinerama-devel-1.1.4-5.oe2203.riscv64.rpm                                   68 kB/s |  15 kB     00:00
+(70/209): libXmu-1.1.3-1.oe2203.riscv64.rpm                                             345 kB/s |  51 kB     00:00
+(71/209): libXpm-3.5.13-1.oe2203.riscv64.rpm                                            407 kB/s |  40 kB     00:00
+(72/209): libXrandr-devel-1.5.2-1.oe2203.riscv64.rpm                                    408 kB/s |  47 kB     00:00
+(73/209): libXrender-devel-0.9.10-10.oe2203.riscv64.rpm                                 367 kB/s |  47 kB     00:00
+(74/209): libXt-1.2.1-1.oe2203.riscv64.rpm                                              665 kB/s | 156 kB     00:00
+(75/209): libXtst-devel-1.2.3-10.oe2203.riscv64.rpm                                     102 kB/s |  28 kB     00:00
+(76/209): libXv-1.0.11-11.oe2203.riscv64.rpm                                             73 kB/s |  16 kB     00:00
+(77/209): libXxf86vm-1.1.4-13.oe2203.riscv64.rpm                                        147 kB/s |  16 kB     00:00
+(78/209): libaom-1.0.0-1.oe2203.riscv64.rpm                                             768 kB/s | 1.0 MB     00:01
+(79/209): libappstream-glib-0.7.14-4.oe2203.riscv64.rpm                                 186 kB/s | 298 kB     00:01
+(80/209): libass-0.15.0-2.oe2203.riscv64.rpm                                             53 kB/s |  89 kB     00:01
+(81/209): libbluray-1.1.2-5.oe2203.riscv64.rpm                                          284 kB/s | 171 kB     00:00
+(82/209): libdatrie-devel-0.2.13-1.oe2203.riscv64.rpm                                    53 kB/s |  19 kB     00:00
+(83/209): libdav1d-0.5.2-2.oe2203.riscv64.rpm                                           467 kB/s | 252 kB     00:00
+(84/209): libdazzle-3.38.0-1.oe2203.riscv64.rpm                                         531 kB/s | 364 kB     00:00
+(85/209): libdazzle-devel-3.38.0-1.oe2203.riscv64.rpm                                   345 kB/s | 331 kB     00:00
+(86/209): libdrm-2.4.109-3.oe2203.riscv64.rpm                                           119 kB/s |  87 kB     00:00
+(87/209): libepoxy-devel-1.5.9-3.oe2203.riscv64.rpm                                     309 kB/s | 143 kB     00:00
+(88/209): libffi-devel-3.3-31.oe2203.riscv64.rpm                                         65 kB/s |  12 kB     00:00
+(89/209): libgegl-0_4-0-0.4.34-1.oe2203.riscv64.rpm                                     831 kB/s | 276 kB     00:00
+(90/209): libgexiv2-0.12.1-1.oe2203.riscv64.rpm                                         254 kB/s |  63 kB     00:00
+(91/209): libgfortran-10.3.1-10.oe2203.riscv64.rpm                                      711 kB/s | 366 kB     00:00
+(92/209): libgimp-3_0-0-2.99.6-3.oe2203.riscv64.rpm                                     440 kB/s | 230 kB     00:00
+(93/209): libgimpui-3_0-0-2.99.6-3.oe2203.riscv64.rpm                                   332 kB/s | 237 kB     00:00
+(94/209): libglvnd-1.3.4-2.oe2203.riscv64.rpm                                           160 kB/s |  74 kB     00:00
+(95/209): libglvnd-core-devel-1.3.4-2.oe2203.riscv64.rpm                                 63 kB/s |  18 kB     00:00
+(96/209): libglvnd-devel-1.3.4-2.oe2203.riscv64.rpm                                     527 kB/s | 178 kB     00:00
+(97/209): libglvnd-egl-1.3.4-2.oe2203.riscv64.rpm                                       111 kB/s |  38 kB     00:00
+(98/209): libglvnd-gles-1.3.4-2.oe2203.riscv64.rpm                                       89 kB/s |  30 kB     00:00
+(99/209): libglvnd-glx-1.3.4-2.oe2203.riscv64.rpm                                       592 kB/s | 130 kB     00:00
+(100/209): libglvnd-opengl-1.3.4-2.oe2203.riscv64.rpm                                   189 kB/s |  42 kB     00:00
+(101/209): libgudev-237-1.oe2203.riscv64.rpm                                            134 kB/s |  30 kB     00:00
+(102/209): libicu-devel-69.1-3.oe2203.riscv64.rpm                                       1.0 MB/s | 961 kB     00:00
+(103/209): libidn-1.38-3.oe2203.riscv64.rpm                                             150 kB/s | 138 kB     00:00
+(104/209): libijs-0.35-9.oe2203.riscv64.rpm                                              29 kB/s |  27 kB     00:00
+(105/209): libimagequant-2.15.1-1.oe2203.riscv64.rpm                                    594 kB/s |  59 kB     00:00
+(106/209): libmng-2.0.3-10.oe2203.riscv64.rpm                                           793 kB/s | 194 kB     00:00
+(107/209): libmodplug-0.8.9.0-10.oe2203.riscv64.rpm                                     508 kB/s | 180 kB     00:00
+(108/209): libmypaint-1.6.1-1.oe2203.riscv64.rpm                                        444 kB/s | 210 kB     00:00
+(109/209): libnotify-0.7.9-1.oe2203.riscv64.rpm                                         104 kB/s |  34 kB     00:00
+(110/209): libogg-1.3.5-1.oe2203.riscv64.rpm                                            153 kB/s |  30 kB     00:00
+(111/209): libpaper-1.1.28-1.oe2203.riscv64.rpm                                         388 kB/s |  33 kB     00:00
+(112/209): libpng-devel-1.6.37-3.oe2203.riscv64.rpm                                     498 kB/s |  53 kB     00:00
+(113/209): libproxy-0.4.17-1.oe2203.riscv64.rpm                                         606 kB/s |  98 kB     00:00
+(114/209): librsvg2-2.50.5-2.oe2203.riscv64.rpm                                         903 kB/s | 2.3 MB     00:02
+(115/209): libselinux-devel-3.3-1.oe2203.riscv64.rpm                                     76 kB/s | 208 kB     00:02
+(116/209): libsepol-devel-3.3-1.oe2203.riscv64.rpm                                      266 kB/s | 943 kB     00:03
+(117/209): libsoup-2.74.2-1.oe2203.riscv64.rpm                                          253 kB/s | 328 kB     00:01
+(118/209): libspiro-20200505-1.oe2203.riscv64.rpm                                        33 kB/s |  40 kB     00:01
+(119/209): libstemmer-0-12.oe2203.riscv64.rpm                                           186 kB/s |  63 kB     00:00
+(120/209): libsysprof-ui-3.38.1-2.oe2203.riscv64.rpm                                    675 kB/s | 158 kB     00:00
+(121/209): libthai-devel-0.1.28-4.oe2203.riscv64.rpm                                    378 kB/s | 122 kB     00:00
+(122/209): libtheora-1.1.1-25.oe2203.riscv64.rpm                                        353 kB/s | 164 kB     00:00
+(123/209): libtiff-devel-4.3.0-12.oe2203.riscv64.rpm                                    101 kB/s |  32 kB     00:00
+(124/209): libunwind-1.6.2-2.oe2203.riscv64.rpm                                         185 kB/s |  53 kB     00:00
+(125/209): libva-2.13.0-1.oe2203.riscv64.rpm                                            413 kB/s |  87 kB     00:00
+(126/209): libvdpau-1.2-1.oe2203.riscv64.rpm                                            640 kB/s | 484 kB     00:00
+(127/209): libvisual-0.4.0-27.oe2203.riscv64.rpm                                        179 kB/s | 144 kB     00:00
+(128/209): libvorbis-1.3.7-2.oe2203.riscv64.rpm                                         205 kB/s | 173 kB     00:00
+(129/209): libvpx-1.7.0-9.oe2203.riscv64.rpm                                            671 kB/s | 745 kB     00:01
+(130/209): libwebp-1.2.1-1.oe2203.riscv64.rpm                                           183 kB/s | 213 kB     00:01
+(131/209): libwmf-0.2.12-2.oe2203.riscv64.rpm                                           152 kB/s | 176 kB     00:01
+(132/209): libwpe-1.6.0-1.oe2203.riscv64.rpm                                             66 kB/s |  22 kB     00:00
+(133/209): libxcb-devel-1.14-1.oe2203.riscv64.rpm                                       675 kB/s | 592 kB     00:00
+(134/209): libxkbcommon-devel-1.3.1-2.oe2203.riscv64.rpm                                 84 kB/s |  65 kB     00:00
+(135/209): libxml2-devel-2.9.12-5.oe2203.riscv64.rpm                                    741 kB/s | 2.5 MB     00:03
+(136/209): libxshmfence-1.3-7.oe2203.riscv64.rpm                                        3.8 kB/s |  11 kB     00:02
+(137/209): mesa-filesystem-21.3.1-1.oe2203.riscv64.rpm                                  3.0 kB/s | 8.4 kB     00:02
+(138/209): mesa-libEGL-21.3.1-1.oe2203.riscv64.rpm                                      609 kB/s | 105 kB     00:00
+(139/209): mesa-libGL-21.3.1-1.oe2203.riscv64.rpm                                       598 kB/s | 155 kB     00:00
+(140/209): mesa-libgbm-21.3.1-1.oe2203.riscv64.rpm                                      124 kB/s |  37 kB     00:00
+(141/209): mesa-libglapi-21.3.1-1.oe2203.riscv64.rpm                                    306 kB/s |  56 kB     00:00
+(142/209): nspr-4.32.0-1.oe2203.riscv64.rpm                                             650 kB/s | 130 kB     00:00
+(143/209): nss-3.76.0-1.oe2203.riscv64.rpm                                              738 kB/s | 620 kB     00:00
+(144/209): nss-help-3.76.0-1.oe2203.riscv64.rpm                                          81 kB/s |  70 kB     00:00
+(145/209): nss-softokn-3.76.0-1.oe2203.riscv64.rpm                                      425 kB/s | 672 kB     00:01
+(146/209): nss-util-3.76.0-1.oe2203.riscv64.rpm                                         287 kB/s | 458 kB     00:01
+(147/209): ocl-icd-2.2.12-2.oe2203.riscv64.rpm                                           25 kB/s |  40 kB     00:01
+(148/209): openblas-devel-0.3.18-2.oe2203.riscv64.rpm                                    12 kB/s |  84 kB     00:07
+(149/209): opencore-amr-0.1.5-7.oe2203.riscv64.rpm                                       19 kB/s | 176 kB     00:09
+(150/209): openjpeg2-2.4.0-5.oe2203.riscv64.rpm                                          18 kB/s | 148 kB     00:08
+(151/209): opus-1.3.1-1.oe2203.riscv64.rpm                                               20 kB/s | 199 kB     00:10
+(152/209): orc-0.4.32-1.oe2203.riscv64.rpm                                               16 kB/s | 164 kB     00:10
+(153/209): pciutils-3.7.0-2.oe2203.riscv64.rpm                                           14 kB/s | 103 kB     00:07
+(154/209): pango-devel-1.49.3-3.oe2203.riscv64.rpm                                       26 kB/s | 363 kB     00:13
+(155/209): pcre-devel-8.45-1.oe2203.riscv64.rpm                                          33 kB/s | 640 kB     00:19
+(156/209): pixman-devel-0.40.0-2.oe2203.riscv64.rpm                                     2.7 kB/s |  17 kB     00:06
+(157/209): pcre2-devel-10.39-1.oe2203.riscv64.rpm                                        29 kB/s | 858 kB     00:29
+(158/209): pngquant-2.12.5-3.oe2203.riscv64.rpm                                         6.4 kB/s |  39 kB     00:06
+(159/209): polkit-help-0.120-3.oe2203.noarch.rpm                                        3.9 kB/s |  25 kB     00:06
+(160/209): polkit-devel-0.120-3.oe2203.riscv64.rpm                                       19 kB/s | 277 kB     00:14
+(161/209): poppler-0.90.0-2.oe2203.riscv64.rpm                                           29 kB/s | 915 kB     00:32
+(162/209): poppler-glib-0.90.0-2.oe2203.riscv64.rpm                                      25 kB/s | 128 kB     00:05
+(163/209): python3-cairo-1.20.0-1.oe2203.riscv64.rpm                                     12 kB/s |  81 kB     00:07
+(164/209): python3-gobject-3.42.0-2.oe2203.riscv64.rpm                                  2.1 kB/s |  13 kB     00:06
+(165/209): python3-gobject-base-3.42.0-2.oe2203.riscv64.rpm                              21 kB/s | 306 kB     00:14
+(166/209): sgml-common-0.6.3-51.oe2203.noarch.rpm                                       7.9 kB/s |  52 kB     00:06
+(167/209): soxr-0.1.3-5.oe2203.riscv64.rpm                                              8.3 kB/s |  70 kB     00:08
+(168/209): poppler-data-0.4.10-1.oe2203.noarch.rpm                                       32 kB/s | 2.3 MB     01:15
+(169/209): openblas-0.3.18-2.oe2203.riscv64.rpm                                         581 kB/s |  92 MB     02:41
+(170/209): speex-1.2.0-5.oe2203.riscv64.rpm                                             9.3 kB/s |  76 kB     00:08
+(171/209): speexdsp-1.2.0-2.oe2203.riscv64.rpm                                          6.5 kB/s |  47 kB     00:07
+(172/209): srt-libs-1.4.1-4.oe2203.riscv64.rpm                                          695 kB/s | 226 kB     00:00
+(173/209): suitesparse-4.4.6-17.oe2203.riscv64.rpm                                      819 kB/s | 756 kB     00:00
+(174/209): sysprof-3.38.1-2.oe2203.riscv64.rpm                                           97 kB/s |  93 kB     00:00
+(175/209): sysprof-cli-3.38.1-2.oe2203.riscv64.rpm                                      342 kB/s | 313 kB     00:00
+(176/209): sysprof-devel-3.38.1-2.oe2203.riscv64.rpm                                    289 kB/s | 120 kB     00:00
+(177/209): tbb-2020.3-5.oe2203.riscv64.rpm                                              291 kB/s | 143 kB     00:00
+(178/209): urw-base35-bookman-fonts-20200910-1.oe2203.noarch.rpm                        696 kB/s | 854 kB     00:01
+(179/209): urw-base35-c059-fonts-20200910-1.oe2203.noarch.rpm                           383 kB/s | 881 kB     00:02
+(180/209): urw-base35-d050000l-fonts-20200910-1.oe2203.noarch.rpm                        34 kB/s |  76 kB     00:02
+(181/209): urw-base35-fonts-20200910-1.oe2203.noarch.rpm                                7.8 kB/s | 9.5 kB     00:01
+(182/209): urw-base35-fonts-common-20200910-1.oe2203.noarch.rpm                         297 kB/s |  21 kB     00:00
+(183/209): urw-base35-gothic-fonts-20200910-1.oe2203.noarch.rpm                         604 kB/s | 651 kB     00:01
+(184/209): urw-base35-nimbus-mono-ps-fonts-20200910-1.oe2203.noarch.rpm                 369 kB/s | 798 kB     00:02
+(185/209): urw-base35-nimbus-roman-fonts-20200910-1.oe2203.noarch.rpm                   264 kB/s | 862 kB     00:03
+(186/209): urw-base35-nimbus-sans-fonts-20200910-1.oe2203.noarch.rpm                    315 kB/s | 1.3 MB     00:04
+(187/209): urw-base35-p052-fonts-20200910-1.oe2203.noarch.rpm                           220 kB/s | 979 kB     00:04
+(188/209): urw-base35-standard-symbols-ps-fonts-20200910-1.oe2203.noarch.rpm             12 kB/s |  41 kB     00:03
+(189/209): urw-base35-z003-fonts-20200910-1.oe2203.noarch.rpm                           174 kB/s | 277 kB     00:01
+(190/209): util-linux-devel-2.37.2-6.oe2203.riscv64.rpm                                  73 kB/s |  30 kB     00:00
+(191/209): vid.stab-1.1.0-1.oe2203.riscv64.rpm                                           99 kB/s |  43 kB     00:00
+(192/209): vo-amrwbenc-0.1.3-1.oe2203.riscv64.rpm                                       354 kB/s |  78 kB     00:00
+(193/209): wayland-devel-1.19.91-1.oe2203.riscv64.rpm                                   333 kB/s | 104 kB     00:00
+(194/209): wayland-protocols-devel-1.24-2.oe2203.noarch.rpm                             233 kB/s |  89 kB     00:00
+(195/209): woff2-1.0.2-6.oe2203.riscv64.rpm                                              17 kB/s |  54 kB     00:03
+(196/209): wpebackend-fdo-1.6.1-1.oe2203.riscv64.rpm                                    7.2 kB/s |  28 kB     00:03
+(197/209): webkit2gtk3-2.32.1-2.oe2203.riscv64.rpm                                      638 kB/s |  15 MB     00:23
+(198/209): x264-libs-0.157-13.20190717git34c06d1_bootstrap.oe2203.riscv64.rpm            32 kB/s | 532 kB     00:16
+(199/209): webkit2gtk3-jsc-2.32.1-2.oe2203.riscv64.rpm                                  119 kB/s | 3.2 MB     00:27
+(200/209): x265-3.4-3.oe2203.riscv64.rpm                                                107 kB/s | 481 kB     00:04
+(201/209): xdg-dbus-proxy-0.1.2-1.oe2203.riscv64.rpm                                    7.7 kB/s |  33 kB     00:04
+(202/209): xdg-utils-1.1.3-5.oe2203.noarch.rpm                                           74 kB/s |  53 kB     00:00
+(203/209): xorg-x11-proto-devel-2021.5-1.oe2203.noarch.rpm                              441 kB/s | 278 kB     00:00
+(204/209): xvidcore-1.3.7-1.oe2203.riscv64.rpm                                          242 kB/s | 242 kB     00:00
+(205/209): xz-devel-5.2.5-2.oe2203.riscv64.rpm                                          183 kB/s | 251 kB     00:01
+(206/209): zimg-3.0.3-1.oe2203.riscv64.rpm                                               98 kB/s |  96 kB     00:00
+(207/209): zlib-devel-1.2.11-19.oe2203.riscv64.rpm                                      163 kB/s | 137 kB     00:00
+(208/209): zvbi-0.2.35-7.oe2203.riscv64.rpm                                             381 kB/s | 451 kB     00:01
+(209/209): kernel-tools-5.10.0-7.oe2203.riscv64.rpm                                     101 kB/s | 120 kB     00:01
+------------------------------------------------------------------------------------------------------------------------
+Total                                                                                   873 kB/s | 218 MB     04:15
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                1/1
+  Installing       : xorg-x11-proto-devel-2021.5-1.oe2203.noarch                                                  1/209
+  Installing       : urw-base35-fonts-common-20200910-1.oe2203.noarch                                             2/209
+  Installing       : json-glib-1.6.2-2.oe2203.riscv64                                                             3/209
+  Installing       : openjpeg2-2.4.0-5.oe2203.riscv64                                                             4/209
+  Installing       : libglvnd-1:1.3.4-2.oe2203.riscv64                                                            5/209
+  Installing       : libdrm-2.4.109-3.oe2203.riscv64                                                              6/209
+  Installing       : babl-0.1.88-1.oe2203.riscv64                                                                 7/209
+  Running scriptlet: babl-0.1.88-1.oe2203.riscv64                                                                 7/209
+  Installing       : zlib-devel-1.2.11-19.oe2203.riscv64                                                          8/209
+  Installing       : nspr-4.32.0-1.oe2203.riscv64                                                                 9/209
+  Installing       : libogg-2:1.3.5-1.oe2203.riscv64                                                             10/209
+  Running scriptlet: libogg-2:1.3.5-1.oe2203.riscv64                                                             10/209
+  Installing       : libICE-1.0.10-2.oe2203.riscv64                                                              11/209
+  Installing       : libSM-1.2.3-2.oe2203.riscv64                                                                12/209
+  Installing       : libXt-1.2.1-1.oe2203.riscv64                                                                13/209
+  Installing       : libpng-devel-2:1.6.37-3.oe2203.riscv64                                                      14/209
+  Installing       : libwebp-1.2.1-1.oe2203.riscv64                                                              15/209
+  Installing       : librsvg2-2.50.5-2.oe2203.riscv64                                                            16/209
+  Installing       : libdazzle-3.38.0-1.oe2203.riscv64                                                           17/209
+  Installing       : cmake-filesystem-3.22.0-4.oe2203.riscv64                                                    18/209
+  Installing       : libtheora-1:1.1.1-25.oe2203.riscv64                                                         19/209
+  Installing       : libvorbis-1:1.3.7-2.oe2203.riscv64                                                          20/209
+  Installing       : hunspell-en-2020.12.07-2.oe2203.noarch                                                      21/209
+  Installing       : hunspell-1.7.0-11.oe2203.riscv64                                                            22/209
+  Installing       : adobe-mappings-cmap-lang-20190730-3.oe2203.noarch                                           23/209
+  Installing       : adobe-mappings-cmap-20190730-3.oe2203.noarch                                                24/209
+  Installing       : webkit2gtk3-jsc-2.32.1-2.oe2203.riscv64                                                     25/209
+  Running scriptlet: sgml-common-0.6.3-51.oe2203.noarch                                                          26/209
+  Installing       : sgml-common-0.6.3-51.oe2203.noarch                                                          26/209
+  Installing       : dbus-devel-1:1.12.20-6.oe2203.riscv64                                                       27/209
+  Running scriptlet: dbus-devel-1:1.12.20-6.oe2203.riscv64                                                       27/209
+  Installing       : iso-codes-4.7.0-1.oe2203.noarch                                                             28/209
+  Installing       : opus-1.3.1-1.oe2203.riscv64                                                                 29/209
+  Installing       : ocl-icd-2.2.12-2.oe2203.riscv64                                                             30/209
+  Installing       : nss-help-3.76.0-1.oe2203.riscv64                                                            31/209
+  Installing       : nss-3.76.0-1.oe2203.riscv64                                                                 32/209
+  Running scriptlet: nss-3.76.0-1.oe2203.riscv64                                                                 32/209
+  Installing       : nss-util-3.76.0-1.oe2203.riscv64                                                            33/209
+  Installing       : nss-softokn-3.76.0-1.oe2203.riscv64                                                         34/209
+  Installing       : mesa-libglapi-21.3.1-1.oe2203.riscv64                                                       35/209
+  Running scriptlet: mesa-libglapi-21.3.1-1.oe2203.riscv64                                                       35/209
+  Installing       : libxshmfence-1.3-7.oe2203.riscv64                                                           36/209
+  Installing       : libwpe-1.6.0-1.oe2203.riscv64                                                               37/209
+  Running scriptlet: libunwind-2:1.6.2-2.oe2203.riscv64                                                          38/209
+  Installing       : libunwind-2:1.6.2-2.oe2203.riscv64                                                          38/209
+  Installing       : gstreamer1-1.19.3-1.oe2203.riscv64                                                          39/209
+  Installing       : libnotify-0.7.9-1.oe2203.riscv64                                                            40/209
+  Installing       : libffi-devel-3.3-31.oe2203.riscv64                                                          41/209
+  Installing       : gobject-introspection-1.70.0-1.oe2203.riscv64                                               42/209
+  Running scriptlet: gobject-introspection-1.70.0-1.oe2203.riscv64                                               42/209
+  Installing       : fribidi-devel-1.0.10-1.oe2203.riscv64                                                       43/209
+  Installing       : alsa-lib-1.2.5.1-1.oe2203.riscv64                                                           44/209
+  Installing       : Imath-3.1.4-1.oe2203.riscv64                                                                45/209
+  Installing       : OpenEXR-libs-3.1.3-1.oe2203.riscv64                                                         46/209
+  Installing       : gjs-1.66.2-1.oe2203.riscv64                                                                 47/209
+  Installing       : python3-gobject-base-3.42.0-2.oe2203.riscv64                                                48/209
+  Installing       : wayland-devel-1.19.91-1.oe2203.riscv64                                                      49/209
+  Installing       : x264-libs-0.157-13.20190717git34c06d1_bootstrap.oe2203.riscv64                              50/209
+  Running scriptlet: x264-libs-0.157-13.20190717git34c06d1_bootstrap.oe2203.riscv64                              50/209
+  Installing       : enchant2-2.3.2-1.oe2203.riscv64                                                             51/209
+  Running scriptlet: enchant2-2.3.2-1.oe2203.riscv64                                                             51/209
+  Installing       : libXmu-1.1.3-1.oe2203.riscv64                                                               52/209
+  Installing       : mesa-libgbm-21.3.1-1.oe2203.riscv64                                                         53/209
+  Running scriptlet: mesa-libgbm-21.3.1-1.oe2203.riscv64                                                         53/209
+  Installing       : libglvnd-egl-1:1.3.4-2.oe2203.riscv64                                                       54/209
+  Installing       : mesa-libEGL-21.3.1-1.oe2203.riscv64                                                         55/209
+  Installing       : libglvnd-gles-1:1.3.4-2.oe2203.riscv64                                                      56/209
+  Installing       : wpebackend-fdo-1.6.1-1.oe2203.riscv64                                                       57/209
+  Installing       : libglvnd-opengl-1:1.3.4-2.oe2203.riscv64                                                    58/209
+  Installing       : urw-base35-bookman-fonts-20200910-1.oe2203.noarch                                           59/209
+  Running scriptlet: urw-base35-bookman-fonts-20200910-1.oe2203.noarch                                           59/209
+  Installing       : urw-base35-c059-fonts-20200910-1.oe2203.noarch                                              60/209
+  Running scriptlet: urw-base35-c059-fonts-20200910-1.oe2203.noarch                                              60/209
+  Installing       : urw-base35-d050000l-fonts-20200910-1.oe2203.noarch                                          61/209
+  Running scriptlet: urw-base35-d050000l-fonts-20200910-1.oe2203.noarch                                          61/209
+  Installing       : urw-base35-gothic-fonts-20200910-1.oe2203.noarch                                            62/209
+  Running scriptlet: urw-base35-gothic-fonts-20200910-1.oe2203.noarch                                            62/209
+  Installing       : urw-base35-nimbus-mono-ps-fonts-20200910-1.oe2203.noarch                                    63/209
+  Running scriptlet: urw-base35-nimbus-mono-ps-fonts-20200910-1.oe2203.noarch                                    63/209
+  Installing       : urw-base35-nimbus-roman-fonts-20200910-1.oe2203.noarch                                      64/209
+  Running scriptlet: urw-base35-nimbus-roman-fonts-20200910-1.oe2203.noarch                                      64/209
+  Installing       : urw-base35-nimbus-sans-fonts-20200910-1.oe2203.noarch                                       65/209
+  Running scriptlet: urw-base35-nimbus-sans-fonts-20200910-1.oe2203.noarch                                       65/209
+  Installing       : urw-base35-p052-fonts-20200910-1.oe2203.noarch                                              66/209
+  Running scriptlet: urw-base35-p052-fonts-20200910-1.oe2203.noarch                                              66/209
+  Installing       : urw-base35-standard-symbols-ps-fonts-20200910-1.oe2203.noarch                               67/209
+  Running scriptlet: urw-base35-standard-symbols-ps-fonts-20200910-1.oe2203.noarch                               67/209
+  Installing       : urw-base35-z003-fonts-20200910-1.oe2203.noarch                                              68/209
+  Running scriptlet: urw-base35-z003-fonts-20200910-1.oe2203.noarch                                              68/209
+  Installing       : urw-base35-fonts-20200910-1.oe2203.noarch                                                   69/209
+  Installing       : libwmf-0.2.12-2.oe2203.riscv64                                                              70/209
+  Running scriptlet: libwmf-0.2.12-2.oe2203.riscv64                                                              70/209
+  Installing       : libXau-devel-1.0.9-2.oe2203.riscv64                                                         71/209
+  Installing       : libxcb-devel-1.14-1.oe2203.riscv64                                                          72/209
+  Installing       : libX11-devel-1.7.2-2.oe2203.riscv64                                                         73/209
+  Installing       : libXext-devel-1.3.4-2.oe2203.riscv64                                                        74/209
+  Installing       : libXfixes-devel-6.0.0-1.oe2203.riscv64                                                      75/209
+  Installing       : libXrender-devel-0.9.10-10.oe2203.riscv64                                                   76/209
+  Installing       : libXi-devel-1.8-2.oe2203.riscv64                                                            77/209
+  Installing       : libXtst-devel-1.2.3-10.oe2203.riscv64                                                       78/209
+  Installing       : libXcursor-devel-1.2.0-1.oe2203.riscv64                                                     79/209
+  Installing       : libXrandr-devel-1.5.2-1.oe2203.riscv64                                                      80/209
+  Installing       : libXcomposite-devel-0.4.5-1.oe2203.riscv64                                                  81/209
+  Installing       : libXdamage-devel-1.1.5-1.oe2203.riscv64                                                     82/209
+  Installing       : libXinerama-devel-1.1.4-5.oe2203.riscv64                                                    83/209
+  Installing       : zvbi-0.2.35-7.oe2203.riscv64                                                                84/209
+  Running scriptlet: zvbi-0.2.35-7.oe2203.riscv64                                                                84/209
+  Installing       : zimg-3.0.3-1.oe2203.riscv64                                                                 85/209
+  Installing       : xz-devel-5.2.5-2.oe2203.riscv64                                                             86/209
+  Installing       : libxml2-devel-2.9.12-5.oe2203.riscv64                                                       87/209
+  Installing       : libxkbcommon-devel-1.3.1-2.oe2203.riscv64                                                   88/209
+  Installing       : xvidcore-1.3.7-1.oe2203.riscv64                                                             89/209
+  Installing       : xdg-dbus-proxy-0.1.2-1.oe2203.riscv64                                                       90/209
+  Installing       : x265-3.4-3.oe2203.riscv64                                                                   91/209
+  Running scriptlet: x265-3.4-3.oe2203.riscv64                                                                   91/209
+  Installing       : woff2-1.0.2-6.oe2203.riscv64                                                                92/209
+  Installing       : wayland-protocols-devel-1.24-2.oe2203.noarch                                                93/209
+  Installing       : vo-amrwbenc-0.1.3-1.oe2203.riscv64                                                          94/209
+  Installing       : vid.stab-1.1.0-1.oe2203.riscv64                                                             95/209
+  Installing       : tbb-2020.3-5.oe2203.riscv64                                                                 96/209
+  Installing       : srt-libs-1.4.1-4.oe2203.riscv64                                                             97/209
+  Installing       : speexdsp-1.2.0-2.oe2203.riscv64                                                             98/209
+  Running scriptlet: speexdsp-1.2.0-2.oe2203.riscv64                                                             98/209
+  Installing       : speex-1.2.0-5.oe2203.riscv64                                                                99/209
+  Installing       : soxr-0.1.3-5.oe2203.riscv64                                                                100/209
+  Installing       : python3-cairo-1.20.0-1.oe2203.riscv64                                                      101/209
+  Installing       : python3-gobject-3.42.0-2.oe2203.riscv64                                                    102/209
+  Installing       : poppler-data-0.4.10-1.oe2203.noarch                                                        103/209
+  Installing       : poppler-0.90.0-2.oe2203.riscv64                                                            104/209
+  Installing       : poppler-glib-0.90.0-2.oe2203.riscv64                                                       105/209
+  Installing       : polkit-help-0.120-3.oe2203.noarch                                                          106/209
+  Installing       : pixman-devel-0.40.0-2.oe2203.riscv64                                                       107/209
+  Installing       : pcre2-devel-10.39-1.oe2203.riscv64                                                         108/209
+  Installing       : pcre-devel-8.45-1.oe2203.riscv64                                                           109/209
+  Installing       : orc-0.4.32-1.oe2203.riscv64                                                                110/209
+  Running scriptlet: orc-0.4.32-1.oe2203.riscv64                                                                110/209
+  Installing       : opencore-amr-0.1.5-7.oe2203.riscv64                                                        111/209
+  Installing       : mesa-filesystem-21.3.1-1.oe2203.riscv64                                                    112/209
+  Installing       : libvpx-1.7.0-9.oe2203.riscv64                                                              113/209
+  Running scriptlet: libvpx-1.7.0-9.oe2203.riscv64                                                              113/209
+  Installing       : libvisual-1:0.4.0-27.oe2203.riscv64                                                        114/209
+  Installing       : libvdpau-1.2-1.oe2203.riscv64                                                              115/209
+  Installing       : libtiff-devel-4.3.0-12.oe2203.riscv64                                                      116/209
+  Installing       : libstemmer-0-12.oe2203.riscv64                                                             117/209
+  Installing       : libspiro-20200505-1.oe2203.riscv64                                                         118/209
+  Installing       : libsepol-devel-3.3-1.oe2203.riscv64                                                        119/209
+  Installing       : libselinux-devel-3.3-1.oe2203.riscv64                                                      120/209
+  Installing       : util-linux-devel-2.37.2-6.oe2203.riscv64                                                   121/209
+  Installing       : libproxy-0.4.17-1.oe2203.riscv64                                                           122/209
+  Installing       : libpaper-1.1.28-1.oe2203.riscv64                                                           123/209
+  Installing       : libmypaint-1.6.1-1.oe2203.riscv64                                                          124/209
+  Installing       : libmodplug-1:0.8.9.0-10.oe2203.riscv64                                                     125/209
+  Running scriptlet: libmodplug-1:0.8.9.0-10.oe2203.riscv64                                                     125/209
+  Installing       : libmng-2.0.3-10.oe2203.riscv64                                                             126/209
+  Running scriptlet: libmng-2.0.3-10.oe2203.riscv64                                                             126/209
+  Installing       : libimagequant-2.15.1-1.oe2203.riscv64                                                      127/209
+  Installing       : pngquant-2.12.5-3.oe2203.riscv64                                                           128/209
+  Installing       : libijs-0.35-9.oe2203.riscv64                                                               129/209
+  Installing       : libidn-1.38-3.oe2203.riscv64                                                               130/209
+  Installing       : libicu-devel-69.1-3.oe2203.riscv64                                                         131/209
+  Installing       : libgudev-237-1.oe2203.riscv64                                                              132/209
+  Installing       : libglvnd-core-devel-1:1.3.4-2.oe2203.riscv64                                               133/209
+  Installing       : libgfortran-10.3.1-10.oe2203.riscv64                                                       134/209
+  Installing       : openblas-devel-0.3.18-2.oe2203.riscv64                                                     135/209
+  Installing       : openblas-0.3.18-2.oe2203.riscv64                                                           136/209
+  Running scriptlet: openblas-0.3.18-2.oe2203.riscv64                                                           136/209
+  Installing       : suitesparse-4.4.6-17.oe2203.riscv64                                                        137/209
+  Installing       : libdav1d-0.5.2-2.oe2203.riscv64                                                            138/209
+  Installing       : libdatrie-devel-0.2.13-1.oe2203.riscv64                                                    139/209
+  Installing       : libthai-devel-0.1.28-4.oe2203.riscv64                                                      140/209
+  Installing       : libbluray-1.1.2-5.oe2203.riscv64                                                           141/209
+  Installing       : libass-0.15.0-2.oe2203.riscv64                                                             142/209
+  Installing       : libaom-1.0.0-1.oe2203.riscv64                                                              143/209
+  Installing       : libXxf86vm-1.1.4-13.oe2203.riscv64                                                         144/209
+  Installing       : libglvnd-glx-1:1.3.4-2.oe2203.riscv64                                                      145/209
+  Installing       : mesa-libGL-21.3.1-1.oe2203.riscv64                                                         146/209
+  Installing       : libglvnd-devel-1:1.3.4-2.oe2203.riscv64                                                    147/209
+  Installing       : libepoxy-devel-1.5.9-3.oe2203.riscv64                                                      148/209
+  Installing       : libva-2.13.0-1.oe2203.riscv64                                                              149/209
+  Running scriptlet: libva-2.13.0-1.oe2203.riscv64                                                              149/209
+  Installing       : libXv-1.0.11-11.oe2203.riscv64                                                             150/209
+  Installing       : libXpm-3.5.13-1.oe2203.riscv64                                                             151/209
+  Installing       : lensfun-0.3.2-20.oe2203.riscv64                                                            152/209
+  Running scriptlet: lensfun-0.3.2-20.oe2203.riscv64                                                            152/209
+  Installing       : lame-3.100-9.oe2203.riscv64                                                                153/209
+  Running scriptlet: lame-3.100-9.oe2203.riscv64                                                                153/209
+  Installing       : jbig2dec-0.19-3.oe2203.riscv64                                                             154/209
+  Installing       : hyphen-2.8.8-14.oe2203.riscv64                                                             155/209
+  Installing       : hwdata-0.353-1.oe2203.noarch                                                               156/209
+  Installing       : pciutils-3.7.0-2.oe2203.riscv64                                                            157/209
+  Running scriptlet: pciutils-3.7.0-2.oe2203.riscv64                                                            157/209
+  Installing       : kernel-tools-5.10.0-7.oe2203.riscv64                                                       158/209
+  Running scriptlet: kernel-tools-5.10.0-7.oe2203.riscv64                                                       158/209
+  Installing       : sysprof-cli-3.38.1-2.oe2203.riscv64                                                        159/209
+  Installing       : libsysprof-ui-3.38.1-2.oe2203.riscv64                                                      160/209
+  Installing       : sysprof-3.38.1-2.oe2203.riscv64                                                            161/209
+  Installing       : gsm-1.0.18-5.oe2203.riscv64                                                                162/209
+  Installing       : ffmpeg-libs-4.2.4-3.oe2203.riscv64                                                         163/209
+  Installing       : graphite2-devel-1.3.14-5.oe2203.riscv64                                                    164/209
+  Installing       : graphene-1.10.6-1.oe2203.riscv64                                                           165/209
+  Installing       : google-droid-sans-fonts-20200215-1.oe2203.noarch                                           166/209
+  Installing       : gettext-0.21-4.oe2203.riscv64                                                              167/209
+  Installing       : exiv2-0.26-27.oe2203.riscv64                                                               168/209
+  Running scriptlet: libgexiv2-0.12.1-1.oe2203.riscv64                                                          169/209
+  Installing       : libgexiv2-0.12.1-1.oe2203.riscv64                                                          169/209
+  Installing       : desktop-file-utils-0.26-2.oe2203.riscv64                                                   170/209
+  Installing       : xdg-utils-1.1.3-5.oe2203.noarch                                                            171/209
+  Installing       : cdparanoia-libs-10.2-31.oe2203.riscv64                                                     172/209
+  Installing       : gstreamer1-plugins-base-1.19.3-1.oe2203.riscv64                                            173/209
+  Installing       : bzip2-devel-1.0.8-4.oe2203.riscv64                                                         174/209
+  Installing       : freetype-devel-2.11.0-1.oe2203.riscv64                                                     175/209
+  Installing       : fontconfig-devel-2.13.94-1.oe2203.riscv64                                                  176/209
+  Installing       : libXft-devel-2.3.4-1.oe2203.riscv64                                                        177/209
+  Installing       : libdazzle-devel-3.38.0-1.oe2203.riscv64                                                    178/209
+  Installing       : at-spi2-core-devel-2.42.0-1.oe2203.riscv64                                                 179/209
+  Installing       : atk-devel-2.36.0-2.oe2203.riscv64                                                          180/209
+  Installing       : cairo-devel-1.17.4-1.oe2203.riscv64                                                        181/209
+  Installing       : cairo-gobject-devel-1.17.4-1.oe2203.riscv64                                                182/209
+  Installing       : gdk-pixbuf2-devel-2.42.6-2.oe2203.riscv64                                                  183/209
+  Installing       : harfbuzz-devel-4.2.0-1.oe2203.riscv64                                                      184/209
+  Installing       : pango-devel-1.49.3-3.oe2203.riscv64                                                        185/209
+  Installing       : polkit-devel-0.120-3.oe2203.riscv64                                                        186/209
+  Installing       : glib2-devel-2.68.1-12.oe2203.riscv64                                                       187/209
+  Installing       : at-spi2-atk-devel-2.38.0-1.oe2203.riscv64                                                  188/209
+  Installing       : gtk3-devel-3.24.30-5.oe2203.riscv64                                                        189/209
+  Installing       : sysprof-devel-3.38.1-2.oe2203.riscv64                                                      190/209
+  Installing       : bubblewrap-0.4.1-1.oe2203.riscv64                                                          191/209
+  Installing       : avahi-glib-0.8-12.oe2203.riscv64                                                           192/209
+  Running scriptlet: avahi-glib-0.8-12.oe2203.riscv64                                                           192/209
+  Installing       : adobe-mappings-pdf-20190401-2.oe2203.noarch                                                193/209
+  Running scriptlet: ghostscript-9.55.0-1.oe2203.riscv64                                                        194/209
+  Installing       : ghostscript-9.55.0-1.oe2203.riscv64                                                        194/209
+  Running scriptlet: ghostscript-9.55.0-1.oe2203.riscv64                                                        194/209
+  Installing       : abattis-cantarell-fonts-0.301-1.oe2203.noarch                                              195/209
+  Installing       : gsettings-desktop-schemas-41.0-1.oe2203.riscv64                                            196/209
+  Installing       : glib-networking-2.68.1-3.oe2203.riscv64                                                    197/209
+  Installing       : libsoup-2.74.2-1.oe2203.riscv64                                                            198/209
+  Running scriptlet: geoclue2-2.5.7-1.oe2203.riscv64                                                            199/209
+  Installing       : geoclue2-2.5.7-1.oe2203.riscv64                                                            199/209
+  Running scriptlet: geoclue2-2.5.7-1.oe2203.riscv64                                                            199/209
+  Installing       : webkit2gtk3-2.32.1-2.oe2203.riscv64                                                        200/209
+  Installing       : libappstream-glib-0.7.14-4.oe2203.riscv64                                                  201/209
+  Running scriptlet: libappstream-glib-0.7.14-4.oe2203.riscv64                                                  201/209
+  Installing       : SDL2-2.0.12-4.oe2203.riscv64                                                               202/209
+  Installing       : LibRaw-0.20.2-5.oe2203.riscv64                                                             203/209
+  Running scriptlet: LibRaw-0.20.2-5.oe2203.riscv64                                                             203/209
+  Installing       : libgegl-0_4-0-0.4.34-1.oe2203.riscv64                                                      204/209
+  Running scriptlet: libgegl-0_4-0-0.4.34-1.oe2203.riscv64                                                      204/209
+  Installing       : gegl04-0.4.34-1.oe2203.riscv64                                                             205/209
+  Running scriptlet: gegl04-0.4.34-1.oe2203.riscv64                                                             205/209
+  Installing       : libgimp-3_0-0-2:2.99.6-3.oe2203.riscv64                                                    206/209
+  Running scriptlet: libgimp-3_0-0-2:2.99.6-3.oe2203.riscv64                                                    206/209
+  Installing       : libgimpui-3_0-0-2:2.99.6-3.oe2203.riscv64                                                  207/209
+  Running scriptlet: libgimpui-3_0-0-2:2.99.6-3.oe2203.riscv64                                                  207/209
+  Installing       : gimp-plugin-python3-2:2.99.6-3.oe2203.riscv64                                              208/209
+  Installing       : gimp-2:2.99.6-3.oe2203.riscv64                                                             209/209
+  Running scriptlet: urw-base35-bookman-fonts-20200910-1.oe2203.noarch                                          209/209
+  Running scriptlet: urw-base35-c059-fonts-20200910-1.oe2203.noarch                                             209/209
+  Running scriptlet: urw-base35-d050000l-fonts-20200910-1.oe2203.noarch                                         209/209
+  Running scriptlet: urw-base35-gothic-fonts-20200910-1.oe2203.noarch                                           209/209
+  Running scriptlet: urw-base35-nimbus-mono-ps-fonts-20200910-1.oe2203.noarch                                   209/209
+  Running scriptlet: urw-base35-nimbus-roman-fonts-20200910-1.oe2203.noarch                                     209/209
+  Running scriptlet: urw-base35-nimbus-sans-fonts-20200910-1.oe2203.noarch                                      209/209
+  Running scriptlet: urw-base35-p052-fonts-20200910-1.oe2203.noarch                                             209/209
+  Running scriptlet: urw-base35-standard-symbols-ps-fonts-20200910-1.oe2203.noarch                              209/209
+  Running scriptlet: urw-base35-z003-fonts-20200910-1.oe2203.noarch                                             209/209
+  Running scriptlet: gimp-2:2.99.6-3.oe2203.riscv64                                                             209/209
+  Verifying        : Imath-3.1.4-1.oe2203.riscv64                                                                 1/209
+  Verifying        : LibRaw-0.20.2-5.oe2203.riscv64                                                               2/209
+  Verifying        : OpenEXR-libs-3.1.3-1.oe2203.riscv64                                                          3/209
+  Verifying        : SDL2-2.0.12-4.oe2203.riscv64                                                                 4/209
+  Verifying        : abattis-cantarell-fonts-0.301-1.oe2203.noarch                                                5/209
+  Verifying        : adobe-mappings-cmap-20190730-3.oe2203.noarch                                                 6/209
+  Verifying        : adobe-mappings-cmap-lang-20190730-3.oe2203.noarch                                            7/209
+  Verifying        : adobe-mappings-pdf-20190401-2.oe2203.noarch                                                  8/209
+  Verifying        : alsa-lib-1.2.5.1-1.oe2203.riscv64                                                            9/209
+  Verifying        : at-spi2-atk-devel-2.38.0-1.oe2203.riscv64                                                   10/209
+  Verifying        : at-spi2-core-devel-2.42.0-1.oe2203.riscv64                                                  11/209
+  Verifying        : atk-devel-2.36.0-2.oe2203.riscv64                                                           12/209
+  Verifying        : avahi-glib-0.8-12.oe2203.riscv64                                                            13/209
+  Verifying        : babl-0.1.88-1.oe2203.riscv64                                                                14/209
+  Verifying        : bubblewrap-0.4.1-1.oe2203.riscv64                                                           15/209
+  Verifying        : bzip2-devel-1.0.8-4.oe2203.riscv64                                                          16/209
+  Verifying        : cairo-devel-1.17.4-1.oe2203.riscv64                                                         17/209
+  Verifying        : cairo-gobject-devel-1.17.4-1.oe2203.riscv64                                                 18/209
+  Verifying        : cdparanoia-libs-10.2-31.oe2203.riscv64                                                      19/209
+  Verifying        : cmake-filesystem-3.22.0-4.oe2203.riscv64                                                    20/209
+  Verifying        : dbus-devel-1:1.12.20-6.oe2203.riscv64                                                       21/209
+  Verifying        : desktop-file-utils-0.26-2.oe2203.riscv64                                                    22/209
+  Verifying        : enchant2-2.3.2-1.oe2203.riscv64                                                             23/209
+  Verifying        : exiv2-0.26-27.oe2203.riscv64                                                                24/209
+  Verifying        : ffmpeg-libs-4.2.4-3.oe2203.riscv64                                                          25/209
+  Verifying        : fontconfig-devel-2.13.94-1.oe2203.riscv64                                                   26/209
+  Verifying        : freetype-devel-2.11.0-1.oe2203.riscv64                                                      27/209
+  Verifying        : fribidi-devel-1.0.10-1.oe2203.riscv64                                                       28/209
+  Verifying        : gdk-pixbuf2-devel-2.42.6-2.oe2203.riscv64                                                   29/209
+  Verifying        : gegl04-0.4.34-1.oe2203.riscv64                                                              30/209
+  Verifying        : geoclue2-2.5.7-1.oe2203.riscv64                                                             31/209
+  Verifying        : gettext-0.21-4.oe2203.riscv64                                                               32/209
+  Verifying        : ghostscript-9.55.0-1.oe2203.riscv64                                                         33/209
+  Verifying        : gimp-2:2.99.6-3.oe2203.riscv64                                                              34/209
+  Verifying        : gimp-plugin-python3-2:2.99.6-3.oe2203.riscv64                                               35/209
+  Verifying        : gjs-1.66.2-1.oe2203.riscv64                                                                 36/209
+  Verifying        : glib-networking-2.68.1-3.oe2203.riscv64                                                     37/209
+  Verifying        : glib2-devel-2.68.1-12.oe2203.riscv64                                                        38/209
+  Verifying        : gobject-introspection-1.70.0-1.oe2203.riscv64                                               39/209
+  Verifying        : google-droid-sans-fonts-20200215-1.oe2203.noarch                                            40/209
+  Verifying        : graphene-1.10.6-1.oe2203.riscv64                                                            41/209
+  Verifying        : graphite2-devel-1.3.14-5.oe2203.riscv64                                                     42/209
+  Verifying        : gsettings-desktop-schemas-41.0-1.oe2203.riscv64                                             43/209
+  Verifying        : gsm-1.0.18-5.oe2203.riscv64                                                                 44/209
+  Verifying        : gstreamer1-1.19.3-1.oe2203.riscv64                                                          45/209
+  Verifying        : gstreamer1-plugins-base-1.19.3-1.oe2203.riscv64                                             46/209
+  Verifying        : gtk3-devel-3.24.30-5.oe2203.riscv64                                                         47/209
+  Verifying        : harfbuzz-devel-4.2.0-1.oe2203.riscv64                                                       48/209
+  Verifying        : hunspell-1.7.0-11.oe2203.riscv64                                                            49/209
+  Verifying        : hunspell-en-2020.12.07-2.oe2203.noarch                                                      50/209
+  Verifying        : hwdata-0.353-1.oe2203.noarch                                                                51/209
+  Verifying        : hyphen-2.8.8-14.oe2203.riscv64                                                              52/209
+  Verifying        : iso-codes-4.7.0-1.oe2203.noarch                                                             53/209
+  Verifying        : jbig2dec-0.19-3.oe2203.riscv64                                                              54/209
+  Verifying        : json-glib-1.6.2-2.oe2203.riscv64                                                            55/209
+  Verifying        : lame-3.100-9.oe2203.riscv64                                                                 56/209
+  Verifying        : lensfun-0.3.2-20.oe2203.riscv64                                                             57/209
+  Verifying        : libICE-1.0.10-2.oe2203.riscv64                                                              58/209
+  Verifying        : libSM-1.2.3-2.oe2203.riscv64                                                                59/209
+  Verifying        : libX11-devel-1.7.2-2.oe2203.riscv64                                                         60/209
+  Verifying        : libXau-devel-1.0.9-2.oe2203.riscv64                                                         61/209
+  Verifying        : libXcomposite-devel-0.4.5-1.oe2203.riscv64                                                  62/209
+  Verifying        : libXcursor-devel-1.2.0-1.oe2203.riscv64                                                     63/209
+  Verifying        : libXdamage-devel-1.1.5-1.oe2203.riscv64                                                     64/209
+  Verifying        : libXext-devel-1.3.4-2.oe2203.riscv64                                                        65/209
+  Verifying        : libXfixes-devel-6.0.0-1.oe2203.riscv64                                                      66/209
+  Verifying        : libXft-devel-2.3.4-1.oe2203.riscv64                                                         67/209
+  Verifying        : libXi-devel-1.8-2.oe2203.riscv64                                                            68/209
+  Verifying        : libXinerama-devel-1.1.4-5.oe2203.riscv64                                                    69/209
+  Verifying        : libXmu-1.1.3-1.oe2203.riscv64                                                               70/209
+  Verifying        : libXpm-3.5.13-1.oe2203.riscv64                                                              71/209
+  Verifying        : libXrandr-devel-1.5.2-1.oe2203.riscv64                                                      72/209
+  Verifying        : libXrender-devel-0.9.10-10.oe2203.riscv64                                                   73/209
+  Verifying        : libXt-1.2.1-1.oe2203.riscv64                                                                74/209
+  Verifying        : libXtst-devel-1.2.3-10.oe2203.riscv64                                                       75/209
+  Verifying        : libXv-1.0.11-11.oe2203.riscv64                                                              76/209
+  Verifying        : libXxf86vm-1.1.4-13.oe2203.riscv64                                                          77/209
+  Verifying        : libaom-1.0.0-1.oe2203.riscv64                                                               78/209
+  Verifying        : libappstream-glib-0.7.14-4.oe2203.riscv64                                                   79/209
+  Verifying        : libass-0.15.0-2.oe2203.riscv64                                                              80/209
+  Verifying        : libbluray-1.1.2-5.oe2203.riscv64                                                            81/209
+  Verifying        : libdatrie-devel-0.2.13-1.oe2203.riscv64                                                     82/209
+  Verifying        : libdav1d-0.5.2-2.oe2203.riscv64                                                             83/209
+  Verifying        : libdazzle-3.38.0-1.oe2203.riscv64                                                           84/209
+  Verifying        : libdazzle-devel-3.38.0-1.oe2203.riscv64                                                     85/209
+  Verifying        : libdrm-2.4.109-3.oe2203.riscv64                                                             86/209
+  Verifying        : libepoxy-devel-1.5.9-3.oe2203.riscv64                                                       87/209
+  Verifying        : libffi-devel-3.3-31.oe2203.riscv64                                                          88/209
+  Verifying        : libgegl-0_4-0-0.4.34-1.oe2203.riscv64                                                       89/209
+  Verifying        : libgexiv2-0.12.1-1.oe2203.riscv64                                                           90/209
+  Verifying        : libgfortran-10.3.1-10.oe2203.riscv64                                                        91/209
+  Verifying        : libgimp-3_0-0-2:2.99.6-3.oe2203.riscv64                                                     92/209
+  Verifying        : libgimpui-3_0-0-2:2.99.6-3.oe2203.riscv64                                                   93/209
+  Verifying        : libglvnd-1:1.3.4-2.oe2203.riscv64                                                           94/209
+  Verifying        : libglvnd-core-devel-1:1.3.4-2.oe2203.riscv64                                                95/209
+  Verifying        : libglvnd-devel-1:1.3.4-2.oe2203.riscv64                                                     96/209
+  Verifying        : libglvnd-egl-1:1.3.4-2.oe2203.riscv64                                                       97/209
+  Verifying        : libglvnd-gles-1:1.3.4-2.oe2203.riscv64                                                      98/209
+  Verifying        : libglvnd-glx-1:1.3.4-2.oe2203.riscv64                                                       99/209
+  Verifying        : libglvnd-opengl-1:1.3.4-2.oe2203.riscv64                                                   100/209
+  Verifying        : libgudev-237-1.oe2203.riscv64                                                              101/209
+  Verifying        : libicu-devel-69.1-3.oe2203.riscv64                                                         102/209
+  Verifying        : libidn-1.38-3.oe2203.riscv64                                                               103/209
+  Verifying        : libijs-0.35-9.oe2203.riscv64                                                               104/209
+  Verifying        : libimagequant-2.15.1-1.oe2203.riscv64                                                      105/209
+  Verifying        : libmng-2.0.3-10.oe2203.riscv64                                                             106/209
+  Verifying        : libmodplug-1:0.8.9.0-10.oe2203.riscv64                                                     107/209
+  Verifying        : libmypaint-1.6.1-1.oe2203.riscv64                                                          108/209
+  Verifying        : libnotify-0.7.9-1.oe2203.riscv64                                                           109/209
+  Verifying        : libogg-2:1.3.5-1.oe2203.riscv64                                                            110/209
+  Verifying        : libpaper-1.1.28-1.oe2203.riscv64                                                           111/209
+  Verifying        : libpng-devel-2:1.6.37-3.oe2203.riscv64                                                     112/209
+  Verifying        : libproxy-0.4.17-1.oe2203.riscv64                                                           113/209
+  Verifying        : librsvg2-2.50.5-2.oe2203.riscv64                                                           114/209
+  Verifying        : libselinux-devel-3.3-1.oe2203.riscv64                                                      115/209
+  Verifying        : libsepol-devel-3.3-1.oe2203.riscv64                                                        116/209
+  Verifying        : libsoup-2.74.2-1.oe2203.riscv64                                                            117/209
+  Verifying        : libspiro-20200505-1.oe2203.riscv64                                                         118/209
+  Verifying        : libstemmer-0-12.oe2203.riscv64                                                             119/209
+  Verifying        : libsysprof-ui-3.38.1-2.oe2203.riscv64                                                      120/209
+  Verifying        : libthai-devel-0.1.28-4.oe2203.riscv64                                                      121/209
+  Verifying        : libtheora-1:1.1.1-25.oe2203.riscv64                                                        122/209
+  Verifying        : libtiff-devel-4.3.0-12.oe2203.riscv64                                                      123/209
+  Verifying        : libunwind-2:1.6.2-2.oe2203.riscv64                                                         124/209
+  Verifying        : libva-2.13.0-1.oe2203.riscv64                                                              125/209
+  Verifying        : libvdpau-1.2-1.oe2203.riscv64                                                              126/209
+  Verifying        : libvisual-1:0.4.0-27.oe2203.riscv64                                                        127/209
+  Verifying        : libvorbis-1:1.3.7-2.oe2203.riscv64                                                         128/209
+  Verifying        : libvpx-1.7.0-9.oe2203.riscv64                                                              129/209
+  Verifying        : libwebp-1.2.1-1.oe2203.riscv64                                                             130/209
+  Verifying        : libwmf-0.2.12-2.oe2203.riscv64                                                             131/209
+  Verifying        : libwpe-1.6.0-1.oe2203.riscv64                                                              132/209
+  Verifying        : libxcb-devel-1.14-1.oe2203.riscv64                                                         133/209
+  Verifying        : libxkbcommon-devel-1.3.1-2.oe2203.riscv64                                                  134/209
+  Verifying        : libxml2-devel-2.9.12-5.oe2203.riscv64                                                      135/209
+  Verifying        : libxshmfence-1.3-7.oe2203.riscv64                                                          136/209
+  Verifying        : mesa-filesystem-21.3.1-1.oe2203.riscv64                                                    137/209
+  Verifying        : mesa-libEGL-21.3.1-1.oe2203.riscv64                                                        138/209
+  Verifying        : mesa-libGL-21.3.1-1.oe2203.riscv64                                                         139/209
+  Verifying        : mesa-libgbm-21.3.1-1.oe2203.riscv64                                                        140/209
+  Verifying        : mesa-libglapi-21.3.1-1.oe2203.riscv64                                                      141/209
+  Verifying        : nspr-4.32.0-1.oe2203.riscv64                                                               142/209
+  Verifying        : nss-3.76.0-1.oe2203.riscv64                                                                143/209
+  Verifying        : nss-help-3.76.0-1.oe2203.riscv64                                                           144/209
+  Verifying        : nss-softokn-3.76.0-1.oe2203.riscv64                                                        145/209
+  Verifying        : nss-util-3.76.0-1.oe2203.riscv64                                                           146/209
+  Verifying        : ocl-icd-2.2.12-2.oe2203.riscv64                                                            147/209
+  Verifying        : openblas-0.3.18-2.oe2203.riscv64                                                           148/209
+  Verifying        : openblas-devel-0.3.18-2.oe2203.riscv64                                                     149/209
+  Verifying        : opencore-amr-0.1.5-7.oe2203.riscv64                                                        150/209
+  Verifying        : openjpeg2-2.4.0-5.oe2203.riscv64                                                           151/209
+  Verifying        : opus-1.3.1-1.oe2203.riscv64                                                                152/209
+  Verifying        : orc-0.4.32-1.oe2203.riscv64                                                                153/209
+  Verifying        : pango-devel-1.49.3-3.oe2203.riscv64                                                        154/209
+  Verifying        : pciutils-3.7.0-2.oe2203.riscv64                                                            155/209
+  Verifying        : pcre-devel-8.45-1.oe2203.riscv64                                                           156/209
+  Verifying        : pcre2-devel-10.39-1.oe2203.riscv64                                                         157/209
+  Verifying        : pixman-devel-0.40.0-2.oe2203.riscv64                                                       158/209
+  Verifying        : pngquant-2.12.5-3.oe2203.riscv64                                                           159/209
+  Verifying        : polkit-devel-0.120-3.oe2203.riscv64                                                        160/209
+  Verifying        : polkit-help-0.120-3.oe2203.noarch                                                          161/209
+  Verifying        : poppler-0.90.0-2.oe2203.riscv64                                                            162/209
+  Verifying        : poppler-data-0.4.10-1.oe2203.noarch                                                        163/209
+  Verifying        : poppler-glib-0.90.0-2.oe2203.riscv64                                                       164/209
+  Verifying        : python3-cairo-1.20.0-1.oe2203.riscv64                                                      165/209
+  Verifying        : python3-gobject-3.42.0-2.oe2203.riscv64                                                    166/209
+  Verifying        : python3-gobject-base-3.42.0-2.oe2203.riscv64                                               167/209
+  Verifying        : sgml-common-0.6.3-51.oe2203.noarch                                                         168/209
+  Verifying        : soxr-0.1.3-5.oe2203.riscv64                                                                169/209
+  Verifying        : speex-1.2.0-5.oe2203.riscv64                                                               170/209
+  Verifying        : speexdsp-1.2.0-2.oe2203.riscv64                                                            171/209
+  Verifying        : srt-libs-1.4.1-4.oe2203.riscv64                                                            172/209
+  Verifying        : suitesparse-4.4.6-17.oe2203.riscv64                                                        173/209
+  Verifying        : sysprof-3.38.1-2.oe2203.riscv64                                                            174/209
+  Verifying        : sysprof-cli-3.38.1-2.oe2203.riscv64                                                        175/209
+  Verifying        : sysprof-devel-3.38.1-2.oe2203.riscv64                                                      176/209
+  Verifying        : tbb-2020.3-5.oe2203.riscv64                                                                177/209
+  Verifying        : urw-base35-bookman-fonts-20200910-1.oe2203.noarch                                          178/209
+  Verifying        : urw-base35-c059-fonts-20200910-1.oe2203.noarch                                             179/209
+  Verifying        : urw-base35-d050000l-fonts-20200910-1.oe2203.noarch                                         180/209
+  Verifying        : urw-base35-fonts-20200910-1.oe2203.noarch                                                  181/209
+  Verifying        : urw-base35-fonts-common-20200910-1.oe2203.noarch                                           182/209
+  Verifying        : urw-base35-gothic-fonts-20200910-1.oe2203.noarch                                           183/209
+  Verifying        : urw-base35-nimbus-mono-ps-fonts-20200910-1.oe2203.noarch                                   184/209
+  Verifying        : urw-base35-nimbus-roman-fonts-20200910-1.oe2203.noarch                                     185/209
+  Verifying        : urw-base35-nimbus-sans-fonts-20200910-1.oe2203.noarch                                      186/209
+  Verifying        : urw-base35-p052-fonts-20200910-1.oe2203.noarch                                             187/209
+  Verifying        : urw-base35-standard-symbols-ps-fonts-20200910-1.oe2203.noarch                              188/209
+  Verifying        : urw-base35-z003-fonts-20200910-1.oe2203.noarch                                             189/209
+  Verifying        : util-linux-devel-2.37.2-6.oe2203.riscv64                                                   190/209
+  Verifying        : vid.stab-1.1.0-1.oe2203.riscv64                                                            191/209
+  Verifying        : vo-amrwbenc-0.1.3-1.oe2203.riscv64                                                         192/209
+  Verifying        : wayland-devel-1.19.91-1.oe2203.riscv64                                                     193/209
+  Verifying        : wayland-protocols-devel-1.24-2.oe2203.noarch                                               194/209
+  Verifying        : webkit2gtk3-2.32.1-2.oe2203.riscv64                                                        195/209
+  Verifying        : webkit2gtk3-jsc-2.32.1-2.oe2203.riscv64                                                    196/209
+  Verifying        : woff2-1.0.2-6.oe2203.riscv64                                                               197/209
+  Verifying        : wpebackend-fdo-1.6.1-1.oe2203.riscv64                                                      198/209
+  Verifying        : x264-libs-0.157-13.20190717git34c06d1_bootstrap.oe2203.riscv64                             199/209
+  Verifying        : x265-3.4-3.oe2203.riscv64                                                                  200/209
+  Verifying        : xdg-dbus-proxy-0.1.2-1.oe2203.riscv64                                                      201/209
+  Verifying        : xdg-utils-1.1.3-5.oe2203.noarch                                                            202/209
+  Verifying        : xorg-x11-proto-devel-2021.5-1.oe2203.noarch                                                203/209
+  Verifying        : xvidcore-1.3.7-1.oe2203.riscv64                                                            204/209
+  Verifying        : xz-devel-5.2.5-2.oe2203.riscv64                                                            205/209
+  Verifying        : zimg-3.0.3-1.oe2203.riscv64                                                                206/209
+  Verifying        : zlib-devel-1.2.11-19.oe2203.riscv64                                                        207/209
+  Verifying        : zvbi-0.2.35-7.oe2203.riscv64                                                               208/209
+  Verifying        : kernel-tools-5.10.0-7.oe2203.riscv64                                                       209/209
+
+Installed:
+  Imath-3.1.4-1.oe2203.riscv64
+  LibRaw-0.20.2-5.oe2203.riscv64
+  OpenEXR-libs-3.1.3-1.oe2203.riscv64
+  SDL2-2.0.12-4.oe2203.riscv64
+  abattis-cantarell-fonts-0.301-1.oe2203.noarch
+  adobe-mappings-cmap-20190730-3.oe2203.noarch
+  adobe-mappings-cmap-lang-20190730-3.oe2203.noarch
+  adobe-mappings-pdf-20190401-2.oe2203.noarch
+  alsa-lib-1.2.5.1-1.oe2203.riscv64
+  at-spi2-atk-devel-2.38.0-1.oe2203.riscv64
+  at-spi2-core-devel-2.42.0-1.oe2203.riscv64
+  atk-devel-2.36.0-2.oe2203.riscv64
+  avahi-glib-0.8-12.oe2203.riscv64
+  babl-0.1.88-1.oe2203.riscv64
+  bubblewrap-0.4.1-1.oe2203.riscv64
+  bzip2-devel-1.0.8-4.oe2203.riscv64
+  cairo-devel-1.17.4-1.oe2203.riscv64
+  cairo-gobject-devel-1.17.4-1.oe2203.riscv64
+  cdparanoia-libs-10.2-31.oe2203.riscv64
+  cmake-filesystem-3.22.0-4.oe2203.riscv64
+  dbus-devel-1:1.12.20-6.oe2203.riscv64
+  desktop-file-utils-0.26-2.oe2203.riscv64
+  enchant2-2.3.2-1.oe2203.riscv64
+  exiv2-0.26-27.oe2203.riscv64
+  ffmpeg-libs-4.2.4-3.oe2203.riscv64
+  fontconfig-devel-2.13.94-1.oe2203.riscv64
+  freetype-devel-2.11.0-1.oe2203.riscv64
+  fribidi-devel-1.0.10-1.oe2203.riscv64
+  gdk-pixbuf2-devel-2.42.6-2.oe2203.riscv64
+  gegl04-0.4.34-1.oe2203.riscv64
+  geoclue2-2.5.7-1.oe2203.riscv64
+  gettext-0.21-4.oe2203.riscv64
+  ghostscript-9.55.0-1.oe2203.riscv64
+  gimp-2:2.99.6-3.oe2203.riscv64
+  gimp-plugin-python3-2:2.99.6-3.oe2203.riscv64
+  gjs-1.66.2-1.oe2203.riscv64
+  glib-networking-2.68.1-3.oe2203.riscv64
+  glib2-devel-2.68.1-12.oe2203.riscv64
+  gobject-introspection-1.70.0-1.oe2203.riscv64
+  google-droid-sans-fonts-20200215-1.oe2203.noarch
+  graphene-1.10.6-1.oe2203.riscv64
+  graphite2-devel-1.3.14-5.oe2203.riscv64
+  gsettings-desktop-schemas-41.0-1.oe2203.riscv64
+  gsm-1.0.18-5.oe2203.riscv64
+  gstreamer1-1.19.3-1.oe2203.riscv64
+  gstreamer1-plugins-base-1.19.3-1.oe2203.riscv64
+  gtk3-devel-3.24.30-5.oe2203.riscv64
+  harfbuzz-devel-4.2.0-1.oe2203.riscv64
+  hunspell-1.7.0-11.oe2203.riscv64
+  hunspell-en-2020.12.07-2.oe2203.noarch
+  hwdata-0.353-1.oe2203.noarch
+  hyphen-2.8.8-14.oe2203.riscv64
+  iso-codes-4.7.0-1.oe2203.noarch
+  jbig2dec-0.19-3.oe2203.riscv64
+  json-glib-1.6.2-2.oe2203.riscv64
+  kernel-tools-5.10.0-7.oe2203.riscv64
+  lame-3.100-9.oe2203.riscv64
+  lensfun-0.3.2-20.oe2203.riscv64
+  libICE-1.0.10-2.oe2203.riscv64
+  libSM-1.2.3-2.oe2203.riscv64
+  libX11-devel-1.7.2-2.oe2203.riscv64
+  libXau-devel-1.0.9-2.oe2203.riscv64
+  libXcomposite-devel-0.4.5-1.oe2203.riscv64
+  libXcursor-devel-1.2.0-1.oe2203.riscv64
+  libXdamage-devel-1.1.5-1.oe2203.riscv64
+  libXext-devel-1.3.4-2.oe2203.riscv64
+  libXfixes-devel-6.0.0-1.oe2203.riscv64
+  libXft-devel-2.3.4-1.oe2203.riscv64
+  libXi-devel-1.8-2.oe2203.riscv64
+  libXinerama-devel-1.1.4-5.oe2203.riscv64
+  libXmu-1.1.3-1.oe2203.riscv64
+  libXpm-3.5.13-1.oe2203.riscv64
+  libXrandr-devel-1.5.2-1.oe2203.riscv64
+  libXrender-devel-0.9.10-10.oe2203.riscv64
+  libXt-1.2.1-1.oe2203.riscv64
+  libXtst-devel-1.2.3-10.oe2203.riscv64
+  libXv-1.0.11-11.oe2203.riscv64
+  libXxf86vm-1.1.4-13.oe2203.riscv64
+  libaom-1.0.0-1.oe2203.riscv64
+  libappstream-glib-0.7.14-4.oe2203.riscv64
+  libass-0.15.0-2.oe2203.riscv64
+  libbluray-1.1.2-5.oe2203.riscv64
+  libdatrie-devel-0.2.13-1.oe2203.riscv64
+  libdav1d-0.5.2-2.oe2203.riscv64
+  libdazzle-3.38.0-1.oe2203.riscv64
+  libdazzle-devel-3.38.0-1.oe2203.riscv64
+  libdrm-2.4.109-3.oe2203.riscv64
+  libepoxy-devel-1.5.9-3.oe2203.riscv64
+  libffi-devel-3.3-31.oe2203.riscv64
+  libgegl-0_4-0-0.4.34-1.oe2203.riscv64
+  libgexiv2-0.12.1-1.oe2203.riscv64
+  libgfortran-10.3.1-10.oe2203.riscv64
+  libgimp-3_0-0-2:2.99.6-3.oe2203.riscv64
+  libgimpui-3_0-0-2:2.99.6-3.oe2203.riscv64
+  libglvnd-1:1.3.4-2.oe2203.riscv64
+  libglvnd-core-devel-1:1.3.4-2.oe2203.riscv64
+  libglvnd-devel-1:1.3.4-2.oe2203.riscv64
+  libglvnd-egl-1:1.3.4-2.oe2203.riscv64
+  libglvnd-gles-1:1.3.4-2.oe2203.riscv64
+  libglvnd-glx-1:1.3.4-2.oe2203.riscv64
+  libglvnd-opengl-1:1.3.4-2.oe2203.riscv64
+  libgudev-237-1.oe2203.riscv64
+  libicu-devel-69.1-3.oe2203.riscv64
+  libidn-1.38-3.oe2203.riscv64
+  libijs-0.35-9.oe2203.riscv64
+  libimagequant-2.15.1-1.oe2203.riscv64
+  libmng-2.0.3-10.oe2203.riscv64
+  libmodplug-1:0.8.9.0-10.oe2203.riscv64
+  libmypaint-1.6.1-1.oe2203.riscv64
+  libnotify-0.7.9-1.oe2203.riscv64
+  libogg-2:1.3.5-1.oe2203.riscv64
+  libpaper-1.1.28-1.oe2203.riscv64
+  libpng-devel-2:1.6.37-3.oe2203.riscv64
+  libproxy-0.4.17-1.oe2203.riscv64
+  librsvg2-2.50.5-2.oe2203.riscv64
+  libselinux-devel-3.3-1.oe2203.riscv64
+  libsepol-devel-3.3-1.oe2203.riscv64
+  libsoup-2.74.2-1.oe2203.riscv64
+  libspiro-20200505-1.oe2203.riscv64
+  libstemmer-0-12.oe2203.riscv64
+  libsysprof-ui-3.38.1-2.oe2203.riscv64
+  libthai-devel-0.1.28-4.oe2203.riscv64
+  libtheora-1:1.1.1-25.oe2203.riscv64
+  libtiff-devel-4.3.0-12.oe2203.riscv64
+  libunwind-2:1.6.2-2.oe2203.riscv64
+  libva-2.13.0-1.oe2203.riscv64
+  libvdpau-1.2-1.oe2203.riscv64
+  libvisual-1:0.4.0-27.oe2203.riscv64
+  libvorbis-1:1.3.7-2.oe2203.riscv64
+  libvpx-1.7.0-9.oe2203.riscv64
+  libwebp-1.2.1-1.oe2203.riscv64
+  libwmf-0.2.12-2.oe2203.riscv64
+  libwpe-1.6.0-1.oe2203.riscv64
+  libxcb-devel-1.14-1.oe2203.riscv64
+  libxkbcommon-devel-1.3.1-2.oe2203.riscv64
+  libxml2-devel-2.9.12-5.oe2203.riscv64
+  libxshmfence-1.3-7.oe2203.riscv64
+  mesa-filesystem-21.3.1-1.oe2203.riscv64
+  mesa-libEGL-21.3.1-1.oe2203.riscv64
+  mesa-libGL-21.3.1-1.oe2203.riscv64
+  mesa-libgbm-21.3.1-1.oe2203.riscv64
+  mesa-libglapi-21.3.1-1.oe2203.riscv64
+  nspr-4.32.0-1.oe2203.riscv64
+  nss-3.76.0-1.oe2203.riscv64
+  nss-help-3.76.0-1.oe2203.riscv64
+  nss-softokn-3.76.0-1.oe2203.riscv64
+  nss-util-3.76.0-1.oe2203.riscv64
+  ocl-icd-2.2.12-2.oe2203.riscv64
+  openblas-0.3.18-2.oe2203.riscv64
+  openblas-devel-0.3.18-2.oe2203.riscv64
+  opencore-amr-0.1.5-7.oe2203.riscv64
+  openjpeg2-2.4.0-5.oe2203.riscv64
+  opus-1.3.1-1.oe2203.riscv64
+  orc-0.4.32-1.oe2203.riscv64
+  pango-devel-1.49.3-3.oe2203.riscv64
+  pciutils-3.7.0-2.oe2203.riscv64
+  pcre-devel-8.45-1.oe2203.riscv64
+  pcre2-devel-10.39-1.oe2203.riscv64
+  pixman-devel-0.40.0-2.oe2203.riscv64
+  pngquant-2.12.5-3.oe2203.riscv64
+  polkit-devel-0.120-3.oe2203.riscv64
+  polkit-help-0.120-3.oe2203.noarch
+  poppler-0.90.0-2.oe2203.riscv64
+  poppler-data-0.4.10-1.oe2203.noarch
+  poppler-glib-0.90.0-2.oe2203.riscv64
+  python3-cairo-1.20.0-1.oe2203.riscv64
+  python3-gobject-3.42.0-2.oe2203.riscv64
+  python3-gobject-base-3.42.0-2.oe2203.riscv64
+  sgml-common-0.6.3-51.oe2203.noarch
+  soxr-0.1.3-5.oe2203.riscv64
+  speex-1.2.0-5.oe2203.riscv64
+  speexdsp-1.2.0-2.oe2203.riscv64
+  srt-libs-1.4.1-4.oe2203.riscv64
+  suitesparse-4.4.6-17.oe2203.riscv64
+  sysprof-3.38.1-2.oe2203.riscv64
+  sysprof-cli-3.38.1-2.oe2203.riscv64
+  sysprof-devel-3.38.1-2.oe2203.riscv64
+  tbb-2020.3-5.oe2203.riscv64
+  urw-base35-bookman-fonts-20200910-1.oe2203.noarch
+  urw-base35-c059-fonts-20200910-1.oe2203.noarch
+  urw-base35-d050000l-fonts-20200910-1.oe2203.noarch
+  urw-base35-fonts-20200910-1.oe2203.noarch
+  urw-base35-fonts-common-20200910-1.oe2203.noarch
+  urw-base35-gothic-fonts-20200910-1.oe2203.noarch
+  urw-base35-nimbus-mono-ps-fonts-20200910-1.oe2203.noarch
+  urw-base35-nimbus-roman-fonts-20200910-1.oe2203.noarch
+  urw-base35-nimbus-sans-fonts-20200910-1.oe2203.noarch
+  urw-base35-p052-fonts-20200910-1.oe2203.noarch
+  urw-base35-standard-symbols-ps-fonts-20200910-1.oe2203.noarch
+  urw-base35-z003-fonts-20200910-1.oe2203.noarch
+  util-linux-devel-2.37.2-6.oe2203.riscv64
+  vid.stab-1.1.0-1.oe2203.riscv64
+  vo-amrwbenc-0.1.3-1.oe2203.riscv64
+  wayland-devel-1.19.91-1.oe2203.riscv64
+  wayland-protocols-devel-1.24-2.oe2203.noarch
+  webkit2gtk3-2.32.1-2.oe2203.riscv64
+  webkit2gtk3-jsc-2.32.1-2.oe2203.riscv64
+  woff2-1.0.2-6.oe2203.riscv64
+  wpebackend-fdo-1.6.1-1.oe2203.riscv64
+  x264-libs-0.157-13.20190717git34c06d1_bootstrap.oe2203.riscv64
+  x265-3.4-3.oe2203.riscv64
+  xdg-dbus-proxy-0.1.2-1.oe2203.riscv64
+  xdg-utils-1.1.3-5.oe2203.noarch
+  xorg-x11-proto-devel-2021.5-1.oe2203.noarch
+  xvidcore-1.3.7-1.oe2203.riscv64
+  xz-devel-5.2.5-2.oe2203.riscv64
+  zimg-3.0.3-1.oe2203.riscv64
+  zlib-devel-1.2.11-19.oe2203.riscv64
+  zvbi-0.2.35-7.oe2203.riscv64
+
+Complete!
