@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://linux.duke.edu/metadata/common" xmlns:rpm="http://linux.duke.edu/metadata/rpm" packages="23703">
+<package type="rpm">
+  <name>GConf2</name>
+  <arch>riscv64</arch>
+  <version epoch="0" ver="3.2.6" rel="27.oe2209"/>
+  <checksum type="sha256" pkgid="YES">956c260ec53c109f8243d5646445738baacffa7ed6be31b75f11841e88441e9e</checksum>
+  <summary>GConf is a system for storing application preferences</summary>
+  <description>The root motivation for GConf is to make application preferences more manageable for system administrators.
+The initial GConf implementation has some shortcomings in this area; however, the client-side API should be correct,
+and the initial implementation is a decent first cut GConf involves a few new concepts,
+but no rocket science. Essentially GConf provides a preferences database, which is like a simple filesystem</description>
+  <packager>http://openeuler.org</packager>
+  <url>http://projects.gnome.org/gconf/</url>
+  <time file="1659760301" build="1659759707"/>
+  <size package="1008285" installed="6605139" archive="6624136"/>
+  <location href="riscv64/GConf2-3.2.6-27.oe2209.riscv64.rpm"/>
+  <format>
+    <rpm:license>LGPLv2+ and GPLv2+</rpm:license>
+    <rpm:vendor>http://openeuler.org</rpm:vendor>
+    <rpm:group>Unspecified</rpm:group>
+    <rpm:buildhost>oerv-obs-worker-06</rpm:buildhost>
+    <rpm:sourcerpm>GConf2-3.2.6-27.oe2209.src.rpm</rpm:sourcerpm>
+    <rpm:header-range start="5096" end="31593"/>
+    <rpm:provides>
+      <rpm:entry name="GConf2" flags="EQ" epoch="0" ver="3.2.6" rel="27.oe2209"/>
+      <rpm:entry name="GConf2(riscv-64)" flags="EQ" epoch="0" ver="3.2.6" rel="27.oe2209"/>
+      <rpm:entry name="GConf2-gtk" flags="EQ" epoch="0" ver="3.2.6" rel="6"/>
+      <rpm:entry name="config(GConf2)" flags="EQ" epoch="0" ver="3.2.6" rel="27.oe2209"/>
+      <rpm:entry name="libgconf-2.so.4()(64bit)"/>
+      <rpm:entry name="libgconfbackend-oldxml.so()(64bit)"/>
+      <rpm:entry name="libgconfbackend-xml.so()(64bit)"/>
+      <rpm:entry name="libgsettingsgconfbackend.so()(64bit)"/>
+    </rpm:provides>
+    <rpm:requires>
+      <rpm:entry name="/bin/sh" pre="1"/>
+      <rpm:entry name="/sbin/ldconfig"/>
+      <rpm:entry name="dbus"/>
+      <rpm:entry name="ld-linux-riscv64-lp64d.so.1()(64bit)"/>
+      <rpm:entry name="ld-linux-riscv64-lp64d.so.1(GLIBC_2.27)(64bit)"/>
+      <rpm:entry name="libdbus-1.so.3()(64bit)"/>
+      <rpm:entry name="libdbus-1.so.3(LIBDBUS_1_3)(64bit)"/>
+      <rpm:entry name="libdbus-glib-1.so.2()(64bit)"/>
+      <rpm:entry name="libgio-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libglib-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libgmodule-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libgobject-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libgthread-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libpolkit-gobject-1.so.0()(64bit)"/>
+      <rpm:entry name="libxml2.so.2()(64bit)"/>
+      <rpm:entry name="libxml2.so.2(LIBXML2_2.4.30)(64bit)"/>
+      <rpm:entry name="procps-ng"/>
+      <rpm:entry name="rtld(GNU_HASH)"/>
+      <rpm:entry name="libc.so.6(GLIBC_2.34)(64bit)"/>
+    </rpm:requires>
+    <rpm:conflicts>
+      <rpm:entry name="GConf2-dbus"/>
+    </rpm:conflicts>
+    <rpm:obsoletes>
+      <rpm:entry name="GConf2-gtk" flags="LT" epoch="0" ver="3.2.6" rel="6"/>
+    </rpm:obsoletes>
+    <file>/etc/dbus-1/system.d/org.gnome.GConf.Defaults.conf</file>
+    <file type="dir">/etc/gconf/2</file>
+    <file>/etc/gconf/2/path</file>
+    <file type="dir">/etc/gconf/gconf.xml.defaults</file>
+    <file type="dir">/etc/gconf/gconf.xml.mandatory</file>
+    <file type="dir">/etc/gconf/gconf.xml.system</file>
+    <file type="dir">/etc/gconf/schemas</file>
+    <file>/etc/xdg/autostart/gsettings-data-convert.desktop</file>
+    <file>/usr/bin/gconf-merge-tree</file>
+    <file>/usr/bin/gconftool-2</file>
+    <file>/usr/bin/gsettings-data-convert</file>
+  </format>
+</package>
+<package type="rpm">
+  <name>abrt-gui</name>
+  <arch>riscv64</arch>
+  <version epoch="0" ver="2.14.6" rel="1.oe2209"/>
+  <checksum type="sha256" pkgid="YES">51bfc05179d28bf31482f686769c54cadb15d508363b96a2e562544cc7c8b6af</checksum>
+  <summary>GUI module for abrt</summary>
+  <description>The abrt-gui package is a GTK+ wizard to make bug reporting more conveniently.</description>
+  <packager>http://openeuler.org</packager>
+  <url>https://github.com/abrt/abrt/</url>
+  <time file="1659776903" build="1659775852"/>
+  <size package="37769" installed="110694" archive="112524"/>
+  <location href="riscv64/abrt-gui-2.14.6-1.oe2209.riscv64.rpm"/>
+  <format>
+    <rpm:license>GPL-2.0 and GPL-2.0+</rpm:license>
+    <rpm:vendor>http://openeuler.org</rpm:vendor>
+    <rpm:group>Unspecified</rpm:group>
+    <rpm:buildhost>oerv-obs-worker-09</rpm:buildhost>
+    <rpm:sourcerpm>abrt-2.14.6-1.oe2209.src.rpm</rpm:sourcerpm>
+    <rpm:header-range start="5096" end="12289"/>
+    <rpm:provides>
+      <rpm:entry name="abrt-applet" flags="EQ" epoch="0" ver="2.14.6" rel="1.oe2209"/>
+      <rpm:entry name="abrt-gui" flags="EQ" epoch="0" ver="2.14.6" rel="1.oe2209"/>
+      <rpm:entry name="abrt-gui(riscv-64)" flags="EQ" epoch="0" ver="2.14.6" rel="1.oe2209"/>
+      <rpm:entry name="abrt-gui-libs" flags="EQ" epoch="0" ver="2.14.6" rel="1.oe2209"/>
+      <rpm:entry name="application()"/>
+      <rpm:entry name="application(org.freedesktop.problems.applet.desktop)"/>
+      <rpm:entry name="config(abrt-gui)" flags="EQ" epoch="0" ver="2.14.6" rel="1.oe2209"/>
+      <rpm:entry name="libabrt_gui.so.0()(64bit)"/>
+      <rpm:entry name="libabrt_gui.so.0(LIBRABRT_GUI_2.14.5)(64bit)"/>
+    </rpm:provides>
+    <rpm:requires>
+      <rpm:entry name="/bin/sh" pre="1"/>
+      <rpm:entry name="abrt" flags="EQ" epoch="0" ver="2.14.6" rel="1.oe2209"/>
+      <rpm:entry name="abrt-dbus" flags="EQ" epoch="0" ver="2.14.6" rel="1.oe2209"/>
+      <rpm:entry name="abrt-libs" flags="EQ" epoch="0" ver="2.14.6" rel="1.oe2209"/>
+      <rpm:entry name="gnome-abrt"/>
+      <rpm:entry name="gsettings-desktop-schemas" flags="GE" epoch="0" ver="3.15"/>
+      <rpm:entry name="ld-linux-riscv64-lp64d.so.1()(64bit)"/>
+      <rpm:entry name="ld-linux-riscv64-lp64d.so.1(GLIBC_2.27)(64bit)"/>
+      <rpm:entry name="libabrt.so.0()(64bit)"/>
+      <rpm:entry name="libabrt.so.0(LIBRABRT_2.14.5)(64bit)"/>
+      <rpm:entry name="libatk-1.0.so.0()(64bit)"/>
+      <rpm:entry name="libcairo-gobject.so.2()(64bit)"/>
+      <rpm:entry name="libcairo.so.2()(64bit)"/>
+      <rpm:entry name="libgdk-3.so.0()(64bit)"/>
+      <rpm:entry name="libgdk_pixbuf-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libgio-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libglib-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libgobject-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libgtk-3.so.0()(64bit)"/>
+      <rpm:entry name="libharfbuzz.so.0()(64bit)"/>
+      <rpm:entry name="libjson-c.so.5()(64bit)"/>
+      <rpm:entry name="libpango-1.0.so.0()(64bit)"/>
+      <rpm:entry name="libpangocairo-1.0.so.0()(64bit)"/>
+      <rpm:entry name="libpolkit-gobject-1.so.0()(64bit)"/>
+      <rpm:entry name="libreport-gtk.so.1()(64bit)"/>
+      <rpm:entry name="libreport-gtk.so.1(LIBREPORT_GTK_2.13.1)(64bit)"/>
+      <rpm:entry name="libreport.so.2()(64bit)"/>
+      <rpm:entry name="libreport.so.2(LIBREPORT_2.13.1)(64bit)"/>
+      <rpm:entry name="libsatyr.so.4()(64bit)"/>
+      <rpm:entry name="libz.so.1()(64bit)"/>
+      <rpm:entry name="rtld(GNU_HASH)"/>
+      <rpm:entry name="libc.so.6(GLIBC_2.34)(64bit)"/>
+    </rpm:requires>
+    <rpm:conflicts>
+      <rpm:entry name="abrt-applet" flags="LT" epoch="0" ver="0.0.5"/>
+    </rpm:conflicts>
+    <rpm:obsoletes>
+      <rpm:entry name="abrt-applet" flags="LT" epoch="0" ver="0.0.5"/>
+      <rpm:entry name="abrt-gui-libs" flags="LT" epoch="0" ver="2.13.0" rel="2"/>
+    </rpm:obsoletes>
+    <file>/etc/xdg/autostart/org.freedesktop.problems.applet.desktop</file>
+    <file>/usr/bin/abrt-applet</file>
+    <file>/usr/bin/system-config-abrt</file>
+  </format>
+</package>
+<package type="rpm">
+  <name>abrt-help</name>
+  <arch>riscv64</arch>
+  <version epoch="0" ver="2.14.6" rel="1.oe2209"/>
+  <checksum type="sha256" pkgid="YES">d6b3aee90135b9d9a6e690b2cdfe131f2cbd7cc4b4fa7ee73c36001b204fd38e</checksum>
+  <summary>Help files for the abrt library</summary>
+  <description>Help document files for abrt library.</description>
+  <packager>http://openeuler.org</packager>
+  <url>https://github.com/abrt/abrt/</url>
+  <time file="1659776903" build="1659775852"/>
+  <size package="69433" installed="52250" archive="61480"/>
+  <location href="riscv64/abrt-help-2.14.6-1.oe2209.riscv64.rpm"/>
+  <format>
+    <rpm:license>GPL-2.0 and GPL-2.0+</rpm:license>
+    <rpm:vendor>http://openeuler.org</rpm:vendor>
+    <rpm:group>Unspecified</rpm:group>
+    <rpm:buildhost>oerv-obs-worker-09</rpm:buildhost>
+    <rpm:sourcerpm>abrt-2.14.6-1.oe2209.src.rpm</rpm:sourcerpm>
+    <rpm:header-range start="5096" end="16849"/>
+    <rpm:provides>
+      <rpm:entry name="abrt-help" flags="EQ" epoch="0" ver="2.14.6" rel="1.oe2209"/>
+      <rpm:entry name="abrt-help(riscv-64)" flags="EQ" epoch="0" ver="2.14.6" rel="1.oe2209"/>
+    </rpm:provides>
+    <rpm:requires>
+      <rpm:entry name="abrt" flags="EQ" epoch="0" ver="2.14.6" rel="1.oe2209"/>
+    </rpm:requires>
+  </format>
+</package>
+<package type="rpm">
+  <name>abrt-libs</name>
+  <arch>riscv64</arch>
+  <version epoch="0" ver="2.14.6" rel="1.oe2209"/>
+  <checksum type="sha256" pkgid="YES">28b656d19963dd14285fc8e31131c1b99ea2afbde87c770b099831b879b520a9</checksum>
+  <summary>Libraries for abrt</summary>
+  <description>Libraries for abrt.</description>
+  <packager>http://openeuler.org</packager>
+  <url>https://github.com/abrt/abrt/</url>
+  <time file="1659776903" build="1659775852"/>
+  <size package="28881" installed="56784" archive="57716"/>
+  <location href="riscv64/abrt-libs-2.14.6-1.oe2209.riscv64.rpm"/>
+  <format>
+    <rpm:license>GPL-2.0 and GPL-2.0+</rpm:license>
+    <rpm:vendor>http://openeuler.org</rpm:vendor>
+    <rpm:group>Unspecified</rpm:group>
+    <rpm:buildhost>oerv-obs-worker-09</rpm:buildhost>
+    <rpm:sourcerpm>abrt-2.14.6-1.oe2209.src.rpm</rpm:sourcerpm>
+    <rpm:header-range start="5096" end="9061"/>
+    <rpm:provides>
+      <rpm:entry name="abrt-libs" flags="EQ" epoch="0" ver="2.14.6" rel="1.oe2209"/>
+      <rpm:entry name="abrt-libs(riscv-64)" flags="EQ" epoch="0" ver="2.14.6" rel="1.oe2209"/>
+      <rpm:entry name="libabrt.so.0()(64bit)"/>
+      <rpm:entry name="libabrt.so.0(LIBRABRT_2.14.5)(64bit)"/>
+    </rpm:provides>
+    <rpm:requires>
+      <rpm:entry name="ld-linux-riscv64-lp64d.so.1()(64bit)"/>
+      <rpm:entry name="ld-linux-riscv64-lp64d.so.1(GLIBC_2.27)(64bit)"/>
+      <rpm:entry name="libgio-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libglib-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libgobject-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libjson-c.so.5()(64bit)"/>
+      <rpm:entry name="libreport.so.2()(64bit)"/>
+      <rpm:entry name="libreport.so.2(LIBREPORT_2.13.1)(64bit)"/>
+      <rpm:entry name="libsatyr.so.4()(64bit)"/>
+      <rpm:entry name="rtld(GNU_HASH)"/>
+      <rpm:entry name="libc.so.6(GLIBC_2.33)(64bit)"/>
+    </rpm:requires>
+    <file type="dir">/etc/abrt</file>
+    <file type="dir">/etc/abrt/plugins</file>
+  </format>
+</package>
+<package type="rpm">
+  <name>evince</name>
+  <arch>riscv64</arch>
+  <version epoch="0" ver="42.3" rel="2.oe2209"/>
+  <checksum type="sha256" pkgid="YES">ad3a684113d8eff2ab630257cc95959cfcc7609046bcf529a1850e015f588538</checksum>
+  <summary>Document viewer for multiple document formats</summary>
+  <description>Evince is a document viewer for multiple document formats. The goal of evince is to replace the
+multiple document viewers that exist on the GNOME Desktop with a single simple application.
+Evince is specifically designed to support the file following formats:
+PDF, Postscript, djvu, tiff, dvi, XPS, SyncTex support with gedit, comics books (cbr,cbz,cb7 and cbt).</description>
+  <packager>http://openeuler.org</packager>
+  <url>https://wiki.gnome.org/Apps/Evince</url>
+  <time file="1659811340" build="1659810947"/>
+  <size package="2013121" installed="10951585" archive="11412808"/>
+  <location href="riscv64/evince-42.3-2.oe2209.riscv64.rpm"/>
+  <format>
+    <rpm:license>GPLv2+ and GPLv3+ and LGPLv2+ and MIT and Afmparse</rpm:license>
+    <rpm:vendor>http://openeuler.org</rpm:vendor>
+    <rpm:group>Unspecified</rpm:group>
+    <rpm:buildhost>oerv-obs-worker-06</rpm:buildhost>
+    <rpm:sourcerpm>evince-42.3-2.oe2209.src.rpm</rpm:sourcerpm>
+    <rpm:header-range start="5096" end="441973"/>
+    <rpm:provides>
+      <rpm:entry name="application()"/>
+      <rpm:entry name="application(org.gnome.Evince-previewer.desktop)"/>
+      <rpm:entry name="application(org.gnome.Evince.desktop)"/>
+      <rpm:entry name="evince" flags="EQ" epoch="0" ver="42.3" rel="2.oe2209"/>
+      <rpm:entry name="evince(riscv-64)" flags="EQ" epoch="0" ver="42.3" rel="2.oe2209"/>
+      <rpm:entry name="evince-dvi"/>
+      <rpm:entry name="evince-libs"/>
+      <rpm:entry name="evince-nautilus"/>
+      <rpm:entry name="libevdocument3.so.4()(64bit)"/>
+      <rpm:entry name="libevview3.so.3()(64bit)"/>
+      <rpm:entry name="metainfo()"/>
+      <rpm:entry name="metainfo(evince-djvudocument.metainfo.xml)"/>
+      <rpm:entry name="metainfo(evince-dvidocument.metainfo.xml)"/>
+      <rpm:entry name="metainfo(org.gnome.Evince.appdata.xml)"/>
+      <rpm:entry name="mimehandler(application/illustrator)"/>
+      <rpm:entry name="mimehandler(application/oxps)"/>
+      <rpm:entry name="mimehandler(application/pdf)"/>
+      <rpm:entry name="mimehandler(application/postscript)"/>
+      <rpm:entry name="mimehandler(application/vnd.comicbook+zip)"/>
+      <rpm:entry name="mimehandler(application/vnd.comicbook-rar)"/>
+      <rpm:entry name="mimehandler(application/vnd.ms-xpsdocument)"/>
+      <rpm:entry name="mimehandler(application/x-bzdvi)"/>
+      <rpm:entry name="mimehandler(application/x-bzpdf)"/>
+      <rpm:entry name="mimehandler(application/x-bzpostscript)"/>
+      <rpm:entry name="mimehandler(application/x-cb7)"/>
+      <rpm:entry name="mimehandler(application/x-cbr)"/>
+      <rpm:entry name="mimehandler(application/x-cbt)"/>
+      <rpm:entry name="mimehandler(application/x-cbz)"/>
+      <rpm:entry name="mimehandler(application/x-dvi)"/>
+      <rpm:entry name="mimehandler(application/x-ext-cb7)"/>
+      <rpm:entry name="mimehandler(application/x-ext-cbr)"/>
+      <rpm:entry name="mimehandler(application/x-ext-cbt)"/>
+      <rpm:entry name="mimehandler(application/x-ext-cbz)"/>
+      <rpm:entry name="mimehandler(application/x-ext-djv)"/>
+      <rpm:entry name="mimehandler(application/x-ext-djvu)"/>
+      <rpm:entry name="mimehandler(application/x-ext-dvi)"/>
+      <rpm:entry name="mimehandler(application/x-ext-eps)"/>
+      <rpm:entry name="mimehandler(application/x-ext-pdf)"/>
+      <rpm:entry name="mimehandler(application/x-ext-ps)"/>
+      <rpm:entry name="mimehandler(application/x-gzdvi)"/>
+      <rpm:entry name="mimehandler(application/x-gzpdf)"/>
+      <rpm:entry name="mimehandler(application/x-gzpostscript)"/>
+      <rpm:entry name="mimehandler(application/x-xzpdf)"/>
+      <rpm:entry name="mimehandler(image/tiff)"/>
+      <rpm:entry name="mimehandler(image/vnd.djvu)"/>
+      <rpm:entry name="mimehandler(image/x-bzeps)"/>
+      <rpm:entry name="mimehandler(image/x-eps)"/>
+      <rpm:entry name="mimehandler(image/x-gzeps)"/>
+    </rpm:provides>
+    <rpm:requires>
+      <rpm:entry name="/sbin/ldconfig" pre="1"/>
+      <rpm:entry name="/sbin/ldconfig"/>
+      <rpm:entry name="glib2(riscv-64)" flags="GE" epoch="0" ver="2.36.0"/>
+      <rpm:entry name="gtk3(riscv-64)"/>
+      <rpm:entry name="ld-linux-riscv64-lp64d.so.1()(64bit)"/>
+      <rpm:entry name="ld-linux-riscv64-lp64d.so.1(GLIBC_2.27)(64bit)"/>
+      <rpm:entry name="libarchive.so.13()(64bit)"/>
+      <rpm:entry name="libatk-1.0.so.0()(64bit)"/>
+      <rpm:entry name="libcairo-gobject.so.2()(64bit)"/>
+      <rpm:entry name="libcairo.so.2()(64bit)"/>
+      <rpm:entry name="libdjvulibre.so.21()(64bit)"/>
+      <rpm:entry name="libgdk-3.so.0()(64bit)"/>
+      <rpm:entry name="libgdk_pixbuf-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libgio-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libglib-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libgmodule-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libgnome-desktop-3.so.19()(64bit)"/>
+      <rpm:entry name="libgobject-2.0.so.0()(64bit)"/>
+      <rpm:entry name="libgspell-1.so.2()(64bit)"/>
+      <rpm:entry name="libgstreamer-1.0.so.0()(64bit)"/>
+      <rpm:entry name="libgstvideo-1.0.so.0()(64bit)"/>
+      <rpm:entry name="libgtk-3.so.0()(64bit)"/>
+      <rpm:entry name="libgxps.so.2()(64bit)"/>
+      <rpm:entry name="libhandy-1.so.0()(64bit)"/>
+      <rpm:entry name="libhandy-1.so.0(LIBHANDY_1_0)(64bit)"/>
+      <rpm:entry name="libkpathsea.so.6()(64bit)"/>
+      <rpm:entry name="libm.so.6()(64bit)"/>
+      <rpm:entry name="libm.so.6(GLIBC_2.27)(64bit)"/>
+      <rpm:entry name="libpango-1.0.so.0()(64bit)"/>
+      <rpm:entry name="libpangocairo-1.0.so.0()(64bit)"/>
+      <rpm:entry name="libpoppler-glib.so.8()(64bit)"/>
+      <rpm:entry name="libsecret-1.so.0()(64bit)"/>
+      <rpm:entry name="libspectre.so.1()(64bit)"/>
+      <rpm:entry name="libsynctex.so.1()(64bit)"/>
+      <rpm:entry name="libtiff.so.5()(64bit)"/>
+      <rpm:entry name="libtiff.so.5(LIBTIFF_4.0)(64bit)"/>
+      <rpm:entry name="libxml2.so.2()(64bit)"/>
+      <rpm:entry name="libxml2.so.2(LIBXML2_2.4.30)(64bit)"/>
+      <rpm:entry name="nautilus"/>
+      <rpm:entry name="rtld(GNU_HASH)"/>
+      <rpm:entry name="texlive-collection-fontsrecommended"/>
+      <rpm:entry name="libc.so.6(GLIBC_2.34)(64bit)"/>
+    </rpm:requires>
+    <file>/usr/bin/evince</file>
+    <file>/usr/bin/evince-previewer</file>
+    <file>/usr/bin/evince-thumbnailer</file>
+  </format>
+</package>
+</metadata>
