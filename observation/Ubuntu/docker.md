@@ -35,7 +35,9 @@ ossyNMMMNyMMhsssssssssssssshmmmhssssssso   CPU: (8)
 
 ```
 
-## Install Docker
+## Docker
+
+### Install Docker
 
 Because Docker is an unsandboxed program, we do suggest you tou change to root.
 
@@ -44,7 +46,7 @@ You can download Docker deb file from [carlosedp/riscv-bringup](https://github.c
 ```bash
 apt update
 wget https://github.com/carlosedp/riscv-bringup/releases/download/v1.0/docker-v20.10.2-dev_riscv64.deb
-apt install ./docker-v20.10.2-dev_riscv64.deb -y
+dpkg -i ./docker-v20.10.2-dev_riscv64.deb -y
 ```
 
 Then you can start docker service manually if it is not working.
@@ -145,11 +147,45 @@ Server:
   GitCommit:        b9f42a0
 ```
 
-## Start your first Docker container
+### Start your first Docker container
 
 We will use `carlosedp/echo_on_riscv` to start it.
 
 ```bash
 docker run -d -p 8080:8080 carlosedp/echo_on_riscv
 curl http://localhost:8080
+```
+
+## Kubernetes
+
+### Install Kubernetes
+
+```bash
+sudo apt update
+sudo apt install -y conntrack ebtables socat
+
+sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+sudo update-alternatives --set arptables /usr/sbin/arptables-legacy
+sudo update-alternatives --set ebtables /usr/sbin/ebtables-legacy
+
+wget https://github.com/carlosedp/riscv-bringup/releases/download/v1.0/kubernetes_1.16.0_riscv64.deb
+sudo dpkg -i kubernetes_1.16.0_riscv64.deb
+
+# Pre-fetch Kubernetes images
+sudo kubeadm config images pull --image-repository=carlosedp --kubernetes-version 1.16.0
+
+# Init cluster
+sudo kubeadm init --image-repository=carlosedp --kubernetes-version 1.16.0 --ignore-preflight-errors SystemVerification,KubeletVersion --pod-network-cidr=10.244.0.0/16
+
+# Adjust livenessProbe for apiserver
+sudo cat /etc/kubernetes/manifests/kube-apiserver.yaml | sed -e 's/\(\s*initialDelaySeconds\).*/\1: 150/'
+sudo cat /etc/kubernetes/manifests/kube-apiserver.yaml | sed -e 's/\(\s*timeoutSeconds\).*/\1: 60/'
+
+# Deploy Flannel network
+kubectl apply -f https://gist.github.com/carlosedp/337b99a98cdcf5962f4a0e24a778994c/raw/kube-flannel.yml
+
+#Allow pod scheduling on master node
+
+kubectl taint nodes --all node-role.kubernetes.io/master-
 ```
