@@ -25,3 +25,9 @@ make CROSS_COMPILE=riscv64-unknown-linux-gnu- PLATFORM=generic FW_PAYLOAD_PATH=<
 ## 测试
 
 结果为 `opensbi/build/platform/generic/firmware/fw_payload.elf`。其他组件也可以在此找到。
+
+### 启动 qemu
+
+```bash
+riscv64-softmmu/qemu-system-riscv64 -M virt -m 256M -nographic -bios ./build/platform/generic/firmware/fw_payload.elf
+```
