@@ -127,81 +127,99 @@ exit
 
 由于 `chroot` 后没有网络，需要在外部准备文件后在内部打包安装。
 
+### 安装打包依赖
+
+```bash
+apt install dpkg-dev
+```
+
 ### 下载包
 
-使用 `apt` 工具下载包。
+首先通过 `apt source` 下载源代码。
+
+> 提示：你需要在 `/etc/apt/sources.list` 中设定 `deb-src` 以启用源代码源。
 
 ```bash
-apt download neofetch
-Get:1 https://mirrors.tuna.tsinghua.edu.cn/ubuntu jammy/universe amd64 neofetch all 7.1.0-3 [84.3 kB]
-Fetched 84.3 kB in 1s (130 kB/s)
-W: Download is performed unsandboxed as root as file '/mnt/debian/root/neofetch_7.1.0-3_all.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)
+apt source neofetch
+正在读取软件包列表... 完成
+提示：neofetch 的打包工作被维护于以下位置的 Git 版本控制系统中：
+https://salsa.debian.org/debian/neofetch.git
+请使用：
+git clone https://salsa.debian.org/debian/neofetch.git
+获得该软件包的最近更新(可能尚未正式发布)。
+需要下载 83.6 kB 的源代码包。
+获取:1 https://mirrors.bfsu.edu.cn/ubuntu-ports jammy/universe neofetch 7.1.0-3 (dsc) [1,823 B]
+获取:2 https://mirrors.bfsu.edu.cn/ubuntu-ports jammy/universe neofetch 7.1.0-3 (tar) [78.9 kB]
+获取:3 https://mirrors.bfsu.edu.cn/ubuntu-ports jammy/universe neofetch 7.1.0-3 (diff) [2,852 B]
 ```
 
-使用 `dpkg` 解包，使用`-x`选项解包文件，`-e`选项解包控制文件。
+顺利完成后，源代码将会解压到 `neofetch-7.1.0` 中，进入它。
 
-```bash
-dpkg -x neofetch_7.1.0-3_all.deb ./neo
-dpkg -X neofetch_7.1.0-3_all.deb ./neo
-./
-./usr/
-./usr/bin/
-./usr/bin/neofetch
-./usr/share/
-./usr/share/doc/
-./usr/share/doc/neofetch/
-./usr/share/doc/neofetch/changelog.Debian.gz
-./usr/share/doc/neofetch/copyright
-./usr/share/man/
-./usr/share/man/man1/
-./usr/share/man/man1/neofetch.1.gz
-dpkg -e neofetch_7.1.0-3_all.deb ./neo/DEBIAN
-tree
-├── neo
-│   ├── DEBIAN
-│   │   ├── control
-│   │   └── md5sums
-│   └── usr
-│       ├── bin
-│       │   └── neofetch
-│       └── share
-│           ├── doc
-│           │   └── neofetch
-│           │       ├── changelog.Debian.gz
-│           │       └── copyright
-│           └── man
-│               └── man1
-│                   └── neofetch.1.gz
-└── neofetch_7.1.0-3_all.deb
+然后编辑 `debian/changelog`，在文件头部按照格式添加更新记录。例如
+
+```text
+neofetch (8.0.0-1) unstable; urgency=medium
+
+  * Upgrade the version number
+
+ -- Ariel Xiong <ArielHeleneto@outlook.com>  Thu, 22 Sep 2022 18:25:49 +0800
 ```
 
-修改控制文件。
+在文件夹中打包。
 
 ```bash
-nano ./neo/DEBIAN/control
+dpkg-buildpackage -us -uc -sa -nc -d -Jauto
+dpkg-buildpackage: info: 源码包 neofetch
+dpkg-buildpackage: info: 源码版本 8.0.0-1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: 源码修改者 Ariel Xiong <ArielHeleneto@outlook.com>
+dpkg-buildpackage: info: 主机架构 riscv64
+ dpkg-source --before-build .
+ debian/rules build
+dh build
+   dh_update_autotools_config
+   dh_autoreconf
+   dh_auto_configure
+   dh_auto_build
+        make -j8 "INSTALL=install --strip-program=true"
+make[1]: 进入目录“/home/ubuntu/neofetch-7.1.0”
+Run 'make install' to install Neofetch.
+make[1]: 离开目录“/home/ubuntu/neofetch-7.1.0”
+   dh_auto_test
+   create-stamp debian/debhelper-build-stamp
+ fakeroot debian/rules binary
+dh binary
+   dh_testroot
+   dh_prep
+   dh_auto_install --destdir=debian/neofetch/
+        make -j8 install DESTDIR=/home/ubuntu/neofetch-7.1.0/debian/neofetch AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: 进入目录“/home/ubuntu/neofetch-7.1.0”
+make[1]: 离开目录“/home/ubuntu/neofetch-7.1.0”
+   dh_installdocs
+   dh_installchangelogs
+   dh_installman
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: 正在 '../neofetch_8.0.0-1_all.deb' 中构建软件包 'neofetch'。
+ dpkg-genbuildinfo --build=binary -O../neofetch_8.0.0-1_riscv64.buildinfo
+ dpkg-genchanges -sa --build=binary -O../neofetch_8.0.0-1_riscv64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
 ```
 
-修改 `Version` 参数以改变版本号。
-
-现在 `chroot` 到 RISC-V 系统中。
-
-重新打包。
+安装
 
 ```bash
-dpkg -b neo res.deb
-dpkg-deb: building package 'neofetch' in 'res.deb'.
-```
-
-安装重新制作的包。
-
-```bash
-dpkg  -i res.deb
-Selecting previously unselected package neofetch.
-(Reading database ... 160690 files and directories currently installed.)
-Preparing to unpack res.deb ...
-Unpacking neofetch (7.2.0-3) ...
-Setting up neofetch (7.2.0-3) ...
-Processing triggers for man-db (2.10.2-1) ...
+sudo apt install ./neofetch_8.0.0-1_all.deb
 ```
 
 最后输出包文件完成任务。
@@ -209,11 +227,11 @@ Processing triggers for man-db (2.10.2-1) ...
 ```bash
 apt policy neofetch
 neofetch:
-  Installed: 7.2.0-3
-  Candidate: 7.2.0-3
-  Version table:
- *** 7.2.0-3 100
+  已安装：8.0.0-1
+  候选： 8.0.0-1
+  版本列表：
+ *** 8.0.0-1 100
         100 /var/lib/dpkg/status
      7.1.0-3 500
-        500 https://mirrors.tuna.tsinghua.edu.cn/ubuntu jammy/universe riscv64 Packages
+        500 https://mirrors.bfsu.edu.cn/ubuntu-ports jammy/universe riscv64 Packages
 ```
