@@ -61,7 +61,7 @@ sudo mount rootfs.dde.ext4 /mnt/deepin-old
 sudo cp -r /mnt/deepin-old/* /mnt/deepin
 ```
 
-- 然后，清除root用户
+- 然后，清除root用户密码
 
 ```bash
 sudo nano /mnt/deepin/etc/shadow
