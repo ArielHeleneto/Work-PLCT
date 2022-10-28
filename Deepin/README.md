@@ -1,7 +1,7 @@
-# 在Ubuntu上构建Deepin RISC-V
+# 构建并运行Deepin RISC-V
 ## 操作步骤
 ### 第一步：先搭建RISC-V模拟环境
-- 这里我们使用qemu-system-riscv64来做虚拟机（ 包含在```qemu-system-misc```软件包中 ），需要qemu-img来创建镜像（ 包含在```qemu-utils```软件包中 ）
+- 以Ubuntu为例，这里我们使用qemu-system-riscv64来做虚拟机（ 包含在```qemu-system-misc```软件包中 ），需要qemu-img来创建镜像（ 包含在```qemu-utils```软件包中 ）
 
 ```bash
 sudo apt install qemu-system-misc qemu-utils
