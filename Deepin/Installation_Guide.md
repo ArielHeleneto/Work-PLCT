@@ -147,4 +147,4 @@ neofetch
 
 - 效果图 :)
 
-![在这里插入图片描述](./img/019df9eabe2d49149badc82f91a91f9f.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/019df9eabe2d49149badc82f91a91f9f.png)
