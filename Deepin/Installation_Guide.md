@@ -27,7 +27,7 @@ qemu-img create -f raw deepin.raw 8G
 - 设定变量（ 关闭终端后得重新设定 ）
 
 ```bash
-$LOOP=$(sudo losetup -f)
+LOOP=$(sudo losetup -f)
 ```
 
 - 下面，挂载这个新镜像并分区、格式化
