@@ -21,14 +21,8 @@ download() {
         then
             break
         fi
-
-        if ! wget "$1"
-        then 
-            echo -e "\e[31m Failed \e[0m"
-            echo "You should make wget available in your PATH!!!"
-            echo "Try to install wget with your package manager!!!"
-            exit 1
-        fi
+        
+        wget "$1"
         
     done
 }
