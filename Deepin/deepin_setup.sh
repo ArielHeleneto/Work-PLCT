@@ -28,7 +28,6 @@ build_vm() {
     while ! qemu-img create -f raw deepin.raw "$SIZE"G
     do
         echo -e "\e[31m Failed!!! \e[0m"
-        exit 1
     done
 
     LOOP=$(sudo losetup -f)

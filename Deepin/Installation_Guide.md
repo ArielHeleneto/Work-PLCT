@@ -12,11 +12,11 @@ sudo apt install qemu-system-misc qemu-utils
 ### 第二步：从中科院软件所镜像站下载rootfs
 
 ```bash
-wget https://mirror.iscas.ac.cn/deepin-riscv/deepin-stage1/rootfs.dde.ext4
+wget https://mirror.iscas.ac.cn/deepin-riscv/deepin-stage1/deepin-beige-stage1-dde.tar.gz
 ```
 
 ### 第三步：新建 QEMU 镜像并分区、格式化
-- rootfs 并非可启动镜像，并且空间有限，故我们应当重新创建一个镜像，将rootfs 的内容全部复制粘贴到上面去。
+- rootfs 并非可启动镜像，故我们应当重新创建一个镜像，将rootfs 的内容全部复制粘贴到上面去。
 
 - 创建镜像（ 这里设定其为8G大小，您可以改为您偏好的镜像大小 ）
 
@@ -30,7 +30,7 @@ qemu-img create -f raw deepin.raw 8G
 LOOP=$(sudo losetup -f)
 ```
 
-- 下面，挂载这个新镜像并分区、格式化
+- 下面，挂载镜像并分区、格式化
 
 ```bash
 sudo losetup -P $LOOP deepin.raw
@@ -47,18 +47,11 @@ sudo mkdir /mnt/deepin
 sudo mount "$LOOP"p1 /mnt/deepin
 ```
 
-### 第四步：拷贝文件到新镜像
-- 挂载老镜像
+### 第四步：拷贝文件到镜像
+- 将rootfs解压到镜像中
 
 ```bash
-sudo mkdir /mnt/deepin-old
-sudo mount rootfs.dde.ext4 /mnt/deepin-old
-```
-
-- 拷贝所有文件到新镜像中
-
-```bash
-sudo cp -r /mnt/deepin-old/* /mnt/deepin
+sudo tar zxvf ./deepin-beige-stage1-dde.tar.gz -C /mnt/deepin/
 ```
 
 - 然后，清除root用户密码
