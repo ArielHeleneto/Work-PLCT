@@ -64,13 +64,7 @@ sudo cp -r /mnt/deepin-old/* /mnt/deepin
 - 然后，清除root用户密码
 
 ```bash
-sudo nano /mnt/deepin/etc/shadow
-```
-
-- 将第一行改为
-
-```bash
-root::19292:0:99999:7:::
+sudo sed "1c root::19292:0:99999:7:::" /mnt/deepin/etc/shadow
 ```
 
 - 然后，添加软件源
