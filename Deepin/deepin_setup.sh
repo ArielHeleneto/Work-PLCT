@@ -92,9 +92,22 @@ build_vm() {
 
     # sudo cp -r ./deepin-beige-stage1-dde/* /mnt/deepin/
 
-    rm -r ./deepin-beige-stage1-dde*
+    # rm -r ./deepin-beige-stage1-dde*
 
-    sudo sed "1c root::19292:0:99999:7:::" /mnt/deepin/etc/shadow
+    # sudo sed "1c root::19292:0:99999:7:::" /mnt/deepin/etc/shadow
+
+    FLAG=0
+    for i in $(sudo cat /mnt/deepin/etc/shadow)
+    do
+        if [ $FLAG -eq 0 ]
+        then
+            echo "root::19292:0:99999:7:::" | sudo tee /mnt/deepin/etc/shadow
+            FLAG=1
+        else
+            echo "$i" | sudo tee -a /mnt/deepin/etc/shadow
+        fi
+    done
+
 
     echo "deb [trusted=yes] https://mirror.iscas.ac.cn/deepin-riscv/deepin-stage1/ beige main" | sudo tee /mnt/deepin/etc/apt/source.list &> /dev/null
 
