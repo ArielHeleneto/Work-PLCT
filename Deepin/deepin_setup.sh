@@ -1,13 +1,17 @@
 #!/bin/bash
-build_vm() {
-
-    echo "Starting Building The VM!!!"
-    if ! shasum ./deepin-beige-stage1-dde.tar.gz | grep 89c3b0361f161d4eba74e546a171a94b9facb194 &> /dev/null
+download() {
+    if ! shasum "$3" | grep "$2" &> /dev/null
     then
-        wget https://mirror.iscas.ac.cn/deepin-riscv/deepin-stage1/deepin-beige-stage1-dde.tar.gz
+        if ! wget "$1"
+        then 
+            echo -e "\e[31m Failed!!! \e[0m"
+            echo "You should make wget available in your PATH!!!"
+            echo "Try to install wget with your package manager!!!"
+            exit 1
+        fi
     fi
 
-    while ! shasum ./deepin-beige-stage1-dde.tar.gz | grep 89c3b0361f161d4eba74e546a171a94b9facb194 &> /dev/null
+    while ! shasum "$3" | grep "$2" &> /dev/null
     do
 
         printf "Download Failed!!! Do you Want To Download Again? [y/n] "
@@ -17,9 +21,41 @@ build_vm() {
         then
             break
         fi
-        wget https://mirror.iscas.ac.cn/deepin-riscv/deepin-stage1/deepin-beige-stage1-dde.tar.gz
+
+        if ! wget "$1"
+        then 
+            echo -e "\e[31m Failed \e[0m"
+            echo "You should make wget available in your PATH!!!"
+            echo "Try to install wget with your package manager!!!"
+            exit 1
+        fi
         
     done
+}
+
+build_vm() {
+
+    echo "Starting Building The VM!!!"
+    # if ! shasum ./deepin-beige-stage1-dde.tar.gz | grep 89c3b0361f161d4eba74e546a171a94b9facb194 &> /dev/null
+    # then
+    #     wget https://mirror.iscas.ac.cn/deepin-riscv/deepin-stage1/deepin-beige-stage1-dde.tar.gz
+    # fi
+
+    # while ! shasum ./deepin-beige-stage1-dde.tar.gz | grep 89c3b0361f161d4eba74e546a171a94b9facb194 &> /dev/null
+    # do
+
+    #     printf "Download Failed!!! Do you Want To Download Again? [y/n] "
+    #     read -r INPUT
+
+    #     if [[ $INPUT != "Y" && $INPUT != "y" ]]
+    #     then
+    #         break
+    #     fi
+    #     wget https://mirror.iscas.ac.cn/deepin-riscv/deepin-stage1/deepin-beige-stage1-dde.tar.gz
+        
+    # done
+
+    download https://mirror.iscas.ac.cn/deepin-riscv/deepin-stage1/deepin-beige-stage1-dde.tar.gz 89c3b0361f161d4eba74e546a171a94b9facb194 ./deepin-beige-stage1-dde.tar.gz
 
     echo "Now We Are Going To Create An Image"
     printf "Type In The Size Whose Unit Is Gigabyte (For Example, 8)> "
@@ -87,28 +123,28 @@ start_vm() {
         fi
     fi
 
-    while ! shasum ./fw_payload_oe.elf | grep d2097a5f5c0c9aa4ded9b80136355f81bf96d029 &> /dev/null
-    do
+    # while ! shasum ./fw_payload_oe.elf | grep d2097a5f5c0c9aa4ded9b80136355f81bf96d029 &> /dev/null
+    # do
 
-        printf "Download Failed!!! Do you Want To Download Again? [y/n] "
-        read -r INPUT
+    #     printf "Download Failed!!! Do you Want To Download Again? [y/n] "
+    #     read -r INPUT
 
-        if [[ $INPUT != "Y" && $INPUT != "y" ]]
-        then
-            break
-        fi
+    #     if [[ $INPUT != "Y" && $INPUT != "y" ]]
+    #     then
+    #         break
+    #     fi
 
-        if ! wget https://repo.openeuler.org/openEuler-preview/RISC-V/Image/fw_payload_oe.elf
-        then 
-            echo -e "\e[31m Failed \e[0m"
-            echo "You should make wget available in your PATH!!!"
-            echo "Try to install wget with your package manager!!!"
-            exit 1
-        fi
+    #     if ! wget https://repo.openeuler.org/openEuler-preview/RISC-V/Image/fw_payload_oe.elf
+    #     then 
+    #         echo -e "\e[31m Failed \e[0m"
+    #         echo "You should make wget available in your PATH!!!"
+    #         echo "Try to install wget with your package manager!!!"
+    #         exit 1
+    #     fi
         
-    done
+    # done
 
-    
+    download https://repo.openeuler.org/openEuler-preview/RISC-V/Image/fw_payload_oe.elf d2097a5f5c0c9aa4ded9b80136355f81bf96d029 ./fw_payload_oe.elf
 
     if ! ls ./deepin.raw &> /dev/null
     then
