@@ -2,8 +2,12 @@
 build_vm() {
 
     echo "Starting Building The VM!!!"
-    wget https://mirror.iscas.ac.cn/deepin-riscv/deepin-stage1/deepin-beige-stage1-dde.tar.gz
-    while shasum ./rootfs.dde.ext4 | grep 89c3b0361f161d4eba74e546a171a94b9facb194 &> /dev/null
+    if ! shasum ./deepin-beige-stage1-dde.tar.gz | grep 89c3b0361f161d4eba74e546a171a94b9facb194 &> /dev/null
+    then
+        wget https://mirror.iscas.ac.cn/deepin-riscv/deepin-stage1/deepin-beige-stage1-dde.tar.gz
+    fi
+
+    while ! shasum ./deepin-beige-stage1-dde.tar.gz | grep 89c3b0361f161d4eba74e546a171a94b9facb194 &> /dev/null
     do
 
         printf "Download Failed!!! Do you Want To Download Again? [y/n] "
@@ -17,21 +21,18 @@ build_vm() {
         
     done
 
-    printf "Now We Are Going To Create An Image, Type In The Size (For Example, 8G) >"
+    echo "Now We Are Going To Create An Image"
+    printf "Type In The Size Whose Unit Is Gigabyte (For Example, 8)> "
     read -r SIZE
 
-    if ! qemu-img create -f raw deepin.raw "$SIZE"
-    then
+    while ! qemu-img create -f raw deepin.raw "$SIZE"G
+    do
         echo -e "\e[31m Failed!!! \e[0m"
-        echo "You should make qemu-img available in your PATH!!!"
-        echo "Try to install qemu-utils or qemu-img with your package manager!!!"
         exit 1
-    fi
+    done
 
     LOOP=$(sudo losetup -f)
     sudo losetup -P "$LOOP" deepin.raw
-
-    sudo fdisk "$LOOP"
 
     if ! sudo parted -s "$LOOP" mklabel gpt
     then
@@ -56,9 +57,13 @@ build_vm() {
     sudo mkdir /mnt/deepin
     sudo mount "$LOOP"p1 /mnt/deepin
 
-    tar zxvf ./deepin-beige-stage1-dde.tar.gz
+    mkdir ./deepin-beige-stage1-dde
 
-    sudo cp -r ./deepin-beige-stage1-dde/* /mnt/deepin/
+    sudo tar zxvf ./deepin-beige-stage1-dde.tar.gz -C /mnt/deepin/
+
+    # sudo cp -r ./deepin-beige-stage1-dde/* /mnt/deepin/
+
+    rm -r ./deepin-beige-stage1-dde*
 
     sudo sed "1c root::19292:0:99999:7:::" /mnt/deepin/etc/shadow
 
@@ -72,7 +77,7 @@ build_vm() {
 
 start_vm() {
     
-    if ! ls ./fw_payload_oe.elf &> /dev/null
+    if ! shasum ./fw_payload_oe.elf | grep d2097a5f5c0c9aa4ded9b80136355f81bf96d029 &> /dev/null
     then
         if ! wget https://repo.openeuler.org/openEuler-preview/RISC-V/Image/fw_payload_oe.elf
         then 
@@ -106,7 +111,7 @@ start_vm() {
 
     
 
-    if ls ./deepin.raw &> /dev/null
+    if ! ls ./deepin.raw &> /dev/null
     then
         build_vm
     fi
