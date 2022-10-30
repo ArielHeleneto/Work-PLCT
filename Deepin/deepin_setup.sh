@@ -112,16 +112,16 @@ build_vm() {
 
 start_vm() {
     
-    if ! shasum ./fw_payload_oe.elf | grep d2097a5f5c0c9aa4ded9b80136355f81bf96d029 &> /dev/null
-    then
-        if ! wget https://repo.openeuler.org/openEuler-preview/RISC-V/Image/fw_payload_oe.elf
-        then 
-            echo -e "\e[31m Failed!!! \e[0m"
-            echo "You should make wget available in your PATH!!!"
-            echo "Try to install wget with your package manager!!!"
-            exit 1
-        fi
-    fi
+    # if ! shasum ./fw_payload_oe.elf | grep d2097a5f5c0c9aa4ded9b80136355f81bf96d029 &> /dev/null
+    # then
+    #     if ! wget https://repo.openeuler.org/openEuler-preview/RISC-V/Image/fw_payload_oe.elf
+    #     then 
+    #         echo -e "\e[31m Failed!!! \e[0m"
+    #         echo "You should make wget available in your PATH!!!"
+    #         echo "Try to install wget with your package manager!!!"
+    #         exit 1
+    #     fi
+    # fi
 
     # while ! shasum ./fw_payload_oe.elf | grep d2097a5f5c0c9aa4ded9b80136355f81bf96d029 &> /dev/null
     # do
