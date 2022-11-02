@@ -112,7 +112,7 @@ build_vm() {
     echo "deb [trusted=yes] https://mirror.iscas.ac.cn/deepin-riscv/deepin-stage1/ beige main" | sudo tee /mnt/deepin/etc/apt/source.list &> /dev/null
 
     sudo umount "$LOOP"p1
-    sudo umount rootfs.dde.ext4
+    # sudo umount rootfs.dde.ext4
     sudo losetup -D
 
 }
