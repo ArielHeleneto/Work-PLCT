@@ -183,12 +183,9 @@ start_vm() {
 
 }
 
-expr $1 + 0 &> /dev/null
-
-if [ $? -eq 0 ]
+if expr $1 + 0  &> /dev/null
 then
-    expr $2 + 0 &> /dev/null
-    if [ $? -eq 0 ]
+    if expr $2 + 0 &> /dev/null
     then
         start_vm $1 $2
     else
