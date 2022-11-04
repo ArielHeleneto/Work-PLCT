@@ -4,7 +4,13 @@
 
 - 戳这里 -> [安装手册链接](./Installation_Guide.md)
 
+## Linux 6.0.6 Kernel
+
+- 见fw_payload.elf
+
 ## deepin_setup
+
+- 注意：请保证在脚本同目录下有本文件夹的[fw_payload.elf](./fw_payload.elf)文件！
 
 <!-- - 注意：此脚本为半成品，攻城狮正在加紧赶工中（ -->
 

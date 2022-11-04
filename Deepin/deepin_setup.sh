@@ -151,7 +151,7 @@ start_vm() {
         
     # done
 
-    download https://repo.openeuler.org/openEuler-preview/RISC-V/Image/fw_payload_oe.elf d2097a5f5c0c9aa4ded9b80136355f81bf96d029 ./fw_payload_oe.elf
+#    download https://repo.openeuler.org/openEuler-preview/RISC-V/Image/fw_payload_oe.elf d2097a5f5c0c9aa4ded9b80136355f81bf96d029 ./fw_payload_oe.elf
 
     if ! ls ./deepin.raw &> /dev/null
     then
@@ -164,7 +164,7 @@ start_vm() {
         -nographic -machine virt \
         -smp "$THREADS" -m "$MEMORY"G \
         -device virtio-vga \
-        -kernel fw_payload_oe.elf \
+        -kernel fw_payload.elf \
         -drive file=deepin.raw,if=none,id=hd0 \
         -object rng-random,filename=/dev/urandom,id=rng0 \
         -device virtio-rng-device,rng=rng0 \
