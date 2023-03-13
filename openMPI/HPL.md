@@ -18,6 +18,8 @@ make PREFIX=$HOME/opt/OpenBLAS install
 
 此处我们需要安装 `openmpi` 和 `openmpi-devel` 两个包，提供程序和头文件。
 
+如果版本过低请换源为 `https://repo.tarsier-infra.com/openEuler-RISC-V/obs/22.03`。
+
 ```bash
 dnf install -y openmpi openmpi-devel
 ```
