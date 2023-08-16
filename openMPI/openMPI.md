@@ -4,8 +4,6 @@
 
 此处我们需要安装 `openmpi-devel` 包，提供程序和头文件。
 
-如果版本过低请换源为 `https://repo.tarsier-infra.com/openEuler-RISC-V/obs/22.03`。
-
 ```bash
 yum install -y openmpi-devel
 ```
