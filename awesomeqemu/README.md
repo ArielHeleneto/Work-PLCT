@@ -1,6 +1,6 @@
 # 通过 QEMU 仿真 RISC-V 环境并启动 OpenEuler RISC-V 系统
 
-> 修订日期 2022-08-23
+> 修订日期 2023-08-16
 
 ## 安装 QEMU
 
@@ -23,43 +23,13 @@ Copyright (c) 2003-2021 Fabrice Bellard and the QEMU Project developers
 
 ### 手动编译安装
 
-> 以下内容引用自 [通过 QEMU 仿真 RISC-V 环境并启动 OpenEuler RISC-V 系统](https://github.com/openeuler-mirror/RISC-V/blob/master/doc/tutorials/vm-qemu-oErv.md)，直接编译可能导致部分功能不可用，作者尚未确认该方案的可用性，也不对以下内容负责。
-
-TODO：增加编译安装的相关内容。
-
-> 修订者注: 建议优先考虑发行版提供的软件包或在有能力的情况下自行打包，**不鼓励** 非必要情况的编译安装。
->
-> 下述内容以 Ubuntu 为例
-
-- 安装必要的构建工具
-
-  `$ sudo apt install build-essential git libglib2.0-dev libfdt-dev libpixman-1-dev zlib1g-dev ninja-build`
-- 创建 /usr/local 下的目标目录 `$ sudo mkdir -p /usr/local/bin/qemu-riscv64`
-- 下载最新的 QEMU 源码包 (修订时为 7.0.0 版本) `$ wget https://download.qemu.org/qemu-7.0.0.tar.xz`
-- 解压源码包并切换目录 `$ tar xvJf qemu-7.0.0.tar.xz && cd qemu-7.0.0`
-- 配置编译选项 `$ sudo ./configure --target-list=riscv64-softmmu,riscv64-linux-user --prefix=/usr/local/bin/qemu-riscv64`
-  > `riscv64-softmmu` 为系统模式，`riscv64-linux-user` 为用户模式。为了测试方便，可以两个都安装
-- 编译安装 `$ sudo make && sudo make install`
-- 执行 `$ qemu-system-riscv64 --version`，如出现类似如下输出表示 QEMU 成功安装并正常工作。
-
-```` bash
-QEMU emulator version 7.0.0
-Copyright (c) 2003-2022 Fabrice Bellard and the QEMU Project developers
-````
+手动编译参见 [Qemu 编译](./build-qemu.md)。因不推荐自行编译 Qemu，本文不再赘述。
 
 ## 准备 openEuler RISC-V 磁盘映像
 
 ### 下载磁盘映像
 
 需要下载启动内核(`fw_payload_oe_qemuvirt.elf`)，桌面或非桌面的磁盘映像。
-
-#### 更新音频内核
-
-由于原内核没有音频驱动，可选用如下方案之一更新内核。
-
-- 在客户系统内安装 [内核](http://obs-backend.tarsier-infra.com:82/Factory:/RISC-V:/Kernel/22.03/riscv64/kernel-5.10.0-7.oe2203.riscv64.rpm) 软件包。（该方法对内核和磁盘映像分离的客户系统不起作用，该脚本不可用。）
-- 下载 [内核](http://obs-backend.tarsier-infra.com:82/Factory:/RISC-V:/Kernel/22.03/riscv64/opensbi-qemu-1.0-1.oe2203.riscv64.rpm) 软件包，解压找到 `fw_payload_oe_qemuvirt.elf` 并替换。
-- 本项目下有准备好的 [内核文件](https://github.com/ArielHeleneto/Work-PLCT/raw/master/awesomeqemu/fw_payload_oe_qemuvirt_new.elf)，替换即可。
 
 ### 下载目录
 
@@ -114,6 +84,90 @@ qemu-img rebase -b another.qcow2 test.qcow2
 
 ```bash
 qemu-img commit test.qcow2
+```
+
+#### 扩容根分区
+
+为了扩大根分区以获得更大的可使用空间，按照如下操作进行。
+
+扩大磁盘镜像。
+
+```bash
+qemu-img resize test.qcow2 +100G
+```
+
+启动虚拟机，使用下列指令检查磁盘大小。
+
+```bash
+lsblk
+```
+
+列出分区情况。
+
+```bash
+fdisk -l
+```
+
+修改根分区。
+
+```bash
+fdisk /dev/vda
+Welcome to fdisk (util-linux 2.35.2).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): p # 输出分区情况
+Disk /dev/vda: 70 GiB, 75161927680 bytes, 146800640 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x247032e6
+
+Device     Boot   Start      End  Sectors Size Id Type
+/dev/vda1          2048  4194303  4192256   2G  e W95 FAT16 (LBA)
+/dev/vda2       4194304 83886079 79691776  38G 83 Linux
+
+Command (m for help): d # 删除原有分区
+Partition number (1,2, default 2): 2
+
+Partition 2 has been deleted.
+
+Command (m for help): n # 新建分区
+Partition type
+   p   primary (1 primary, 0 extended, 3 free)
+   e   extended (container for logical partitions)
+Select (default p): p # 选择主分区
+Partition number (2-4, default 2): 2
+First sector (4194304-146800639, default 4194304): # 此处和上文的 /dev/vda2 的起始块应当一致
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (4194304-146800639, default 146800639): #保持默认直接分配到最尾端
+
+Created a new partition 2 of type 'Linux' and of size 68 GiB.
+Partition #2 contains a ext4 signature.Do you want to remove the signature? [Y]es/[N]o: n
+
+Command (m for help): p #再次检查
+
+Disk /dev/vda: 70 GiB, 75161927680 bytes, 146800640 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x247032e6
+
+Device     Boot   Start       End   Sectors Size Id Type
+/dev/vda1          2048   4194303   4192256   2G  e W95 FAT16 (LBA)
+/dev/vda2       4194304 146800639 142606336  68G 83 Linux
+
+Command (m for help): w # 写入到磁盘
+The partition table has been altered.
+Syncing disks.
+```
+
+更新磁盘信息。
+
+```bash
+resize2fs /dev/vda2
 ```
 
 ## 启动 openEuler RISC-V 虚拟机
