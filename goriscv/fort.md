@@ -185,6 +185,6 @@ END
 
 最后，在左侧 ”运行和调试“ 中选择 `Fortran Launch (GDB) with RISC-V` 并启动调试。
 
-![screen](./imgs/fort.png.png)
+![screen](./imgs/fort.png)
 
 如需在本机调试，直接在左侧 ”运行和调试“ 中选择 `Fortran Launch (GDB) on x86` 并启动调试。
