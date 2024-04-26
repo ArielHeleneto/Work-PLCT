@@ -264,3 +264,12 @@ Users online:   1
 ## 参考文献
 
 - [通过 QEMU 仿真 RISC-V 环境并启动 OpenEuler RISC-V 系统](https://github.com/openeuler-mirror/RISC-V/blob/master/doc/tutorials/vm-qemu-oErv.md)
+
+## 添加 RVV
+
+在 `start_vm.sh` 中的 `cmd` 添加下列行：
+
+```bash
+
+  -cpu rv64,zba=true,zbb=true,v=true,vlen=256,vext_spec=v1.0,rvv_ta_all_1s=true,rvv_ma_all_1s=true \
+```
