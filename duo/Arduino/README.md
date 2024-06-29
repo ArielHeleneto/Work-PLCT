@@ -48,3 +48,29 @@ Duo 的默认固件大核 Linux 系统会控制板载 LED 闪烁，这个是通�
 
 [闪烁](./record.mp4)
 
+## GPIO 测试
+
+在 Arduino IDE 写入下列测试程序，该程序功能实现的是设备 GPIO 20 脚位每秒钟变换一次电平（从高电平变换为低电平）来支持上传功能，之后点上传按钮进行测试。
+
+```cpp
+#define TEST_PIN 20  //0,1,2,14,15,19,20,21,22,24,25,26,27
+
+// the setup function runs once when you press reset or power the board
+void setup() {
+  pinMode(TEST_PIN, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(TEST_PIN, HIGH); // turn the TEST_PIN on (HIGH is the voltage level)
+  delay(1000);                  // wait for a second
+  digitalWrite(TEST_PIN, LOW);  // turn the TEST_PIN off by making the voltage LOW
+  delay(1000);                  // wait for a second
+}
+```
+
+将万用表正极连接到 GPIO 20 号（即板上 GP15），负极连接到 GND 脚，并调整为直流电压挡。观察现象。
+
+观察到万用表电压在 3.3V 和 0.1V 之间跳动，电压为一折线。
+
+[闪烁](./GPIO.mkv)
