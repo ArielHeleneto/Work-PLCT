@@ -73,4 +73,6 @@ void loop() {
 
 观察到万用表电压在 3.3V 和 0.1V 之间跳动，电压为一折线。
 
-[闪烁](./GPIO.mkv)
+[操作](./GPIO.mkv)
+
+[万用表](./GPIOrecord.mp4)
