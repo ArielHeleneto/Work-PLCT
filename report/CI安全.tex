@@ -1,0 +1,360 @@
+% !TeX encoding = UTF-8
+
+%% ------------------------------------------------------------------------
+%% Copyright (C) 2021-2023 SJTUG
+%% 
+%% SJTUBeamer Example Document by SJTUG
+%% 
+%% SJTUBeamer Example Document is licensed under a
+%% Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+%% 
+%% You should have received a copy of the license along with this
+%% work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
+%%
+%% For a quick start, check out src/doc/sjtubeamerquickstart.tex
+%% Join discussions: https://github.com/sjtug/SJTUBeamer/discussions
+%% -----------------------------------------------------------------------
+
+\documentclass[xcolor=table,dvipsnames,svgnames,aspectratio=169]{ctexbeamer}
+% 可以通过 fontset=macnew / fontset=ubuntu / fontset=windows 选项切换字体集；
+% 如遇无法显示的数学符号，尝试对 ctexbeamer 文档类添加 no-math 选项；
+% 写纯英文幻灯片可以改用 beamer 文档类。
+
+\usepackage{tikz}
+\usepackage[normalem]{ulem}
+\usetikzlibrary{arrows}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hologo}
+\usepackage{colortbl}
+\usepackage{shapepar}
+\usepackage{hyperxmp}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{tipa}
+\usepackage{multicol}
+\usepackage{datetime2}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+
+% 参考文献设置，使用 style=gb7714-2015 样式为标准顺序编码制，
+% 使用 style=gb7714-2015ay 样式可以改为著者-出版年制。
+% \usepackage[backend=biber,style=gb7714-2015]{biblatex}
+% \addbibresource{ref.bib}
+
+% 该行指定了图像的额外搜索路径
+\graphicspath{{figures/}}
+
+\hypersetup{
+  pdfcopyright       = {Licensed under CC-BY-SA 4.0. Some rights reserved.},
+  pdflicenseurl      = {http://creativecommons.org/licenses/by-sa/4.0/},
+  unicode            = true,
+  psdextra           = true,
+  pdfdisplaydoctitle = true
+}
+
+\pdfstringdefDisableCommands{
+  \let\\\relax
+  \let\quad\relax
+  \let\hspace\@gobble
+}
+
+% \renewcommand{\TeX}{\hologo{TeX}}
+% \renewcommand{\LaTeX}{\hologo{LaTeX}}
+% \newcommand{\BibTeX}{\hologo{BibTeX}}
+% \newcommand{\XeTeX}{\hologo{XeTeX}}
+% \newcommand{\pdfTeX}{\hologo{pdfTeX}}
+% \newcommand{\LuaTeX}{\hologo{LuaTeX}}
+% \newcommand{\MiKTeX}{\hologo{MiKTeX}}
+% \newcommand{\MacTeX}{Mac\hologo{TeX}}
+% \newcommand{\beamer}{\textsc{beamer}}
+% \newcommand{\XeLaTeX}{\hologo{Xe}\kern-.13em\LaTeX{}}
+% \newcommand{\pdfLaTeX}{pdf\LaTeX{}}
+% \newcommand{\LuaLaTeX}{Lua\LaTeX{}}
+% \def\TeXLive{\TeX{} Live}
+% \let\TL=\TeXLive
+
+% \newcommand{\SJTUThesis}{\textsc{SJTUThesis}}
+% \newcommand{\SJTUThesisVersion}{2.0.3}
+% \newcommand{\SJTUThesisDate}{2023/9/25}
+% \newcommand{\SJTUBeamer}{\textsc{SJTUBeamer}}
+% \newcommand{\SJTUBeamerVersion}{3.0.0}
+% \newcommand{\SJTUBeamerDate}{2022/11/22}
+
+% \newcommand\link[1]{\href{#1}{\faLink}}
+% \newcommand\pkg[1]{\texttt{#1}}
+
+% \def\cmd#1{\texttt{\color{structure}\footnotesize $\backslash$#1}}
+% \def\env#1{\texttt{\color{structure}\footnotesize #1}}
+% \def\cmdxmp#1#2#3{\small{\texttt{\color{structure}$\backslash$#1}\{#2\}
+% \hspace{1em}\\ $\Rightarrow$\hspace{1em} {#3}\par\vskip1em}}
+
+\usetheme[maxplus,blue,light]{sjtubeamer}
+\setbeameroption{show notes on second screen=bottom}
+% 使用 maxplus/max/min 切换标题页样式
+% 使用 red/blue 切换主色调
+% 使用 light/dark 切换亮/暗色模式
+% 使用外样式关键词以获得不同的边栏样式
+%   miniframes infolines  sidebar
+%   default    smoothbars split	 
+%   shadow     tree       smoothtree
+% 使用 topright/bottomright 切换徽标位置
+% 使用逗号分隔列表以同时使用多种选项
+
+% \setbeamertemplate{background}{}
+% 对于 max 主题，如果需要关闭正文背景图，请取消注释上一行。
+
+% \tikzexternalize[prefix=build/]
+% 如果您需要缓存 tikz 图像，请取消注释上一行，并在编译选项中添加 -shell-escape。
+
+\lstset{
+  language=[LaTeX]TeX,           % 更改高亮语言
+  texcsstyle=*\color{cprimary},  % 只在高亮 LaTeX 语言时必须
+  tabsize=2,
+  basicstyle=\ttfamily\scriptsize,%
+  keywordstyle=\color{cprimary},%
+  stringstyle=\color{csecondary},%
+  commentstyle=\color{ctertiary!50!gray},%
+  breaklines,%
+}
+\logo{}
+\author{熊家辉}
+\institute[萨塞克斯人工智能学院]{浙江工商大学}
+% \date{\the\year 年 \the\month 月}
+\date{2024 年 6 月 5 日}
+% \date{\today}
+\subject{RISCOF 初步}
+\keywords{CI, secure}
+
+\title[CI 安全初步] % 页脚显示标题
+{\textbf{CI 安全初步 - 从傲来操作系统开始}} % 首页标题
+
+\subtitle{PLCT Lab 每周技术分享}
+
+\begin{document}
+
+% 使用节目录
+\AtBeginSection[]{
+  \begin{frame}
+    %% 使用传统节目录，也可以将 subsectionstyle=... 换成 hideallsubsections 以隐藏所有小节信息
+    % \tableofcontents[currentsection,subsectionstyle=show/show/hide]
+    %% 或者使用节页
+    \sectionpage
+  \end{frame}
+}
+
+% 使用小节目录
+\AtBeginSubsection[]{		       % 在每小节开始
+  \begin{frame}
+    %% 使用传统小节目录
+    % \tableofcontents[currentsection,subsectionstyle=show/shaded/hide]
+    %% 或者使用小节页
+    \subsectionpage
+  \end{frame}
+}
+
+\maketitle
+
+% \begin{frame}
+%   \frametitle{来源}
+%   \begin{thebibliography}{00}
+%     \setbeamertemplate{bibliography item}[online]
+%     \bibitem{} Alexara Wu.
+%     \newblock 如何使用 \LaTeX{} 排版论文[EB/OL].
+%     \newblock 2021.
+%     \url{https://github.com/sjtug/sjtulib-latex-talk/tree/alexara-2021}
+%   \end{thebibliography}
+
+%   \vspace*{2ex}
+
+%   \begin{itemize}
+%     \item 本示例文档的源码结构适用于简短的单次报告，仅展示 \beamer{} 文档类的通
+%           用功能，更多地在使用 \SJTUBeamer{} 的样式信息。
+%     \item 为发挥 \SJTUBeamer{} 的全部功能，参见发布区
+%           \link{https://github.com/sjtug/SJTUBeamer/releases} 的快速入门、用户手
+%           册与开发文档。
+%     \item 就制作一组讲座而言，相关源码结构可以参考新讲座
+%           \link{https://github.com/sjtug/sjtulib-latex-talk/tree/logcreative-2022}。
+%           新讲座使用了社区版主题的同时也展示了 \SJTUBeamer{} 的特殊用法。
+%   \end{itemize}
+
+% \end{frame}
+
+\begin{frame}{目录}
+  \tableofcontents[hideallsubsections]	% 隐藏所有小节信息
+\end{frame}
+
+\section{傲来操作系统测试系统中的 CI 安全}
+
+\subsection{Class-test for Gitee}
+
+\begin{frame}
+  \frametitle{Class-test}
+
+  \href{https://gitee.com/LearningEulixOS/class-test-ci}{LearningEulixOS/class-test-ci} 是第一期傲来操作系统训练营的导学课。任务要求用 C 语言完成五个简单的题目。
+
+  \begin{itemize}
+    \item 输出 Hello World!
+    \item 打印出从 1 到 10 的整数序列。
+    \item 打印出 9x9 乘法表的一部分。
+    \item 查找 100 以内的最大素数、
+    \item 模拟约瑟夫问题，输出每一个被淘汰人的编号。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Class-test 评分方法}
+
+  在线的自动测试会在每次向仓库提交内容后自动运行，测试结果可以流水线页面查阅。
+
+  完成实验后，请上传至远程仓库运行 CI。详细执行情况与输出可在流水线页面查看。
+\end{frame}
+
+% \begin{frame}
+%   \frametitle{CI 分析}
+
+%   分析 CI 和首页的说明可知提交成绩的方法是。
+
+%   \begin{enumerate}
+%     \item \lstinline|make test-output|
+%     \item \lstinline|make save-test-results|
+%     \item \lstinline|curl -X POST "$POST_API" -H "accept: application/json;charset=utf-8" -H "Content-Type: application/json" -d "$(cat build/test_results.json)" -v|
+%   \end{enumerate}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{安全问题}
+
+%   分析日志可知 POST_API 是 https://api.learningcamp.cn/web/api/courseRank/createByThird
+
+%   向该地址发送 json 可以任意篡改成绩。（满分五分甚至可以改成100分）
+
+% \end{frame}
+
+\begin{frame}
+  \frametitle{结果}
+
+  \begin{figure}
+    \centering
+    \begin{stampbox}
+      \includegraphics
+      [height=.2\textheight]
+      {figures/res.png}
+    \end{stampbox}
+    \caption{实验结果}
+  \end{figure}
+
+\end{frame}
+
+\section{CI 的安全强化}
+
+\subsection{使用机密}
+
+\begin{frame}
+  \frametitle{机密应当加密存储}
+
+  敏感值绝不能以明文存储在工作流程文件中，而应存储为密码。
+
+  \note{敏感值绝不能以明文存储在工作流程文件中，而应存储为密码。 机密可在组织、存储库或环境级进行配置，使你可在 GitHub 中存储敏感信息。
+
+  机密使用 Libsodium 密封箱，以使其在到达 GitHub 前被加密。 当使用 UI 或通过 REST API 提交机密时会发生这种情况。 此客户端加密有助于最大程度地减少与 GitHub基础架构中的意外日志记录相关的风险（例如，异常日志和请求日志等）。 密钥在上传后，GitHub 可对其进行解密，以便它能够被注入工作流程运行时。
+  
+  为了帮助防止意外泄露，GitHub 使用一种机制尝试对运行日志中显示的任何密码进行编校。 此编辑会寻找作业使用的任何已配置机密的精确匹配项，以及值的常见编码，如 Base64。 但是，由于密码值可以通过多种方式转换，因此不能保证此编校。 此外，运行器只能对当前作业使用的机密进行编辑。 因此，你应该采取某些积极主动的步骤和良好的做法，以帮助确保密码得到编校， 并限制与密码相关的其他风险：}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{切勿将结构化数据用作机密}
+
+  不要使用 JSON、XML 或 YAML（或类似）的 Blob 来封装密码值.
+
+  \note{结构化数据可能导致日志中的密码编校失败，因为编校很大程度上取决于查找特定密码值的完全匹配项。 例如，不要使用 JSON、XML 或 YAML（或类似）的 Blob 来封装密码值，否则会显著降低密码被正确编校的可能性。 而应为每个敏感值创建单独的密码。}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{注册工作流中使用的所有机密}
+
+  如果机密用于生成工作流中的另一敏感值，则该生成值应正式注册为机密。
+
+  \note{
+    如果机密用于生成工作流中的另一敏感值，则该生成值应正式注册为机密，以便在它出现在日志中时对其进行编辑。 例如，如果使用私钥生成签名的 JWT 来访问 Web API，请确保将该 JWT 注册为密码，否则，如果它进入日志输出，则不会得到编校。
+    注册密码也适用于任何类型的转换编码。 如果以某种方式（如 Base64 或 URL 编码）转换您的密码，请确保将新值也注册为密码。
+}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{机密的处理方式}
+
+  审核密码的使用方式，以帮助确保按预期方式处理密码。
+
+  \note{
+    
+  审核密码的使用方式，以帮助确保按预期方式处理密码。 您可以通过检查执行工作流程的仓库的源代码并检查工作流程中使用的任何操作来进行审核。 例如，确认它们未发送到非预期主机，或明确打印到日志输出。
+  在测试有效/无效输入后查看工作流程的运行日志，并确认密码已正确编校或未显示。 调用的命令或工具向 STDOUT 和 STDERR 发送错误的方式并不总是很明显，并且机密随后可能会出现在错误日志中。 因此，在测试有效和无效的输入后，最好是手动查看工作流程日志。 有关如何清理可能无意中包含敏感数据的工作流日志的信息，请参阅“使用工作流运行日志”。
+
+}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{使用最小范围的凭据}
+
+  确保工作流程中使用的凭据具有所需的最小权限。
+  \note{
+  确保工作流程中使用的凭据具有所需的最小权限，并请注意，任何对仓库具有写入权限的用户都可访问仓库中配置的所有密码。
+  Actions 可以从 githubtoken 上下文访问 GITHUBTOKEN 来使用它。 有关详细信息，请参阅“上下文”。 因此，应确保向 GITHUBTOKEN 授予所需的最低权限。 将 GITHUBTOKEN 的默认权限设置为只读取存储库内容是良好的安全做法。 然后可以根据需要增加工作流程文件中个别任务的权限。 有关详细信息，请参阅“自动令牌身份验证”。
+}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{审核并轮换已注册机密}
+
+  定期查查已注册的密码，以确认它们仍是必需的。 删除不再需要的密码。
+  \note{
+  
+  定期查查已注册的密码，以确认它们仍是必需的。 删除不再需要的密码。
+  定期轮换密码，以减小泄露的密码有效的时间窗。
+
+}
+\end{frame}
+
+\begin{frame}
+  \frametitle{考虑要求对访问机密进行审查}
+
+  审查者限制对环境机密访问。
+  \note{
+    您可以使用所需的审查者来保护环境机密。 在审查者批准之前，工作流程作业无法访问环境机密。 有关在环境中存储机密或需要审查环境的详细信息，请参阅“在 GitHub Actions 中使用机密”和“使用环境进行部署”。对存储库具有写入访问权限的任何用户都有权读取存储库中配置的所有机密。 因此，应确保工作流中使用的凭据具有所需的最低权限。
+
+}
+\end{frame}
+
+\subsection{了解脚本注入的风险}
+
+\begin{frame}<1-2>
+  \frametitle{考虑要求对访问机密进行审查}
+
+  审查者限制对环境机密访问。
+  \note<1>{
+    创建工作流、自定义操作和复合操作操作时，应始终考虑代码是否可能执行来自攻击者的不受信任的输入。 当攻击者将恶意命令和脚本添加到上下文时可能发生这种情况。 当您的工作流程运行时，这些字符串可能会被解释为代码，然后在运行器上执行。
+
+    攻击者可以将其自己的恶意内容添加到 github 上下文中，这应被视为潜在的不受信任的输入。 这些上下文通常以 body、defaultbranch、email、headref、label、message、name、pagename、ref 和 title 结尾。 例如：github.event.issue.title 或 github.event.pullrequest.body。
+    
+    您应该确保这些值不会直接流入工作流程、操作、API 调用，或任何可能被解释为可执行代码的其它地方。 通过采用您将用于任何其他特权应用程序代码的相同防御编程姿态，，您可以帮助安全保护 GitHub Actions 的使用。 若要了解攻击者可能采取的某些步骤，请参阅“GitHub Actions 的安全强化”。
+    
+    
+}
+ \note<2>{此外，还有其他不太明显的潜在不信任输入来源，如分支名称和电子邮件地址，这些输入在允许的内容方面可能相当灵活。 例如 将是一个有效的分支名称，并将成为目标存储库可能的攻击途径。
+    
+ 以下部分解释了如何帮助降低脚本注入的风险。
+
+ 此示例易受脚本注入的影响，因为 run 命令在运行器的临时 shell 脚本中执行。 在 shell 脚本运行之前，内的表达式被评估后替换为结果值，这使它易受 shell 命令注入的攻击。
+
+ 使用操作而不是内联脚本、使用中间环境变量}
+\end{frame}
+
+\makebottom
+
+\end{document}

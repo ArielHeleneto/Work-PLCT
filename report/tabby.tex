@@ -1,0 +1,320 @@
+% !TeX encoding = UTF-8
+
+%% ------------------------------------------------------------------------
+%% Copyright (C) 2021-2023 SJTUG
+%% 
+%% SJTUBeamer Example Document by SJTUG
+%% 
+%% SJTUBeamer Example Document is licensed under a
+%% Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+%% 
+%% You should have received a copy of the license along with this
+%% work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
+%%
+%% For a quick start, check out src/doc/sjtubeamerquickstart.tex
+%% Join discussions: https://github.com/sjtug/SJTUBeamer/discussions
+%% -----------------------------------------------------------------------
+
+\documentclass[xcolor=table,dvipsnames,svgnames,aspectratio=169]{ctexbeamer}
+% 可以通过 fontset=macnew / fontset=ubuntu / fontset=windows 选项切换字体集；
+% 如遇无法显示的数学符号，尝试对 ctexbeamer 文档类添加 no-math 选项；
+% 写纯英文幻灯片可以改用 beamer 文档类。
+
+\usepackage{tikz}
+\usepackage[normalem]{ulem}
+\usetikzlibrary{arrows}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hologo}
+\usepackage{colortbl}
+\usepackage{shapepar}
+\usepackage{hyperxmp}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{tipa}
+\usepackage{multicol}
+\usepackage{datetime2}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+% 量和单位
+\usepackage{siunitx}
+%si格式
+\sisetup{
+  separate-uncertainty = true,
+  inter-unit-product = \ensuremath{{}\cdot{}}
+}
+
+% 参考文献设置，使用 style=gb7714-2015 样式为标准顺序编码制，
+% 使用 style=gb7714-2015ay 样式可以改为著者-出版年制。
+% \usepackage[backend=biber,style=gb7714-2015]{biblatex}
+% \addbibresource{ref.bib}
+
+% 该行指定了图像的额外搜索路径
+\graphicspath{{figures/}}
+
+\hypersetup{
+  pdfcopyright       = {Licensed under CC-BY-SA 4.0. Some rights reserved.},
+  pdflicenseurl      = {http://creativecommons.org/licenses/by-sa/4.0/},
+  unicode            = true,
+  psdextra           = true,
+  pdfdisplaydoctitle = true
+}
+
+\pdfstringdefDisableCommands{
+  \let\\\relax
+  \let\quad\relax
+  \let\hspace\@gobble
+}
+
+% \renewcommand{\TeX}{\hologo{TeX}}
+% \renewcommand{\LaTeX}{\hologo{LaTeX}}
+% \newcommand{\BibTeX}{\hologo{BibTeX}}
+% \newcommand{\XeTeX}{\hologo{XeTeX}}
+% \newcommand{\pdfTeX}{\hologo{pdfTeX}}
+% \newcommand{\LuaTeX}{\hologo{LuaTeX}}
+% \newcommand{\MiKTeX}{\hologo{MiKTeX}}
+% \newcommand{\MacTeX}{Mac\hologo{TeX}}
+% \newcommand{\beamer}{\textsc{beamer}}
+% \newcommand{\XeLaTeX}{\hologo{Xe}\kern-.13em\LaTeX{}}
+% \newcommand{\pdfLaTeX}{pdf\LaTeX{}}
+% \newcommand{\LuaLaTeX}{Lua\LaTeX{}}
+% \def\TeXLive{\TeX{} Live}
+% \let\TL=\TeXLive
+
+% \newcommand{\SJTUThesis}{\textsc{SJTUThesis}}
+% \newcommand{\SJTUThesisVersion}{2.0.3}
+% \newcommand{\SJTUThesisDate}{2023/9/25}
+% \newcommand{\SJTUBeamer}{\textsc{SJTUBeamer}}
+% \newcommand{\SJTUBeamerVersion}{3.0.0}
+% \newcommand{\SJTUBeamerDate}{2022/11/22}
+
+% \newcommand\link[1]{\href{#1}{\faLink}}
+% \newcommand\pkg[1]{\texttt{#1}}
+
+% \def\cmd#1{\texttt{\color{structure}\footnotesize $\backslash$#1}}
+% \def\env#1{\texttt{\color{structure}\footnotesize #1}}
+% \def\cmdxmp#1#2#3{\small{\texttt{\color{structure}$\backslash$#1}\{#2\}
+% \hspace{1em}\\ $\Rightarrow$\hspace{1em} {#3}\par\vskip1em}}
+
+\usetheme[maxplus,blue,light]{sjtubeamer}
+\setbeameroption{show notes on second screen=bottom}
+% 使用 maxplus/max/min 切换标题页样式
+% 使用 red/blue 切换主色调
+% 使用 light/dark 切换亮/暗色模式
+% 使用外样式关键词以获得不同的边栏样式
+%   miniframes infolines  sidebar
+%   default    smoothbars split	 
+%   shadow     tree       smoothtree
+% 使用 topright/bottomright 切换徽标位置
+% 使用逗号分隔列表以同时使用多种选项
+
+% \setbeamertemplate{background}{}
+% 对于 max 主题，如果需要关闭正文背景图，请取消注释上一行。
+
+% \tikzexternalize[prefix=build/]
+% 如果您需要缓存 tikz 图像，请取消注释上一行，并在编译选项中添加 -shell-escape。
+
+\lstset{
+  language=[LaTeX]TeX,           % 更改高亮语言
+  texcsstyle=*\color{cprimary},  % 只在高亮 LaTeX 语言时必须
+  tabsize=2,
+  basicstyle=\ttfamily\scriptsize,%
+  keywordstyle=\color{cprimary},%
+  stringstyle=\color{csecondary},%
+  commentstyle=\color{ctertiary!50!gray},%
+  breaklines,%
+}
+\logo{}
+\author{熊家辉}
+\institute[萨塞克斯人工智能学院]{浙江工商大学}
+% \date{\the\year 年 \the\month 月}
+\date{2024 年 6 月 5 日}
+% \date{\today}
+\subject{RISCOF 初步}
+\keywords{CI, secure}
+
+\title[Tabby Terminals] % 页脚显示标题
+{\textbf{Tabby Terminals 系列工具}} % 首页标题
+
+\subtitle{PLCT Lab 每周技术分享}
+
+\begin{document}
+
+% 使用节目录
+\AtBeginSection[]{
+  \begin{frame}
+    %% 使用传统节目录，也可以将 subsectionstyle=... 换成 hideallsubsections 以隐藏所有小节信息
+    % \tableofcontents[currentsection,subsectionstyle=show/show/hide]
+    %% 或者使用节页
+    \sectionpage
+  \end{frame}
+}
+
+% 使用小节目录
+\AtBeginSubsection[]{		       % 在每小节开始
+  \begin{frame}
+    %% 使用传统小节目录
+    % \tableofcontents[currentsection,subsectionstyle=show/shaded/hide]
+    %% 或者使用小节页
+    \subsectionpage
+  \end{frame}
+}
+
+\maketitle
+
+% \begin{frame}
+%   \frametitle{来源}
+%   \begin{thebibliography}{00}
+%     \setbeamertemplate{bibliography item}[online]
+%     \bibitem{} Alexara Wu.
+%     \newblock 如何使用 \LaTeX{} 排版论文[EB/OL].
+%     \newblock 2021.
+%     \url{https://github.com/sjtug/sjtulib-latex-talk/tree/alexara-2021}
+%   \end{thebibliography}
+
+%   \vspace*{2ex}
+
+%   \begin{itemize}
+%     \item 本示例文档的源码结构适用于简短的单次报告，仅展示 \beamer{} 文档类的通
+%           用功能，更多地在使用 \SJTUBeamer{} 的样式信息。
+%     \item 为发挥 \SJTUBeamer{} 的全部功能，参见发布区
+%           \link{https://github.com/sjtug/SJTUBeamer/releases} 的快速入门、用户手
+%           册与开发文档。
+%     \item 就制作一组讲座而言，相关源码结构可以参考新讲座
+%           \link{https://github.com/sjtug/sjtulib-latex-talk/tree/logcreative-2022}。
+%           新讲座使用了社区版主题的同时也展示了 \SJTUBeamer{} 的特殊用法。
+%   \end{itemize}
+
+% \end{frame}
+
+\begin{frame}{目录}
+  \tableofcontents[hideallsubsections]	% 隐藏所有小节信息
+\end{frame}
+
+\section{Tabby Terminal}
+
+\subsection{简介}
+
+\begin{frame}[allowframebreaks]
+  \frametitle{Tabby 简介}
+
+  \href{https://github.com/Eugeny/tabby}{Tabby} (前身是 Terminus) 是一个可高度配置的终端模拟器和 SSH 或串口客户端，支持 Windows，macOS 和 Linux。
+
+  \begin{itemize}
+    \item 集成 SSH，Telnet 客户端和连接管理器
+    \item 集成串行终端
+    \item 定制主题和配色方案
+    \item 完全可配置的快捷键和多键快捷键
+    \item 分体式窗格
+    \item 自动保存标签页
+    \item 支持 PowerShell（和 PS Core）、WSL、Git-Bash、Cygwin、MSYS2、Cmder 和 CMD
+    \item 在 SSH 会话中通过 Zmodem 进行直接文件传输
+    \item 完整的 Unicode 支持，包括双角字符
+    \item 不会因快速的输出而卡住
+    \item Windows 上舒适的 shell 体验，包括 tab 自动补全（通过 Clink）
+    \item 为 SSH secrets 和设置集成了加密容器
+    \item SSH、SFTP 和 Telnet 客户端可用作 Web 应用（也可托管）
+    \item 如果在 Tabby.exe 所在的目录创建一个名为data文件夹，Tabby 将可以在 Windows 上作为便携式的应用程序运行。
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Tabby 是什么}
+
+Tabby 是 Windows 标准终端 (conhost)、PowerShell ISE、PuTTY、macOS Terminal.app 和 iTerm 的替代品
+
+Tabby 不是一个全新的 shell，也不是 MinGW 或 Cygwin 的替代品。它也不是轻量级的。 在 Windows 上运行一个 Tabby 大约需要 $\SI{360}{MB}$ 内存。
+\end{frame}
+
+\subsection{功能}
+
+\begin{frame}
+  \frametitle{Tabby 支持的 SSH}
+
+  \begin{itemize}
+    \item 带有连接管理器的 SSH2 客户端
+    \item X11和端口转发
+    \item 自动跳转主机管理
+    \item 代理转发（包括 Pageant 和 Windows 原生 OpenSSH 代理）
+    \item 登录脚本
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Tabby 支持的串行终端}
+
+  \begin{itemize}
+    \item 保存连接
+    \item 逐行读取的输入支持
+    \item 可选的十六进制逐字节输入和十六进制转储输出
+    \item 换行转换
+    \item 自动重连
+  \end{itemize}
+
+\end{frame}
+\begin{frame}[allowframebreaks]
+  \frametitle{Tabby 的一些插件}
+  插件和主题可以直接在 Tabby 设置中安装。
+
+  \begin{itemize}
+    \item clickable-links - 使终端中的路径和 URL 可点击
+    \item docker - 连接 Docker 容器
+    \item title-control - 允许通过提供要删除的前缀、后缀和/或字符串来修改标签页的标题
+    \item quick-cmds - 快速向一个或所有标签页发送命令
+    \item save-output - 将终端输出记录到文件中
+    \item sync-config - 将配置同步到 Gist 或 Gitee
+    \item clippy - 一个可以一直烦你的示例插件
+    \item workspace-manager - 允许根据给定的配置创建自定义工作区配置文件
+    \item search-in-browser - 从 Tabby 标签页带有选中的文本来打开系统默认浏览器
+    \item sftp-tab - 为ssh连接打开类似SecureCRT的sftp标签页
+  \end{itemize}
+
+\end{frame}
+
+\section{Tabby Web}
+
+\subsection{简介}
+
+\begin{frame}
+  \frametitle{Tabby-web 简介}
+
+  \href{https://github.com/Eugeny/tabby-web}{Tabby-web} 将 Tabby Terminal 作为 Web 应用程序提供，同时管理多个配置文件、身份验证并通过单独的网关服务提供 TCP 连接。
+
+\end{frame}
+
+\subsection{需求}
+
+\begin{frame}
+  \frametitle{Tabby 是什么}
+  
+  \begin{itemize}
+    \item Python 3.7+
+    \item 带 Django 支持的数据库（MariaDB, Postgres, SQLite）
+    \item 存储（如本地存储，S3存储等，只要 \lstinline|fsspec| 支持即可）
+  \end{itemize}
+\end{frame}
+
+\subsection{使用 docker 启动}
+
+\begin{frame}[fragile]
+  \frametitle{Tabby 支持的 SSH}
+  \begin{codeblock}[language=bash]{工具链编译}
+docker-compose up -e SOCIAL_AUTH_GITHUB_KEY=xxx -e SOCIAL_AUTH_GITHUB_SECRET=yyy
+  \end{codeblock}
+
+  \note{
+    OAuth credentials from GitHub, GitLab, Google or Microsoft for authentication.
+    For SSH and Telnet: a tabby-connection-gateway to forward traffic.
+    Docker BuildKit: export DOCKERBUILDKIT=1
+
+    will start Tabby Web on port 9090 with MariaDB as a storage backend.
+
+  For SSH and Telnet, once logged in, enter your connection gateway address and auth token in the settings.}
+  
+\end{frame}
+
+\makebottom
+
+\end{document}

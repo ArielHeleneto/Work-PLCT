@@ -1,0 +1,321 @@
+% !TeX encoding = UTF-8
+
+%% ------------------------------------------------------------------------
+%% Copyright (C) 2021-2023 SJTUG
+%% 
+%% SJTUBeamer Example Document by SJTUG
+%% 
+%% SJTUBeamer Example Document is licensed under a
+%% Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+%% 
+%% You should have received a copy of the license along with this
+%% work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
+%%
+%% For a quick start, check out src/doc/sjtubeamerquickstart.tex
+%% Join discussions: https://github.com/sjtug/SJTUBeamer/discussions
+%% -----------------------------------------------------------------------
+
+\documentclass[xcolor=table,dvipsnames,svgnames,aspectratio=169]{ctexbeamer}
+% 可以通过 fontset=macnew / fontset=ubuntu / fontset=windows 选项切换字体集；
+% 如遇无法显示的数学符号，尝试对 ctexbeamer 文档类添加 no-math 选项；
+% 写纯英文幻灯片可以改用 beamer 文档类。
+
+\usepackage{tikz}
+\usepackage[normalem]{ulem}
+\usetikzlibrary{arrows}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hologo}
+\usepackage{colortbl}
+\usepackage{shapepar}
+\usepackage{hyperxmp}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{tipa}
+\usepackage{multicol}
+\usepackage{datetime2}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+
+% 参考文献设置，使用 style=gb7714-2015 样式为标准顺序编码制，
+% 使用 style=gb7714-2015ay 样式可以改为著者-出版年制。
+% \usepackage[backend=biber,style=gb7714-2015]{biblatex}
+% \addbibresource{ref.bib}
+
+% 该行指定了图像的额外搜索路径
+\graphicspath{{figures/}}
+
+\hypersetup{
+  pdfcopyright       = {Licensed under CC-BY-SA 4.0. Some rights reserved.},
+  pdflicenseurl      = {http://creativecommons.org/licenses/by-sa/4.0/},
+  unicode            = true,
+  psdextra           = true,
+  pdfdisplaydoctitle = true
+}
+
+\pdfstringdefDisableCommands{
+  \let\\\relax
+  \let\quad\relax
+  \let\hspace\@gobble
+}
+
+% \renewcommand{\TeX}{\hologo{TeX}}
+% \renewcommand{\LaTeX}{\hologo{LaTeX}}
+% \newcommand{\BibTeX}{\hologo{BibTeX}}
+% \newcommand{\XeTeX}{\hologo{XeTeX}}
+% \newcommand{\pdfTeX}{\hologo{pdfTeX}}
+% \newcommand{\LuaTeX}{\hologo{LuaTeX}}
+% \newcommand{\MiKTeX}{\hologo{MiKTeX}}
+% \newcommand{\MacTeX}{Mac\hologo{TeX}}
+% \newcommand{\beamer}{\textsc{beamer}}
+% \newcommand{\XeLaTeX}{\hologo{Xe}\kern-.13em\LaTeX{}}
+% \newcommand{\pdfLaTeX}{pdf\LaTeX{}}
+% \newcommand{\LuaLaTeX}{Lua\LaTeX{}}
+% \def\TeXLive{\TeX{} Live}
+% \let\TL=\TeXLive
+
+% \newcommand{\SJTUThesis}{\textsc{SJTUThesis}}
+% \newcommand{\SJTUThesisVersion}{2.0.3}
+% \newcommand{\SJTUThesisDate}{2023/9/25}
+% \newcommand{\SJTUBeamer}{\textsc{SJTUBeamer}}
+% \newcommand{\SJTUBeamerVersion}{3.0.0}
+% \newcommand{\SJTUBeamerDate}{2022/11/22}
+
+% \newcommand\link[1]{\href{#1}{\faLink}}
+% \newcommand\pkg[1]{\texttt{#1}}
+
+% \def\cmd#1{\texttt{\color{structure}\footnotesize $\backslash$#1}}
+% \def\env#1{\texttt{\color{structure}\footnotesize #1}}
+% \def\cmdxmp#1#2#3{\small{\texttt{\color{structure}$\backslash$#1}\{#2\}
+% \hspace{1em}\\ $\Rightarrow$\hspace{1em} {#3}\par\vskip1em}}
+
+\usetheme[maxplus,blue,light]{sjtubeamer}
+\setbeameroption{show notes on second screen=bottom}
+% 使用 maxplus/max/min 切换标题页样式
+% 使用 red/blue 切换主色调
+% 使用 light/dark 切换亮/暗色模式
+% 使用外样式关键词以获得不同的边栏样式
+%   miniframes infolines  sidebar
+%   default    smoothbars split	 
+%   shadow     tree       smoothtree
+% 使用 topright/bottomright 切换徽标位置
+% 使用逗号分隔列表以同时使用多种选项
+
+% \setbeamertemplate{background}{}
+% 对于 max 主题，如果需要关闭正文背景图，请取消注释上一行。
+
+% \tikzexternalize[prefix=build/]
+% 如果您需要缓存 tikz 图像，请取消注释上一行，并在编译选项中添加 -shell-escape。
+
+\lstset{
+  language=[LaTeX]TeX,           % 更改高亮语言
+  texcsstyle=*\color{cprimary},  % 只在高亮 LaTeX 语言时必须
+  tabsize=2,
+  basicstyle=\ttfamily\scriptsize,%
+  keywordstyle=\color{cprimary},%
+  stringstyle=\color{csecondary},%
+  commentstyle=\color{ctertiary!50!gray},%
+  breaklines,%
+}
+\logo{}
+\author{熊家辉}
+\institute[萨塞克斯人工智能学院]{浙江工商大学}
+% \date{\the\year 年 \the\month 月}
+\date{2024 年 5 月 15 日}
+% \date{\today}
+\subject{开源协议与中国特色知识产权体系初步}
+\keywords{开源协议,知识产权,中国特色知识产权体系}
+
+\title[开源协议在中国] % 页脚显示标题
+{\textbf{开源协议与中国特色知识产权体系初步}} % 首页标题
+
+\subtitle{PLCT Lab 每周技术分享}
+
+\begin{document}
+
+% 使用节目录
+\AtBeginSection[]{
+  \begin{frame}
+    %% 使用传统节目录，也可以将 subsectionstyle=... 换成 hideallsubsections 以隐藏所有小节信息
+    % \tableofcontents[currentsection,subsectionstyle=show/show/hide]
+    %% 或者使用节页
+    \sectionpage
+  \end{frame}
+}
+
+% 使用小节目录
+\AtBeginSubsection[]{		       % 在每小节开始
+  \begin{frame}
+    %% 使用传统小节目录
+    % \tableofcontents[currentsection,subsectionstyle=show/shaded/hide]
+    %% 或者使用小节页
+    \subsectionpage
+  \end{frame}
+}
+
+\maketitle
+
+\begin{frame}{目录}
+  \tableofcontents[hideallsubsections]	% 隐藏所有小节信息
+\end{frame}
+
+\section{中国特色知识产权体系}
+
+\subsection{中华人民共和国著作权法}
+
+\begin{frame}
+  \frametitle{中华人民共和国著作权法}
+
+  《中华人民共和国著作权法》是为保护文学、艺术和科学作品作者的著作权，以及与著作权有关的权益，鼓励有益于社会主义精神文明、物质文明建设的作品的创作和传播，促进社会主义文化和科学事业的发展与繁荣制定的\textbf{法律}。
+
+  \begin{itemize}
+    \item 第三条本法所称的作品，是指文学、艺术和科学领域内具有独创性并能以一定形式表现的智力成果，包括：（一）文字作品；（二）口述作品；（三）音乐、戏剧、曲艺、舞蹈、杂技艺术作品；（四）美术、建筑作品；（五）摄影作品；\textbf{（六）视听作品；}（七）工程设计图、产品设计图、地图、示意图等图形作品和模型作品；\textbf{（八）计算机软件；}（九）符合作品特征的其他智力成果。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{著作权人}
+  《中华人民共和国著作权法》第九条规定著作权人包括：
+  \begin{itemize}
+    \item 作者；
+    \item 其他依照本法享有著作权的自然人、法人或者非法人组织。
+  \end{itemize}
+  《中华人民共和国著作权法》第十一条规定：
+
+  著作权属于作者，本法另有规定的除外。创作作品的自然人是作者。由法人或者非法人组织主持，代表法人或者非法人组织意志创作，并由法人或者非法人组织承担责任的作品，法人或者非法人组织视为作者。
+\end{frame}
+
+\begin{frame}
+  \frametitle{著作权中的人身权利}
+  《中华人民共和国著作权法》第十条规定著作权包括：
+  \begin{itemize}
+    \item \textbf{发表权}，即决定作品是否公之于众的权利；
+    \item \textbf{署名权}，即表明作者身份，在作品上署名的权利；
+    \item \textbf{修改权}，即修改或者授权他人修改作品的权利；
+    \item \textbf{保护作品完整权}，即保护作品不受歪曲、篡改的权利；
+  \end{itemize}
+
+  上述权利为人身权利，不能许可他人行使、转让。
+  % 著作权人可以许可他人行使前款第五项至第十七项规定的权利，并依照约定或者本法有关规定获得报酬。
+  
+  % 著作权人可以全部或者部分转让本条第一款第五项至第十七项规定的权利，并依照约定或者本法有关规定获得报酬。
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+  \frametitle{著作权中的财产权利}
+  《中华人民共和国著作权法》第十条规定著作权包括：
+
+  著作权人可以许可他人行使前款第五项至第十七项规定的权利，并依照约定或者本法有关规定获得报酬。著作权人可以全部或者部分转让本条第一款第五项至第十七项规定的权利，并依照约定或者本法有关规定获得报酬。
+  
+  \begin{itemize}
+    \item \textbf{复制权}，即以印刷、复印、拓印、录音、录像、翻录、翻拍、数字化等方式将作品制作一份或者多份的权利；
+    \item 发行权，即以出售或者赠与方式向公众提供作品的原件或者复制件的权利；
+    \item \textbf{出租权}，即有偿许可他人临时使用视听作品、计算机软件的原件或者复制件的权利，计算机软件不是出租的主要标的的除外；
+    \item 展览权，即公开陈列美术作品、摄影作品的原件或者复制件的权利；
+    \item 表演权，即公开表演作品，以及用各种手段公开播送作品的表演的权利；
+    \item 放映权，即通过放映机、幻灯机等技术设备公开再现美术、摄影、视听作品等的权利；
+    \item 广播权，即以有线或者无线方式公开传播或者转播作品，以及通过扩音器或者其他传送符号、声音、图像的类似工具向公众传播广播的作品的权利，但不包括本款第十二项规定的权利；
+    \item \textbf{信息网络传播权}，即以有线或者无线方式向公众提供，使公众可以在其选定的时间和地点获得作品的权利；
+    \item 摄制权，即以摄制视听作品的方法将作品固定在载体上的权利；
+    \item \textbf{改编权}，即改变作品，创作出具有独创性的新作品的权利；
+    \item 翻译权，即将作品从一种语言文字转换成另一种语言文字的权利；
+    \item 汇编权，即将作品或者作品的片段通过选择或者编排，汇集成新作品的权利；
+    \item \textbf{应当由著作权人享有的其他权利。}
+  \end{itemize}
+  
+\end{frame}
+
+\section{开源协议对著作权的约定}
+
+\subsection{开源协议对著作权的约定}
+
+\begin{frame}
+  \frametitle{一个栗子}
+  \begin{figure}
+    \centering
+    \begin{stampbox}
+      \includegraphics
+      [width=0.8\linewidth]
+      {figures/apache.png}
+    \end{stampbox}
+    \caption{Apache License 2.0}
+  \end{figure}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{一些简单的看开源软件的维度}
+  \begin{itemize}
+    \item 商业用途
+    \item 修改
+    \item 再分发
+    \item 专利使用
+    \item 私人使用
+    \item 商标使用
+    \item 责任
+    \item 保修
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{传染性分析}
+  \begin{figure}
+    \centering
+    \begin{stampbox}
+      \includegraphics
+      [height=.5\textheight]
+      {figures/chuanran.png}
+    \end{stampbox}
+    \caption{常用开源许可证的兼容性}
+  \end{figure}
+\end{frame}
+
+\subsection{一些常见问题}
+
+\begin{frame}
+  \frametitle{违反传染性开源许可证开发的软件是否可能被强制开源？}
+  从合同违约责任来看，若开源许可证规定衍生程序或修订版本应当使用相同的许可证公开源代码，但使用人未公开源代码，属于合同违约行为。而公开源代码属于非金钱债务。《中华人民共和国民法典》第五百八十条条规定，当事人一方不履行非金钱债务或者履行非金钱债务不符合约定的，对方可以请求履行，但是有下列情形之一的除外：
+
+  \begin{itemize}
+    \item 法律上或者事实上不能履行；
+    \item 债务的标的不适于强制履行或者履行费用过高；
+    \item 债权人在合理期限内未请求履行。
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{GPL 类传染性不能作为没有侵害著作权的抗辩}
+
+  浙江某公司、苏州某公司等侵害计算机软件著作权纠纷民事二审 (（2021）最高法知民终51号)%https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=CdfYWykqskJJUWRuK9e9suNni/D76WLFV7CJbyTUBYwJqVB8CKH2CZO3qNaLMqsJnUovwdnpQ0pwpwTUu5yR92cm/niwQNBlUuYaE6OC21MTfM50KLbovdej6lZnbpVW
+
+  \begin{itemize}
+    \item 浙江亿某通信科技公司就涉案软件是否享有软件著作权；涉案软件具有独创性且可以以有形形式复制，构成著作权法项下的作品，应当依法获得保护。他人未经网某科技（苏州）公司许可，不得擅自复制、修改、发行涉案软件，否则将构成侵害涉案软件著作权的违法行为。
+    \item 浙江亿某通信科技公司与苏州启某网络科技有限公司基于GPLv2协议提出的不侵权抗辩是否成立：在软件尚未被开源、该软件著作权人认为其软件不受GPLv2协议约束、被诉侵权人则依据GPLv2协议提出不侵权抗辩的侵权纠纷中，软件开发者自身是否违反GPLv2协议和是否享有软件著作权，是相对独立的两个法律问题，二者不宜混为一谈，以免不合理地剥夺或限制软件开发者基于其独创性贡献依法享有的著作权。
+  \end{itemize}
+  \note{
+    自2009年起，网经公司陆续投入研发经费约2589万元，完成了一款名称为“OfficeTen”的网关产品系统软件，2015年12月，网经公司在参加广东电信网关设备公开招标的过程中发现，亿邦公司也参加了此次招标。招投标过程中，网经公司听说亿邦公司曾向广东电信研究院的测试人员宣称，其产品与网经公司产品相同，并称技术来自网经公司的离职人员，故网经公司就此展开调查。2016年1月5日，网经公司从亿邦公司的经销商处购得亿邦公司生产的企业网关一台，经比对，该设备软件运行结果中存在网经公司软件源代码特殊标记，且两软件运行结果存在其他相同的指标。
+
+    第一，网经公司无权进行起诉。网经公司提出控告的涉案软件与其著作权登记的软件，以及鉴定所用软件是否一致，网经公司尚未予以证明。第二，相关软件是基于OpenWRT系统软件作为开源框架搭建的，而基于OpenWRT系统软件进行的二次开发，属于OpenWRT系统软件的衍生品，均要遵循GPR2.0协议的要求，权利属于OpenWRT系统软件开源代码权利人。网经公司所认为的其软件与启奥公司的软件存在相似性，若该相似性属实，也属于开源代码，故网经公司本案诉讼请求没有权利基础。
+  }
+\end{frame}
+
+\begin{frame}
+  \frametitle{使用开源语言软件开发的应用程序}
+
+  计算机语言软件本身具有工具属性，使用语言软件编程的软件与语言软件之间并未体现以后者为基础的派生关系，不属于语言软件的演绎作品，不受语言许可证约束。
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{上诉人浙江亿某通信科技公司、苏州启某网络科技有限公司因与被上诉人网某科技（苏州）公司及一审被告刘某甲、吴某某、谢某侵害计算机软件著作权纠纷一案}
+
+  本案两被上诉人主张著作权保护的 ShopNC 电商系统计算机软件由 PHP 语言编写，但计算机语言本身具有工具属性，以特定计算机语言编写的 ShopNC 软件作品通过作者创造性的智力劳动所表现的作品独创性与计算机语言之间并未体现以后者为基础的派生关系，故也并非属于 PHP 语言演绎作品。即使以演绎作品的角度审查，CC 许可证的上述开源传导性，指向的是原作品的演绎作品，涉案 ShopNC 软件也并不受软件手册 CC 许可证开源义务的约束。
+\note{被上诉人在开发软件时内置了大量的特定内容，若第三方运行使用了该软件，在输入被上诉人设定的特定路径以后，该特有内容就会在第三方的网站中呈现，本案中上诉人运行的软件中大量出现了被上诉人内置的特有内容，其中包括第4965号公证书第16页、18页、20页等均显示被上诉人的版权信息，而且涉案网站的网址输入相关的路径，页面显示出二维码，二维码经扫描后显示的也是被上诉人的官方网站。由此可见涉案软件中出现大量的被上诉人的信息，都说明了上诉人复制、使用和运行了被上诉人开发的软件，客观上可以认定上诉人存在侵权行为。}
+  % https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=aiiSJMJpIABnovH9cZF31V0HAiks05OMGNxUMFIc/bm6HiqlM4C+xZO3qNaLMqsJnUovwdnpQ0rlKwzxZ3tBAxPz6I5gkllmM0CLoD65xjhtt0O4zZ+zJWk6bfAgpdzC
+  
+\end{frame}
+
+\makebottom
+
+\end{document}
