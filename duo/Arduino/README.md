@@ -252,6 +252,69 @@ receive 1 bytes
 
 [操作](./I2C.mkv)
 
+## SPI 测试
+
+在 Arduino IDE 写入下列测试程序，该程序功能实现的是 SPI 环回测试。之后点上传按钮进行测试。
+
+```cpp
+#include <SPI.h>
+
+char str[]="hello world\n";
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(115200);
+  SPI.begin();
+}
+
+byte i = 0;
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  // digitalWrite(12, 1);
+  SPI.beginTransaction(SPISettings());
+  Serial.printf("transfer %c\n\r", str[i]);
+  char out = SPI.transfer(str[i++]);        // spi loop back
+  SPI.endTransaction();
+  Serial.printf("receive %x \n\r", out);
+  i %= 12;
+}
+```
+
+将 GP7 和 GP8、GP4 和 RX、GP5 和 TX、GND 和 G 相连，打开 UART 并设置波特率为 38400 观察现象。
+
+观察到串口输出下列内容。
+
+```
+receive a 
+transfer h
+receive 68 
+transfer e
+receive 65 
+transfer l
+receive 6c 
+transfer l
+receive 6c 
+transfer o
+receive 6f 
+transfer  
+receive 20 
+transfer w
+receive 77 
+transfer o
+receive 6f 
+transfer r
+receive 72 
+transfer l
+receive 6c 
+transfer d
+receive 64 
+transfer
+```
+
+波特率较高可能会产生乱码。
+
+[操作](./SPI.mkv)
+
 ## PWM 测试
 
 在 Arduino IDE 写入下列测试程序，该程序功能实现的是 PWM 调整电压。之后点上传按钮进行测试。
