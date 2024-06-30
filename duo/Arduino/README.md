@@ -76,3 +76,739 @@ void loop() {
 [操作](./GPIO.mkv)
 
 [万用表](./GPIOrecord.mp4)
+
+## UART 测试
+
+在 Arduino IDE 写入下列测试程序，该程序功能实现的是设备 UART 每秒钟输出字符串。之后点上传按钮进行测试。
+
+```cpp
+void setup() {
+  Serial.begin(150);
+}
+
+void loop() {
+  Serial.printf("Hullo Milk-V Duo!\r\n");
+  delay(100);
+}
+```
+
+将 GP4 和 RX、GP5 和 TX、GND 和 G 相连，打开 UART 并设置波特率为 150 观察现象。
+
+观察到串口输出 `Hullo Milk-V Duo!`。
+
+波特率较高可能会产生乱码。
+
+[操作](./UART.mkv)
+
+## I2C 测试
+
+在 Arduino IDE 写入下列测试程序，该程序功能实现的是设备 I2C 接收到的字符串输出到 UART。之后点上传按钮进行测试。
+
+```cpp
+#include <Wire.h>
+
+void receive(int a) {
+  Serial.printf("receive %d bytes\n\r", a);
+  while(a--) {
+    Serial.printf("%d \n\r", Wire1.read());
+  }
+}
+
+void setup() {
+  Serial.begin(38400);
+
+  Wire1.begin(0x50);
+  Wire1.onReceive(receive);
+
+  Wire.begin();
+  Serial.printf("test slave\n\r");
+  Wire1.print();
+}
+
+byte val = 0;
+
+void loop() {
+  Wire.beginTransmission(0x50);         // Transmit to device number 0x50
+  Serial.printf("send %d \n\r", ++val);
+  Wire.write(val);                      // Sends value byte
+  Wire.endTransmission();               // Stop transmitting
+  Wire1.onService();
+  delay(1000);
+}
+```
+
+将 GP0 和 GP9、GP1 和 GP8、GP4 和 RX、GP5 和 TX、GND 和 G 相连，打开 UART 并设置波特率为 38400 观察现象。
+
+观察到串口输出下列内容。
+
+```
+test slave
+Wire1: 1
+[iic_dump_register]: ===dump start
+IC_CON = 0x22
+IC_TAR = 0x55
+IC_SAR = 0x50
+IC_SS_SCL_HCNT = 0x1ab
+IC_SS_SCL_LCNT = 0x1f3
+IC_ENABLE = 0x1
+IC_STATUS = 0x6
+IC_INTR_MASK = 0x224
+IC_INTR_STAT = 0
+IC_RAW_INTR_STAT = 0x10
+[iic_dump_register]: ===dump end
+send 1 
+receive 1 bytes
+1 
+send 2 
+receive 1 bytes
+2 
+send 3 
+receive 1 bytes
+3 
+send 4 
+receive 1 bytes
+4 
+send 5 
+receive 1 bytes
+5 
+send 6 
+receive 1 bytes
+6 
+send 7 
+receive 1 bytes
+7 
+send 8 
+receive 1 bytes
+8 
+send 9 
+receive 1 bytes
+9 
+send 10 
+receive 1 bytes
+10 
+send 11 
+receive 1 bytes
+11 
+send 12 
+receive 1 bytes
+12 
+send 13 
+receive 1 bytes
+13 
+send 14 
+receive 1 bytes
+14 
+send 15 
+receive 1 bytes
+15 
+send 16 
+receive 1 bytes
+16 
+send 17 
+receive 1 bytes
+17 
+send 18 
+receive 1 bytes
+18 
+send 19 
+receive 1 bytes
+19 
+send 20 
+receive 1 bytes
+20 
+send 21 
+receive 1 bytes
+21 
+send 22 
+receive 1 bytes
+22 
+send 23 
+receive 1 bytes
+23 
+send 24 
+receive 1 bytes
+24 
+send 25 
+receive 1 bytes
+25 
+send 26 
+receive 1 bytes
+26 
+send 27 
+receive 1 bytes
+27 
+send 28 
+receive 1 bytes
+28 
+send 29 
+receive 1 bytes
+29 
+send 30 
+receive 1 bytes
+30 
+```
+
+波特率较高可能会产生乱码。
+
+[操作](./I2C.mkv)
+
+## PWM 测试
+
+在 Arduino IDE 写入下列测试程序，该程序功能实现的是 PWM 调整电压。之后点上传按钮进行测试。
+
+```cpp
+void setup() {
+  pinMode(9, OUTPUT);
+  Serial.begin(38400);
+}
+
+void loop() {
+  for(int i = 128; i < 255; i++)
+  {
+    analogWrite(9,i);
+    Serial.printf("i = %d \n\r", i);
+    delay(100);
+  }
+  for(int i = 255; i > 128; i--)
+  {
+    analogWrite(9,i);
+    Serial.printf("i = %d \n\r", i);
+    delay(100);
+  }
+}
+```
+
+将 GP6 和 万用表正极、GP4 和 RX、GP5 和 TX、GND 和 G 相连、GND 和万用表负极相连，打开 UART 并设置波特率为 38400 观察现象。设置万用表为直流电压模式。
+
+观察到串口输出下列内容。
+
+```
+i = 128 
+i = 129 
+i = 130 
+i = 131 
+i = 132 
+i = 133 
+i = 134 
+i = 135 
+i = 136 
+i = 137 
+i = 138 
+i = 139 
+i = 140 
+i = 141 
+i = 142 
+i = 143 
+i = 144 
+i = 145 
+i = 146 
+i = 147 
+i = 148 
+i = 149 
+i = 150 
+i = 151 
+i = 152 
+i = 153 
+i = 154 
+i = 155 
+i = 156 
+i = 157 
+i = 158 
+i = 159 
+i = 160 
+i = 161 
+i = 162 
+i = 163 
+i = 164 
+i = 165 
+i = 166 
+i = 167 
+i = 168 
+i = 169 
+i = 170 
+i = 171 
+i = 172 
+i = 173 
+i = 174 
+i = 175 
+i = 176 
+i = 177 
+i = 178 
+i = 179 
+i = 180 
+i = 181 
+i = 182 
+i = 183 
+i = 184 
+i = 185 
+i = 186 
+i = 187 
+i = 188 
+i = 189 
+i = 190 
+i = 191 
+i = 192 
+i = 193 
+i = 194 
+i = 195 
+i = 196 
+i = 197 
+i = 198 
+i = 199 
+i = 200 
+i = 201 
+i = 202 
+i = 203 
+i = 204 
+i = 205 
+i = 206 
+i = 207 
+i = 208 
+i = 209 
+i = 210 
+i = 211 
+i = 212 
+i = 213 
+i = 214 
+i = 215 
+i = 216 
+i = 217 
+i = 218 
+i = 219 
+i = 220 
+i = 221 
+i = 222 
+i = 223 
+i = 224 
+i = 225 
+i = 226 
+i = 227 
+i = 228 
+i = 229 
+i = 230 
+i = 231 
+i = 232 
+i = 233 
+i = 234 
+i = 235 
+i = 236 
+i = 237 
+i = 238 
+i = 239 
+i = 240 
+i = 241 
+i = 242 
+i = 243 
+i = 244 
+i = 245 
+i = 246 
+i = 247 
+i = 248 
+i = 249 
+i = 250 
+i = 251 
+i = 252 
+i = 253 
+i = 254 
+i = 255 
+i = 254 
+i = 253 
+i = 252 
+i = 251 
+i = 250 
+i = 249 
+i = 248 
+i = 247 
+i = 246 
+i = 245 
+i = 244 
+i = 243 
+i = 242 
+i = 241 
+i = 240 
+i = 239 
+i = 238 
+i = 237 
+i = 236 
+i = 235 
+i = 234 
+i = 233 
+i = 232 
+i = 231 
+i = 230 
+i = 229 
+i = 228 
+i = 227 
+i = 226 
+i = 225 
+i = 224 
+i = 223 
+i = 222 
+i = 221 
+i = 220 
+i = 219 
+i = 218 
+i = 217 
+i = 216 
+i = 215 
+i = 214 
+i = 213 
+i = 212 
+i = 211 
+i = 210 
+i = 209 
+i = 208 
+i = 207 
+i = 206 
+i = 205 
+i = 204 
+i = 203 
+i = 202 
+i = 201 
+i = 200 
+i = 199 
+i = 198 
+i = 197 
+i = 196 
+i = 195 
+i = 194 
+i = 193 
+i = 192 
+i = 191 
+i = 190 
+i = 189 
+i = 188 
+i = 187 
+i = 186 
+i = 185 
+i = 184 
+i = 183 
+i = 182 
+i = 181 
+i = 180 
+i = 179 
+i = 178 
+i = 177 
+i = 176 
+i = 175 
+i = 174 
+i = 173 
+i = 172 
+i = 171 
+i = 170 
+i = 169 
+i = 168 
+i = 167 
+i = 166 
+i = 165 
+i = 164 
+i = 163 
+i = 162 
+i = 161 
+i = 160 
+i = 159 
+i = 158 
+i = 157 
+i = 156 
+i = 155 
+i = 154 
+i = 153 
+i = 152 
+i = 151 
+i = 150 
+i = 149 
+i = 148 
+i = 147 
+i = 146 
+i = 145 
+i = 144 
+i = 143 
+i = 142 
+i = 141 
+i = 140 
+i = 139 
+i = 138 
+i = 137 
+i = 136 
+i = 135 
+i = 134 
+i = 133 
+i = 132 
+i = 131 
+i = 130 
+i = 129 
+i = 128 
+i = 129 
+i = 130 
+i = 131 
+i = 132 
+i = 133 
+i = 134 
+i = 135 
+i = 136 
+i = 137 
+i = 138 
+i = 139 
+i = 140 
+i = 141 
+i = 142 
+i = 143 
+i = 144 
+i = 145 
+i = 146 
+i = 147 
+i = 148 
+i = 149 
+i = 150 
+i = 151 
+i = 152 
+i = 153 
+i = 154 
+i = 155 
+i = 156 
+i = 157 
+i = 158 
+i = 159 
+i = 160 
+i = 161 
+i = 162 
+i = 163 
+i = 164 
+i = 165 
+i = 166 
+i = 167 
+i = 168 
+i = 169 
+i = 170 
+i = 171 
+i = 172 
+i = 173 
+i = 174 
+i = 175 
+i = 176 
+i = 177 
+i = 178 
+i = 179 
+i = 180 
+i = 181 
+i = 182 
+i = 183 
+i = 184 
+i = 185 
+i = 186 
+i = 187 
+i = 188 
+i = 189 
+i = 190 
+i = 191 
+i = 192 
+i = 193 
+i = 194 
+i = 195 
+i = 196 
+i = 197 
+i = 198 
+i = 199 
+i = 200 
+i = 201 
+i = 202 
+i = 203 
+i = 204 
+i = 205 
+i = 206 
+i = 207 
+i = 208 
+i = 209 
+i = 210 
+i = 211 
+i = 212 
+i = 213 
+i = 214 
+i = 215 
+i = 216 
+i = 217 
+i = 218 
+i = 219 
+i = 220 
+i = 221 
+i = 222 
+i = 223 
+i = 224 
+i = 225 
+i = 226 
+i = 227 
+i = 228 
+i = 229 
+i = 230 
+i = 231 
+i = 232 
+i = 233 
+i = 234 
+i = 235 
+i = 236 
+i = 237 
+i = 238 
+i = 239 
+i = 240 
+i = 241 
+i = 242 
+i = 243 
+i = 244 
+i = 245 
+i = 246 
+i = 247 
+i = 248 
+i = 249 
+i = 250 
+i = 251 
+i = 252 
+i = 253 
+i = 254 
+i = 255 
+i = 254 
+i = 253 
+i = 252 
+i = 251 
+i = 250 
+i = 249 
+i = 248 
+i = 247 
+i = 246 
+i = 245 
+i = 244 
+i = 243 
+i = 242 
+i = 241 
+i = 240 
+i = 239 
+i = 238 
+i = 237 
+i = 236 
+i = 235 
+i = 234 
+i = 233 
+i = 232 
+i = 231 
+i = 230 
+i = 229 
+i = 228 
+i = 227 
+i = 226 
+i = 225 
+i = 224 
+i = 223 
+i = 222 
+i = 221 
+i = 220 
+i = 219 
+i = 218 
+i = 217 
+i = 216 
+i = 215 
+i = 214 
+i = 213 
+i = 212 
+i = 211 
+i = 210 
+i = 209 
+i = 208 
+i = 207 
+i = 206 
+i = 205 
+i = 204 
+i = 203 
+i = 202 
+i = 201 
+i = 200 
+i = 199 
+i = 198 
+i = 197 
+i = 196 
+i = 195 
+i = 194 
+i = 193 
+i = 192 
+i = 191 
+i = 190 
+i = 189 
+i = 188 
+i = 187 
+i = 186 
+i = 185 
+i = 184 
+i = 183 
+i = 182 
+i = 181 
+i = 180 
+i = 179 
+i = 178 
+i = 177 
+i = 176 
+i = 175 
+i = 174 
+i = 173 
+i = 172 
+i = 171 
+i = 170 
+i = 169 
+i = 168 
+i = 167 
+i = 166 
+i = 165 
+i = 164 
+i = 163 
+i = 162 
+i = 161 
+i = 160 
+i = 159 
+i = 158 
+i = 157 
+i = 156 
+i = 155 
+i = 154 
+i = 153 
+i = 152 
+i = 151 
+i = 150 
+i = 149 
+i = 148 
+i = 147 
+i = 146 
+i = 145 
+i = 144 
+i = 143 
+i = 142 
+i = 141 
+i = 140 
+i = 139 
+i = 138 
+i = 137 
+i = 136 
+i = 135 
+i = 134 
+i = 133 
+i = 132 
+i = 131 
+i = 130 
+i = 129 
+i = 128 
+i = 129 
+i = 130 
+i = 131 
+i = 132 
+i = 133 
+i = 134 
+i = 135 
+i = 136 
+i = 137 
+i = 138 
+i = 139 
+i = 140 
+i = 141
+```
+
+观察到 `i` 和电压的关系约为 $3.3*i/256=V$ 即电压和 `i` 成正比，实现了 PWM 调压功能。 
+
+波特率较高可能会产生乱码。
+
+[操作](./PWM.mkv)
