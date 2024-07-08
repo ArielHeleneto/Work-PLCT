@@ -50,6 +50,8 @@ Duo 的默认固件大核 Linux 系统会控制板载 LED 闪烁，这个是通�
 
 ## GPIO 测试
 
+### 高低电平测试
+
 在 Arduino IDE 写入下列测试程序，该程序功能实现的是设备 GPIO 20 脚位每秒钟变换一次电平（从高电平变换为低电平）来支持上传功能，之后点上传按钮进行测试。
 
 ```cpp
@@ -76,6 +78,35 @@ void loop() {
 [操作](./GPIO.mkv)
 
 [万用表](./GPIOrecord.mp4)
+
+### LED 测试
+
+在 Arduino IDE 写入下列测试程序，该程序功能实现的是设备 GPIO 20 脚位每秒钟变换一次电平（从高电平变换为低电平）来支持上传功能，之后点上传按钮进行测试。
+
+```cpp
+#define TEST_PIN 20  //0,1,2,14,15,19,20,21,22,24,25,26,27
+
+// the setup function runs once when you press reset or power the board
+void setup() {
+  pinMode(TEST_PIN, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(TEST_PIN, HIGH); // turn the TEST_PIN on (HIGH is the voltage level)
+  delay(100);                  // wait for a second
+  digitalWrite(TEST_PIN, LOW);  // turn the TEST_PIN off by making the voltage LOW
+  delay(100);                  // wait for a second
+}
+```
+
+将 LED 灯正极连接到 GPIO 20 号（即板上 GP15），负极连接到 GND 脚。观察现象。
+
+观察到 LED 灯闪烁。
+
+[操作](./GPIO.mkv)
+
+[LED](./GPIO-LED.mp4)
 
 ## UART 测试
 
@@ -316,6 +347,8 @@ transfer
 [操作](./SPI.mkv)
 
 ## PWM 测试
+
+### PWM 调压测试
 
 在 Arduino IDE 写入下列测试程序，该程序功能实现的是 PWM 调整电压。之后点上传按钮进行测试。
 
@@ -875,3 +908,166 @@ i = 141
 波特率较高可能会产生乱码。
 
 [操作](./PWM.mkv)
+
+### PWM 控制 LED 测试
+
+在 Arduino IDE 写入下列测试程序，该程序功能实现的是 PWM 调整电压。之后点上传按钮进行测试。
+
+```cpp
+void setup() {
+  pinMode(9, OUTPUT);
+}
+
+void loop() {
+  for(int i = 1; i < 255; i++)
+  {
+    analogWrite(9,i);
+    delay(10);
+  }
+  for(int i = 255; i > 1; i--)
+  {
+    analogWrite(9,i);
+    delay(10);
+  }
+}
+```
+
+将 GP6 和 LED 正极，GND 和 LED 负极相连，设置万用表为直流电压模式。
+
+观察 LED 灯如呼吸灯闪烁。
+
+## ADC 测试
+
+### ADC 测试电阻
+
+在 Arduino IDE 写入下列测试程序，该程序功能实现的是 PWM 调整电压。之后点上传按钮进行测试。
+
+```cpp
+int adc_get_val = 0;
+
+void setup() {
+  Serial.begin(38400);
+}
+
+void loop() {
+  adc_get_val = analogRead(31);
+  Serial.printf("adc_get_val = %d \n\r", adc_get_val);
+  delay(100);
+}
+```
+
+将 GP26 和电位器信号脚（即中间的脚），两端和 3.3V GND 分别相连、GP4 和 RX、GP5 和 TX、GND 和 G 相连，打开 UART 并设置波特率为 38400 观察现象。
+
+观察到串口输出下列内容。
+
+```
+adc_get_val = 1023 
+adc_get_val = 1000 
+adc_get_val = 976 
+adc_get_val = 948 
+adc_get_val = 952 
+adc_get_val = 918 
+adc_get_val = 900 
+adc_get_val = 896 
+adc_get_val = 880 
+adc_get_val = 864 
+adc_get_val = 809 
+adc_get_val = 784 
+adc_get_val = 779 
+adc_get_val = 780 
+adc_get_val = 786 
+adc_get_val = 786 
+adc_get_val = 776 
+adc_get_val = 776 
+adc_get_val = 778 
+adc_get_val = 784 
+adc_get_val = 786 
+adc_get_val = 780 
+adc_get_val = 778 
+adc_get_val = 780 
+adc_get_val = 754 
+adc_get_val = 741 
+adc_get_val = 744 
+adc_get_val = 746 
+adc_get_val = 742 
+adc_get_val = 744 
+adc_get_val = 749 
+adc_get_val = 741 
+adc_get_val = 752 
+adc_get_val = 748 
+adc_get_val = 742 
+adc_get_val = 738 
+adc_get_val = 740 
+adc_get_val = 746 
+adc_get_val = 741 
+adc_get_val = 744 
+adc_get_val = 748 
+adc_get_val = 741 
+adc_get_val = 736 
+adc_get_val = 749 
+adc_get_val = 746 
+adc_get_val = 740 
+adc_get_val = 744 
+adc_get_val = 741 
+adc_get_val = 740 
+adc_get_val = 744 
+adc_get_val = 742 
+adc_get_val = 738 
+```
+
+观察到旋转电位器可以使数值变化，电压越高（阻值越高）则数值越高。
+
+### ADC 控制 LED
+
+在 Arduino IDE 写入下列测试程序，该程序功能实现的是 PWM 调整电压。之后点上传按钮进行测试。
+
+```cpp
+int adc_get_val = 0;
+
+void setup() {
+  Serial.begin(38400);
+  pinMode(9, OUTPUT);
+}
+
+void loop() {
+  adc_get_val = analogRead(31);
+  Serial.printf("adc_get_val = %d, max(1,min(255, adc_get_val / 4)) = %d \n\r", adc_get_val, max(1,min(255, adc_get_val / 4)));
+  analogWrite(9, max(1,min(255, adc_get_val / 4)));
+}
+```
+
+将 GP26 和电位器信号脚（即中间的脚），两端和 3.3V GND 分别相连、GP4 和 RX、GP5 和 TX、GND 和 G 相连，GP6 和 LED 正极、GND 和 LED 负极相连，打开 UART 并设置波特率为 38400 观察现象。
+
+观察到串口输出下列内容。
+
+```
+adc_get_val = 1023, max(1,min(255, adc_get_val / 4)) = 255 
+adc_get_val = 1023, max(1,min(255, adc_get_val / 4)) = 255 
+adc_get_val = 1023, max(1,min(255, adc_get_val / 4)) = 255 
+adc_get_val = 1010, max(1,min(255, adc_get_val / 4)) = 252 
+adc_get_val = 964, max(1,min(255, adc_get_val / 4)) = 241 
+adc_get_val = 934, max(1,min(255, adc_get_val / 4)) = 233 
+adc_get_val = 896, max(1,min(255, adc_get_val / 4)) = 224 
+adc_get_val = 864, max(1,min(255, adc_get_val / 4)) = 216 
+adc_get_val = 816, max(1,min(255, adc_get_val / 4)) = 204 
+adc_get_val = 760, max(1,min(255, adc_get_val / 4)) = 190 
+adc_get_val = 704, max(1,min(255, adc_get_val / 4)) = 176 
+adc_get_val = 640, max(1,min(255, adc_get_val / 4)) = 160 
+adc_get_val = 576, max(1,min(255, adc_get_val / 4)) = 144 
+adc_get_val = 512, max(1,min(255, adc_get_val / 4)) = 128 
+adc_get_val = 462, max(1,min(255, adc_get_val / 4)) = 115 
+adc_get_val = 410, max(1,min(255, adc_get_val / 4)) = 102 
+adc_get_val = 360, max(1,min(255, adc_get_val / 4)) = 90 
+adc_get_val = 316, max(1,min(255, adc_get_val / 4)) = 79 
+adc_get_val = 256, max(1,min(255, adc_get_val / 4)) = 64 
+adc_get_val = 192, max(1,min(255, adc_get_val / 4)) = 48 
+adc_get_val = 116, max(1,min(255, adc_get_val / 4)) = 29 
+adc_get_val = 35, max(1,min(255, adc_get_val / 4)) = 8 
+adc_get_val = 0, max(1,min(255, adc_get_val / 4)) = 1 
+adc_get_val = 0, max(1,min(255, adc_get_val / 4)) = 1 
+adc_get_val = 0, max(1,min(255, adc_get_val / 4)) = 1 
+```
+
+旋转电位器，随着数值变大，灯越亮，反之亦然。
+
+![ADC-LED](./ADC-LED.mp4)
