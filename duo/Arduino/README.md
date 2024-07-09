@@ -40,7 +40,7 @@ Duo 的默认固件大核 Linux 系统会控制板载 LED 闪烁，这个是通�
 
 [移除闪烁](./remove.mkv)
 
-## 闪烁 LED 灯
+### 闪烁 LED 灯
 
 在 Arduino IDE 的 文件 菜单中依次打开 示例 > 01.Basics > Blink 测试程序，该程序功能实现的是 Arduino 设备板载 LED 闪烁，Duo 中也是支持的，你也许需要安装 pyserial （**不是 serial**） 来支持上传功能，之后我们直接点 上传 按钮进行测试。
 
@@ -48,9 +48,11 @@ Duo 的默认固件大核 Linux 系统会控制板载 LED 闪烁，这个是通�
 
 [闪烁](./record.mp4)
 
-## GPIO 测试
+## 代码示例
 
-### 高低电平测试
+### GPIO 测试
+
+#### 高低电平测试
 
 在 Arduino IDE 写入下列测试程序，该程序功能实现的是设备 GPIO 20 脚位每秒钟变换一次电平（从高电平变换为低电平）来支持上传功能，之后点上传按钮进行测试。
 
@@ -79,7 +81,7 @@ void loop() {
 
 [万用表](./GPIOrecord.mp4)
 
-### LED 测试
+#### LED 测试
 
 在 Arduino IDE 写入下列测试程序，该程序功能实现的是设备 GPIO 20 脚位每秒钟变换一次电平（从高电平变换为低电平）来支持上传功能，之后点上传按钮进行测试。
 
@@ -108,7 +110,7 @@ void loop() {
 
 [LED](./GPIO-LED.mp4)
 
-## UART 测试
+### UART 测试
 
 在 Arduino IDE 写入下列测试程序，该程序功能实现的是设备 UART 每秒钟输出字符串。之后点上传按钮进行测试。
 
@@ -131,7 +133,7 @@ void loop() {
 
 [操作](./UART.mkv)
 
-## I2C 测试
+### I2C 测试
 
 在 Arduino IDE 写入下列测试程序，该程序功能实现的是设备 I2C 接收到的字符串输出到 UART。之后点上传按钮进行测试。
 
@@ -283,7 +285,7 @@ receive 1 bytes
 
 [操作](./I2C.mkv)
 
-## SPI 测试
+### SPI 测试
 
 在 Arduino IDE 写入下列测试程序，该程序功能实现的是 SPI 环回测试。之后点上传按钮进行测试。
 
@@ -346,9 +348,9 @@ transfer
 
 [操作](./SPI.mkv)
 
-## PWM 测试
+### PWM 测试
 
-### PWM 调压测试
+#### PWM 调压测试
 
 在 Arduino IDE 写入下列测试程序，该程序功能实现的是 PWM 调整电压。之后点上传按钮进行测试。
 
@@ -909,7 +911,7 @@ i = 141
 
 [操作](./PWM.mkv)
 
-### PWM 控制 LED 测试
+#### PWM 控制 LED 测试
 
 在 Arduino IDE 写入下列测试程序，该程序功能实现的是 PWM 调整电压。之后点上传按钮进行测试。
 
@@ -936,9 +938,9 @@ void loop() {
 
 观察 LED 灯如呼吸灯闪烁。
 
-## ADC 测试
+### ADC 测试
 
-### ADC 测试电阻
+#### ADC 测试电阻
 
 在 Arduino IDE 写入下列测试程序，该程序功能实现的是 PWM 调整电压。之后点上传按钮进行测试。
 
@@ -1017,7 +1019,7 @@ adc_get_val = 738
 
 观察到旋转电位器可以使数值变化，电压越高（阻值越高）则数值越高。
 
-### ADC 控制 LED
+#### ADC 控制 LED
 
 在 Arduino IDE 写入下列测试程序，该程序功能实现的是 PWM 调整电压。之后点上传按钮进行测试。
 
@@ -1071,3 +1073,53 @@ adc_get_val = 0, max(1,min(255, adc_get_val / 4)) = 1
 旋转电位器，随着数值变大，灯越亮，反之亦然。
 
 ![ADC-LED](./ADC-LED.mp4)
+
+## 传感器和外接组件
+
+### LCD1602
+
+```cpp
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+LiquidCrystal_I2C lcd(0x27, 16, 2); 
+
+void setup() {
+  lcd.init();
+  lcd.backlight();
+
+  lcd.print("Hello MilkV Duo!");
+  lcd.setCursor(0,1);
+  lcd.print("Have a Nice Day!");
+}
+
+void loop() {
+  delay(1000);
+}
+```
+
+TODO: 验证失败
+
+### 无源蜂鸣器
+
+```cpp
+#define BUZZER_PIN 4
+
+const unsigned heigh[]={32,65,130,261,523,1046,2093};
+
+void setup() {
+  pinMode(BUZZER_PIN, OUTPUT);
+}
+void loop() {
+  for(unsigned int i = 0; i < 7; i++)
+  {
+    tone(BUZZER_PIN, heigh[i]);
+    delay(100);
+    noTone(BUZZER_PIN);
+    delay(100);
+  }
+}
+```
+
+将无源蜂鸣器模块的 VCC 连接到 3.3V，GND 连接到 GND，IO 连接到 GP2。该程序可以发出简谱 C 大调的 1-7.
+
