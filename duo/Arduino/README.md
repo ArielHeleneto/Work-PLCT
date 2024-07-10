@@ -1125,3 +1125,169 @@ void loop() {
 
 将无源蜂鸣器模块的 VCC 连接到 3.3V，GND 连接到 GND，IO 连接到 GP2。该程序可以发出简谱 C 大调的 1-7.
 
+### DHT22
+
+```cpp
+// Example testing sketch for various DHT humidity/temperature sensors
+// Written by ladyada, public domain
+
+// REQUIRES the following Arduino libraries:
+// - DHT Sensor Library: https://github.com/adafruit/DHT-sensor-library
+// - Adafruit Unified Sensor Lib: https://github.com/adafruit/Adafruit_Sensor
+
+#include "DHT.h"
+
+#define DHTPIN 20     // Digital pin connected to the DHT sensor
+// Feather HUZZAH ESP8266 note: use pins 3, 4, 5, 12, 13 or 14 --
+// Pin 15 can work but DHT must be disconnected during program upload.
+
+// Uncomment whatever type you're using!
+//#define DHTTYPE DHT11   // DHT 11
+#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
+//#define DHTTYPE DHT21   // DHT 21 (AM2301)
+
+// Connect pin 1 (on the left) of the sensor to +5V
+// NOTE: If using a board with 3.3V logic like an Arduino Due connect pin 1
+// to 3.3V instead of 5V!
+// Connect pin 2 of the sensor to whatever your DHTPIN is
+// Connect pin 3 (on the right) of the sensor to GROUND (if your sensor has 3 pins)
+// Connect pin 4 (on the right) of the sensor to GROUND and leave the pin 3 EMPTY (if your sensor has 4 pins)
+// Connect a 10K resistor from pin 2 (data) to pin 1 (power) of the sensor
+
+// Initialize DHT sensor.
+// Note that older versions of this library took an optional third parameter to
+// tweak the timings for faster processors.  This parameter is no longer needed
+// as the current DHT reading algorithm adjusts itself to work on faster procs.
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(38400);
+  Serial.println(F("DHTxx test!"));
+
+  dht.begin();
+}
+
+void loop() {
+  // Wait a few seconds between measurements.
+  delay(2000);
+
+  // Reading temperature or humidity takes about 250 milliseconds!
+  // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
+  float h = dht.readHumidity();
+  // Read temperature as Celsius (the default)
+  float t = dht.readTemperature();
+  // Read temperature as Fahrenheit (isFahrenheit = true)
+  float f = dht.readTemperature(true);
+
+  // Check if any reads failed and exit early (to try again).
+  if (isnan(h) || isnan(t) || isnan(f)) {
+    Serial.println(F("Failed to read from DHT sensor!"));
+    return;
+  }
+
+  // Compute heat index in Fahrenheit (the default)
+  float hif = dht.computeHeatIndex(f, h);
+  // Compute heat index in Celsius (isFahreheit = false)
+  float hic = dht.computeHeatIndex(t, h, false);
+
+  Serial.print(F("Humidity: "));
+  Serial.print(h);
+  Serial.print(F("%  Temperature: "));
+  Serial.print(t);
+  Serial.print(F("°C "));
+  Serial.print(f);
+  Serial.print(F("°F  Heat index: "));
+  Serial.print(hic);
+  Serial.print(F("°C "));
+  Serial.print(hif);
+  Serial.println(F("°F"));
+}
+```
+
+安装 Adafruit Unified Sensor 和 DHT sensor library 库。观察串口输出如下。
+
+```
+DHTxx test!
+Humidity: 54.60%  Temperature: 32.20°C 89.96°F  Heat index: 35.95°C 96.71°F
+Humidity: 54.60%  Temperature: 32.20°C 89.96°F  Heat index: 35.95°C 96.71°F
+```
+
+波形如图所示。
+
+![DHT22](./DHT22.png)
+
+#### 接线
+
+- DHT22 的 + ，3.3V
+- DHT22 的 - ，GND
+- GP4 和 RX、GP5 和 TX、GND 和 G 相连
+
+
+## Bugs
+
+## I2C 成功发送后返回值不正确
+
+### 代码
+
+```cpp
+#include <Wire.h>
+
+void receive(int a) {
+  Serial.printf("receive %d bytes\n\r", a);
+  while(a--) {
+    Serial.printf("%d \n\r", Wire1.read());
+  }
+}
+
+void setup() {
+  Serial.begin(38400);
+
+  Wire1.begin(0x50);
+  Wire1.onReceive(receive);
+
+  Wire.begin();
+  Serial.printf("test slave\n\r");
+  Wire1.print();
+}
+
+byte val = 0;
+
+void loop() {
+  Wire.beginTransmission(0x50);         // Transmit to device number 0x50
+  Serial.printf("send %d \n\r", ++val);
+  Wire.write(val);                      // Sends value byte
+  int ans=Wire.endTransmission();               // Stop transmitting
+  Serial.printf("ans=%d\n\r",ans);
+  Wire1.onService();
+  delay(1000);
+}
+```
+
+### 接线
+
+将 GP0 和 GP9、GP1 和 GP8、GP4 和 RX、GP5 和 TX、GND 和 G 相连，打开 UART 并设置波特率为 38400 观察现象。
+
+### 预期结果
+
+`ans` 为 0。
+
+### 实际结果
+
+`ans` 为 4，即 [endTransmission()](https://www.arduino.cc/reference/en/language/functions/communication/wire/endtransmission/) 中的  other error。
+
+```
+203 
+ans=4
+send 204 
+receive 1 bytes
+204 
+ans=4
+send 205 
+receive 1 bytes
+205 
+ans=4
+send 206 
+receive 1 bytes
+206 
+ans=4
+```
