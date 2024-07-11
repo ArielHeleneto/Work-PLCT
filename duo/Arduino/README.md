@@ -1084,7 +1084,7 @@ adc_get_val = 0, max(1,min(255, adc_get_val / 4)) = 1
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
-LiquidCrystal_I2C lcd(0x27, 16, 2); 
+LiquidCrystal_I2C lcd(0x3F, 16, 2); //请根据实际情况修改地址，必要时使用扫描器
 
 void setup() {
   lcd.init();
@@ -1100,7 +1100,20 @@ void loop() {
 }
 ```
 
-TODO: 验证失败
+#### 接线方式
+
+- GND 接 GND
+- VCC 接 VBUS
+- GP0 接 SCL
+- GP1 接 SDA
+
+### 波形
+
+波形可用 I2C 解码器。 如图所示.
+
+![1602 Wave](./1602Wave.png)
+
+![1602](./1602.png)
 
 ### 无源蜂鸣器
 
@@ -1221,7 +1234,6 @@ Humidity: 54.60%  Temperature: 32.20°C 89.96°F  Heat index: 35.95°C 96.71°F
 - DHT22 的 + ，3.3V
 - DHT22 的 - ，GND
 - GP4 和 RX、GP5 和 TX、GND 和 G 相连
-
 
 ## Bugs
 
