@@ -66,7 +66,9 @@ Duo LED GPIO (wiringX) 25: Low
 
 ### PWM
 
-位于 [pwm](https://github.com/milkv-duo/duo-examples/tree/main/pwm) 中。使用 `make` 编译获得产物 `pwm` 上传至 Milk-V Duo 上运行。
+将 GP3 连接到逻辑分析仪，GND 接 GND。
+
+位于 [pwm](https://github.com/milkv-duo/duo-examples/tree/main/pwm) 中。修改 44 行 `milkv_duo256m` 为 `milkv_duo`，使用 `make` 编译获得产物 `pwm` 上传至 Milk-V Duo 上运行。
 
 运行后，输入 `3:500` 输出如下。
 
@@ -75,14 +77,12 @@ Duo LED GPIO (wiringX) 25: Low
 PWM Period fixed to 1000ns, please set Duty in range of 0-1000.
 Enter -> Pin:Duty
 3:500
-ERROR: The milkv_duo256m does not support the pwmEnable functionality
-ERROR: The milkv_duo256m does not support the pwmSetPolarity functionality
-ERROR: The milkv_duo256m does not support the pwmSetPeriod functionality
-ERROR: The milkv_duo256m does not support the pwmSetDuty functionality
 pin 3 -> duty 500
 ```
 
-TODO: 测试未通过
+duty cycle 为 50%。
+
+[PWMWave](./PWM.png)
 
 ### ADC
 
