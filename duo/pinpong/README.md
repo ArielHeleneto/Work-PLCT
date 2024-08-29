@@ -24,4 +24,4 @@ Duo 的默认固件大核 Linux 系统会控制板载 LED 闪烁，这个是通�
 
 ## Demo
 
-See 
+无法使用 见 [milkv-duo/duo-buildroot-sdk#132](https://github.com/milkv-duo/duo-buildroot-sdk/issues/132)
