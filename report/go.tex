@@ -1,0 +1,324 @@
+% !TeX encoding = UTF-8
+
+%% ------------------------------------------------------------------------
+%% Copyright (C) 2021-2023 SJTUG
+%% 
+%% SJTUBeamer Example Document by SJTUG
+%% 
+%% SJTUBeamer Example Document is licensed under a
+%% Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+%% 
+%% You should have received a copy of the license along with this
+%% work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
+%%
+%% For a quick start, check out src/doc/sjtubeamerquickstart.tex
+%% Join discussions: https://github.com/sjtug/SJTUBeamer/discussions
+%% -----------------------------------------------------------------------
+
+\documentclass[xcolor=table,dvipsnames,svgnames,aspectratio=169]{ctexbeamer}
+% 可以通过 fontset=macnew / fontset=ubuntu / fontset=windows 选项切换字体集；
+% 如遇无法显示的数学符号，尝试对 ctexbeamer 文档类添加 no-math 选项；
+% 写纯英文幻灯片可以改用 beamer 文档类。
+
+\usepackage{tikz}
+\usepackage[normalem]{ulem}
+\usetikzlibrary{arrows}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hologo}
+\usepackage{colortbl}
+\usepackage{shapepar}
+\usepackage{hyperxmp}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{tipa}
+\usepackage{multicol}
+\usepackage{datetime2}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+
+% 参考文献设置，使用 style=gb7714-2015 样式为标准顺序编码制，
+% 使用 style=gb7714-2015ay 样式可以改为著者-出版年制。
+% \usepackage[backend=biber,style=gb7714-2015]{biblatex}
+% \addbibresource{ref.bib}
+
+% 该行指定了图像的额外搜索路径
+\graphicspath{{figures/}}
+
+\hypersetup{
+  pdfcopyright       = {Licensed under CC-BY-SA 4.0. Some rights reserved.},
+  pdflicenseurl      = {http://creativecommons.org/licenses/by-sa/4.0/},
+  unicode            = true,
+  psdextra           = true,
+  pdfdisplaydoctitle = true
+}
+
+\pdfstringdefDisableCommands{
+  \let\\\relax
+  \let\quad\relax
+  \let\hspace\@gobble
+}
+
+% \renewcommand{\TeX}{\hologo{TeX}}
+% \renewcommand{\LaTeX}{\hologo{LaTeX}}
+% \newcommand{\BibTeX}{\hologo{BibTeX}}
+% \newcommand{\XeTeX}{\hologo{XeTeX}}
+% \newcommand{\pdfTeX}{\hologo{pdfTeX}}
+% \newcommand{\LuaTeX}{\hologo{LuaTeX}}
+% \newcommand{\MiKTeX}{\hologo{MiKTeX}}
+% \newcommand{\MacTeX}{Mac\hologo{TeX}}
+% \newcommand{\beamer}{\textsc{beamer}}
+% \newcommand{\XeLaTeX}{\hologo{Xe}\kern-.13em\LaTeX{}}
+% \newcommand{\pdfLaTeX}{pdf\LaTeX{}}
+% \newcommand{\LuaLaTeX}{Lua\LaTeX{}}
+% \def\TeXLive{\TeX{} Live}
+% \let\TL=\TeXLive
+
+% \newcommand{\SJTUThesis}{\textsc{SJTUThesis}}
+% \newcommand{\SJTUThesisVersion}{2.0.3}
+% \newcommand{\SJTUThesisDate}{2023/9/25}
+% \newcommand{\SJTUBeamer}{\textsc{SJTUBeamer}}
+% \newcommand{\SJTUBeamerVersion}{3.0.0}
+% \newcommand{\SJTUBeamerDate}{2022/11/22}
+
+% \newcommand\link[1]{\href{#1}{\faLink}}
+% \newcommand\pkg[1]{\texttt{#1}}
+
+% \def\cmd#1{\texttt{\color{structure}\footnotesize $\backslash$#1}}
+% \def\env#1{\texttt{\color{structure}\footnotesize #1}}
+% \def\cmdxmp#1#2#3{\small{\texttt{\color{structure}$\backslash$#1}\{#2\}
+% \hspace{1em}\\ $\Rightarrow$\hspace{1em} {#3}\par\vskip1em}}
+
+\usetheme[maxplus,blue,light]{sjtubeamer}
+% \setbeameroption{show notes on second screen=bottom}
+% 使用 maxplus/max/min 切换标题页样式
+% 使用 red/blue 切换主色调
+% 使用 light/dark 切换亮/暗色模式
+% 使用外样式关键词以获得不同的边栏样式
+%   miniframes infolines  sidebar
+%   default    smoothbars split	 
+%   shadow     tree       smoothtree
+% 使用 topright/bottomright 切换徽标位置
+% 使用逗号分隔列表以同时使用多种选项
+
+% \setbeamertemplate{background}{}
+% 对于 max 主题，如果需要关闭正文背景图，请取消注释上一行。
+
+% \tikzexternalize[prefix=build/]
+% 如果您需要缓存 tikz 图像，请取消注释上一行，并在编译选项中添加 -shell-escape。
+
+\lstset{
+  language=[LaTeX]TeX,           % 更改高亮语言
+  texcsstyle=*\color{cprimary},  % 只在高亮 LaTeX 语言时必须
+  tabsize=2,
+  basicstyle=\ttfamily\scriptsize,%
+  keywordstyle=\color{cprimary},%
+  stringstyle=\color{csecondary},%
+  commentstyle=\color{ctertiary!50!gray},%
+  breaklines,%
+}
+\logo{}
+\author{熊家辉}
+\institute[萨塞克斯人工智能学院]{浙江工商大学}
+% \date{\the\year 年 \the\month 月}
+\date{2024 年 8 月 23 日}
+% \date{\today}
+\subject{Arduino on Milk-V Duo}
+\keywords{Arduino, RISC-V, Milk-V Duo}
+
+\title[Go on RISC-V] % 页脚显示标题
+{\textbf{测评 Go 编译器对 RISC-V 适配}} % 首页标题
+
+\subtitle{PLCT Lab 每周技术分享}
+
+\begin{document}
+
+% 使用节目录
+\AtBeginSection[]{
+  \begin{frame}
+    %% 使用传统节目录，也可以将 subsectionstyle=... 换成 hideallsubsections 以隐藏所有小节信息
+    % \tableofcontents[currentsection,subsectionstyle=show/show/hide]
+    %% 或者使用节页
+    \sectionpage
+  \end{frame}
+}
+
+% 使用小节目录
+\AtBeginSubsection[]{		       % 在每小节开始
+  \begin{frame}
+    %% 使用传统小节目录
+    % \tableofcontents[currentsection,subsectionstyle=show/shaded/hide]
+    %% 或者使用小节页
+    \subsectionpage
+  \end{frame}
+}
+
+\maketitle
+
+% \begin{frame}
+%   \frametitle{自我介绍}
+%   % \begin{thebibliography}{00}
+%   %   \setbeamertemplate{bibliography item}[online]
+%   %   \bibitem{} Alexara Wu.
+%   %   \newblock 如何使用 \LaTeX{} 排版论文[EB/OL].
+%   %   \newblock 2021.
+%   %   \url{https://github.com/sjtug/sjtulib-latex-talk/tree/alexara-2021}
+%   % \end{thebibliography}
+
+%   % \vspace*{2ex}
+%   % ；；现工作于中国科学院软件研究所编程和编译语言实验室测试工程方向，在工作期间曾主管 openEuler RISC-V 主线化测试工作、中国大陆第一个 RISC-V 架构主线化支持的操作系统测试工作并代表测试团队出席与 openEuler Developer Day 2023 一同举行的 openEuler 技术委员会会议；现任珠海横琴群芯汇聚投资合伙企业（Milk-V）合伙人。参与多个知名开源项目的 RISC-V 支持建设和测试工作，包括 Numpy、openEuler、openKylin、Deepin、openWRT。曾参加 RISC-V China Summit 2023 并担任志愿者组长。持有中国业余无线电操作证，有效期内的呼号为 BG5CQH 的中华人民共和国无线电台执照（地面无线电业务）；持有有效的轻型民用无人驾驶航空器安全操控理论培训合格证明。
+
+%   \begin{itemize}
+%     \item 熊家辉，就读于浙江工商大学萨塞克斯人工智能学院通信工程（中外合作）专业，预计于 2026 年 8 月获得浙江工商大学工学学士学位和萨塞克斯大学荣誉工程学士学位。
+%     \item 在 2023 年 10 月被萨塞克斯大学信息与工程学院选举为国际学生代表（任期至 2024 年 5 月）。现工作于 PLCT Lab 测试团队。现任群芯闪耀（Milk-V）合伙人。（但不是该公司代表。如欲联系该公司，请至会场 A7 展台或使用\href{https://milkv.io/}{官网}。）
+%     \item 曾参加 RISC-V China Summit 2023 并担任志愿者。曾参加 RISC-V China Summit 2024 并担任机动和英语对接组志愿者。
+%     \item 持有中国业余无线电操作证，有效期内的呼号为 BG5CQH 的中华人民共和国无线电台执照（地面无线电业务）；持有有效的轻型民用无人驾驶航空器安全操控理论培训合格证明。
+%     \item 发表译文一篇\href{https://mp.weixin.qq.com/s/0oge4bSOYCZCAZGXtiGRKA}{《RISC-V 对技术和创新的影响》}并被多家媒体转载。
+%   \end{itemize}
+
+% \end{frame}
+
+\begin{frame}{目录}
+  \tableofcontents[hideallsubsections]	% 隐藏所有小节信息
+\end{frame}
+
+\section{Go}
+
+\subsection{Go 简介}
+
+\begin{frame}
+  \frametitle{Go 简介}
+
+  Go（又称Golang）是Google开发的一种静态强类型、编译型、并发型，并具有垃圾回收功能的编程语言。
+
+  罗伯特·格瑞史莫、罗勃·派克及肯·汤普逊于2007年9月开始设计Go，稍后伊恩·兰斯·泰勒（Ian Lance Taylor）、拉斯·考克斯（Russ Cox）加入项目。Go是基于Inferno操作系统所开发的。[5]Go于2009年11月正式宣布推出，成为开放源代码项目，支持Linux、macOS、Windows等操作系统。
+
+目前，Go每半年发布一个二级版本（即从a.x升级到a.y）。 当前的版本是 1.23。
+
+\end{frame}
+
+\subsection{Go 的编译器}
+
+\begin{frame}
+  \frametitle{Go 的编译器}
+  \begin{itemize}
+    \item gc
+    \item gccgo
+    \item Gollvm
+  \end{itemize}
+
+\end{frame}
+
+\subsection{gc}
+
+\begin{frame}
+  \frametitle{gc}
+
+  Go 在 1.5 版本实现了自举，所使用的编译器在 \lstinline|cmd/compile/| 中。这也是当前的默认实现。
+\end{frame}
+
+\begin{frame}
+  \frametitle{gc 编译流程：第一阶段：词法和语法分析}
+  %https://golang.design/under-the-hood/zh-cn/part1basic/ch02life/compile/
+
+  这部分代码位于 \lstinline|cmd/compile/internal/syntax| 中。
+
+  在编译的第一阶段，源代码被 token 化（词法分析），解析（语法分析），并为每个源构造语法树文件。每个语法树都是相应源文件的精确表示对应于源的各种元素的节点，如表达式，声明和陈述。语法树还包括位置信息用于错误报告和调试信息的创建。
+  
+  这一步会输出一个 AST 语法树。
+\end{frame}
+
+\begin{frame}
+  \frametitle{gc 编译流程：第二阶段：语义分析}
+  % https://golang.design/under-the-hood/zh-cn/part1basic/ch02life/compile/
+
+  这部分代码位于 \lstinline|cmd/compile/internal/gc| 中。
+
+  对 AST 进行类型检查。第一步是名称解析和类型推断，它们确定哪个对象属于哪个标识符，以及每个表达式具有的类型。类型检查包括某些额外的检查，例如 “声明和未使用” 以及确定函数是否终止。
+
+在 AST 上也进行了某些转换。一些节点基于类型信息被细化，例如从算术加法节点类型分割的字符串添加。另外还有死代码消除，函数调用内联和转义分析。
+
+\note{语义分析的过程中包含几个重要的操作：逃逸分析、变量捕获、函数内联、闭包处理。}
+\end{frame}
+
+\begin{frame}
+  \frametitle{gc 编译流程：第三阶段：SSA 生成}
+  % #https://golang.design/under-the-hood/zh-cn/part1basic/ch02life/compile/
+
+  转换为 SSA 代码位于 \lstinline|cmd/compile/internal/gc| 中。SSA 传递与规则代码位于 \lstinline|cmd/compile/internal/ssa| 中。
+
+  在此阶段，AST将转换为静态单一分配（SSA）形式，这是一种具有特定属性的低级中间表示，可以更轻松地实现优化并最终从中生成机器代码。
+
+  \note{在此转换期间，将应用函数内在函数。这些是特殊功能，编译器已经教导它们根据具体情况用大量优化的代码替换。
+
+  在AST到SSA转换期间，某些节点也被降级为更简单的组件，因此编译器的其余部分可以使用它们。 例如，内置复制替换为内存移动，并且范围循环被重写为for循环。 其中一些目前发生在转换为SSA之前，由于历史原因，但长期计划是将所有这些都移到这里。
+
+  然后，应用一系列与机器无关的传递和规则。 这些不涉及任何单个计算机体系结构，因此可以在所有 GOARCH 变体上运行。
+
+  这些通用过程的一些示例包括消除死代码，删除不需要的零检查以及删除未使用的分支。通用重写规则主要涉及表达式，例如用常量值替换某些表达式，以及优化乘法和浮点运算。}
+\end{frame}
+
+\begin{frame}
+  \frametitle{gc 编译流程：第四阶段：机器码生成}
+  %https://golang.design/under-the-hood/zh-cn/part1basic/ch02life/compile/
+
+  底层 SSA 和架构特定的传递代码位于 \lstinline|cmd/compile/internal/ssa| 中。生成机器码代码位于 \lstinline|cmd/internal/obj| 中。
+
+  编译器的机器相关阶段以“底层”传递开始，该传递将通用值重写为其机器特定的变体。例如，在 amd64 存储器操作数上是可能的，因此可以组合许多加载存储操作。
+
+  \note{编译器的机器相关阶段以“底层”传递开始，该传递将通用值重写为其机器特定的变体。例如，在 amd64 存储器操作数上是可能的，因此可以组合许多加载存储操作。
+
+  请注意，较低的通道运行所有特定于机器的重写规则，因此它当前也应用了大量优化。
+  
+  一旦SSA“降低”并且更加特定于目标体系结构，就会运行最终的代码优化过程。这包括另一个死代码消除传递，移动值更接近它们的使用，删除从未读取的局部变量，以及寄存器分配。
+  
+  作为此步骤的一部分完成的其他重要工作包括堆栈框架布局，它将堆栈偏移分配给局部变量，以及指针活动分析，它计算每个 GC 安全点上的堆栈指针。
+  
+  在SSA生成阶段结束时，Go 函数已转换为一系列 obj.Prog 指令。它们会被传递给装载器（cmd/internal/obj），将它们转换为机器代码并写出最终的目标文件。目标文件还将包含反射数据，导出数据和调试信息。}
+\end{frame}
+
+\begin{frame}
+  \frametitle{gc 优势}
+  开箱即用，点击就送，无需动脑。
+\end{frame}
+
+\begin{frame}
+  \frametitle{gc 劣势}
+  开箱即用，点击就送，无需动脑。
+
+  \note{难以配置部分RISC-V指令集，只有rv20a64和rv22a64的支持。同时支持的目标较少。}
+\end{frame}
+
+\subsection{gccgo}
+
+\begin{frame}
+  \frametitle{gccgo}
+
+  gccgo 是 gcc 的 go 语言编译器。
+\end{frame}
+
+\begin{frame}
+  \frametitle{gccgo 优势}
+  \begin{itemize}
+    \item 几乎所有的目标，包括 thead 支持
+    \item 更小的文件
+    \item 针对目标处理器的特定优化。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{gccgo 劣势}
+
+  \begin{itemize}
+    \item 相对配置复杂（想想好多的编译选项）
+    \item 没有默认附带，得自己搓。
+    \item 支持1.18及以下的库，部分新库没有实现
+    \item musl 和某些奇特的 libc 实现无法链接。
+  \end{itemize}
+  
+  \note{https://gcc.gnu.org/bugzilla/show_bug.cgi?id=113143 似乎和这个有什么关系。装个libucontext加上静态链接可以缓解这个问题}
+\end{frame}
+
+\makebottom
+
+\end{document}

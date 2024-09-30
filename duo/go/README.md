@@ -32,6 +32,10 @@ Duo 的默认固件大核 Linux 系统会控制板载 LED 闪烁，这个是通�
 
 构建环境需要 `git`，`nodejs`，`pnpm`，`golang`，`gcc`。这些工具均可在源中找到。
 
+```
+sudo pacman -Syy --needed git nodejs pnpm go gcc
+```
+
 构建需要交叉工具链，可以从 ruyisdk 中获取。
 
 本测试使用玄铁工具链。
