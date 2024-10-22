@@ -9,7 +9,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${workspaceRoot}\\${fileBasenameNoExtension}.exe"
+                "${workspaceRoot}/${fileBasenameNoExtension}"
             ],
             "group": {
                 "kind": "build",
@@ -20,9 +20,8 @@
         {
             "type": "shell",
             "label": "cpp: build file for riscv",
-            "command": "wsl",
+            "command": "/home/ariel/host-tools/gcc/riscv64-linux-musl-x86_64/bin/riscv64-unknown-linux-musl-g++",
             "args": [
-                "/home/ariel/host-tools/gcc/riscv64-linux-musl-x86_64/bin/riscv64-unknown-linux-musl-g++",
                 "-g",
                 "${fileBasename}",
                 "-o",
@@ -47,13 +46,6 @@
                 "${fileBasenameNoExtension}",
                 "root@172.16.0.215:~/${fileBasenameNoExtension}"
             ]
-        },
-        {
-            "label": "strat qemu-static",
-            "type": "shell",
-            "isBackground": true,
-            "command": "wsl /usr/bin/qemu-riscv64-static -g 30666 ${fileBasenameNoExtension}",
-            "problemMatcher": []
         },
         {
             "label": "set duo",
