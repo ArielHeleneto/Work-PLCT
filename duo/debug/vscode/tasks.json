@@ -1,0 +1,87 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "cpp: build file",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${workspaceRoot}\\${fileBasenameNoExtension}.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "build ${fileDirname}"
+        },
+        {
+            "type": "shell",
+            "label": "cpp: build file for riscv",
+            "command": "wsl",
+            "args": [
+                "/home/ariel/host-tools/gcc/riscv64-linux-musl-x86_64/bin/riscv64-unknown-linux-musl-g++",
+                "-g",
+                "${fileBasename}",
+                "-o",
+                "${fileBasenameNoExtension}",
+                "-static"
+            ],
+            "group": {
+                "kind": "build"
+            },
+            "detail": "build riscv${fileDirname}"
+        },
+        {
+            "label": "cp file to duo",
+            "type": "shell",
+            "command": "scp",
+            "args": [
+                "-O",
+                "-o",
+                "StrictHostKeyChecking=no",
+                "-o",
+                "UserKnownHostsFile=/dev/null",
+                "${fileBasenameNoExtension}",
+                "root@172.16.0.215:~/${fileBasenameNoExtension}"
+            ]
+        },
+        {
+            "label": "strat qemu-static",
+            "type": "shell",
+            "isBackground": true,
+            "command": "wsl /usr/bin/qemu-riscv64-static -g 30666 ${fileBasenameNoExtension}",
+            "problemMatcher": []
+        },
+        {
+            "label": "set duo",
+            "type": "shell",
+            "isBackground": true,
+            "command": "ssh",
+            "args": [
+                "-o",
+                "StrictHostKeyChecking=no",
+                "-o",
+                "UserKnownHostsFile=/dev/null",
+                "root@172.16.0.215",
+                "\"chmod +x ${fileBasenameNoExtension}\""
+            ]
+        },
+        {
+            "label": "start duo",
+            "type": "shell",
+            // "isBackground": true,
+            "command": "ssh",
+            "args": [
+                "-o",
+                "StrictHostKeyChecking=no",
+                "-o",
+                "UserKnownHostsFile=/dev/null",
+                "root@172.16.0.215",
+                "\"gdbserver --once :2222 ${fileBasenameNoExtension}\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,82 @@
+{
+    "version": "0.0.1",
+    "configurations": [
+        {
+            "name": "Fortran Launch (GDB) on x86",
+            "type": "cppdbg",
+            "request": "launch",
+            "targetArchitecture": "x86",
+            "program": "${workspaceRoot}\\${fileBasenameNoExtension}.exe",
+            "miDebuggerPath": "gdb.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "externalConsole": true,
+            "preLaunchTask": "fortan: build file"
+        },
+        {
+            "name": "c Launch (GDB) with RISC-V",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set arch",
+                    "text": "-gdb-set architecture riscv",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "D:/cygwin64/bin/gdb-multiarch.exe",
+            "miDebuggerServerAddress": "172.16.0.215:2222",
+            // "targetArchitecture": "riscv"
+        },
+        {
+            "name": "wsl (gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            // "program": "${workspaceFolder}/bin/main",
+            "program": "${command:extension.vscode-wsl-workspaceFolder}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            // "cwd": "${workspaceFolder}",
+            "cwd": "${command:extension.vscode-wsl-workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "windows": {
+                "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    },
+                    {
+                        "description": "Set arch",
+                        "text": "-gdb-set architecture riscv",
+                        "ignoreFailures": true
+                    }
+                ]
+            },
+            "pipeTransport": {
+                "pipeCwd": "",
+                "pipeProgram": "C:\\Windows\\System32\\bash.exe",
+                "pipeArgs": ["-c"],
+                "debuggerPath": "/usr/bin/gdb-multiarch"
+            },
+            "sourceFileMap": {
+                "/mnt/d": "D:\\",
+                "/usr": "${env:LOCALAPPDATA}\\lxss\\rootfs\\usr"
+            }}
+    ]
+}
